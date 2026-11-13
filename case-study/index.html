@@ -1,0 +1,243 @@
+<title>SMS Opt-Out Classifier</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap">
+<style>
+/* Layout: one reading column, wide figures break out; SMS bubbles carry the story. */
+:root {
+  --bg: #f6f8fa;
+  --surface: #ffffff;
+  --fg: #12202b;
+  --muted: #55646f;
+  --line: #d9e0e6;
+  --accent: #0a6b66;
+  --accent-soft: #dcf0ee;
+  --bad: #b3261e;
+  --bad-soft: #f8e3e1;
+  --good: #1b6b3a;
+  --warn: #8a5a00;
+  --warn-soft: #f7ecd2;
+  --font-display: "IBM Plex Serif", Georgia, serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e171e; --surface: #16222b; --fg: #e6edf2; --muted: #9aaab6; --line: #2a3a46;
+    --accent: #5cc8bf; --accent-soft: #123532; --bad: #ff8a80; --bad-soft: #3a1c1a;
+    --good: #7fd49a; --warn: #f0c36a; --warn-soft: #3a2f12; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e171e; --surface: #16222b; --fg: #e6edf2; --muted: #9aaab6; --line: #2a3a46;
+  --accent: #5cc8bf; --accent-soft: #123532; --bad: #ff8a80; --bad-soft: #3a1c1a;
+  --good: #7fd49a; --warn: #f0c36a; --warn-soft: #3a2f12; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--fg);
+  font: 16px/1.6 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 72px;
+}
+main { max-width: 760px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }
+h1, h2 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; line-height: 1.2; margin: 0; }
+h1 { font-size: clamp(30px, 6vw, 46px); }
+h2 { font-size: 26px; margin-bottom: 14px; }
+h3 { font-size: 16px; margin: 0 0 6px; }
+p { margin: 0 0 12px; max-width: 65ch; }
+.eyebrow { font: 500 12px/1 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+.lede { font-size: 19px; color: var(--muted); margin-top: 16px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 22px; font: 400 13px var(--font-mono); color: var(--muted); }
+section > :last-child { margin-bottom: 0; }
+
+/* SMS thread */
+.thread { display: flex; flex-direction: column; gap: 8px; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; max-width: 420px; }
+.bubble { padding: 9px 13px; border-radius: 16px; max-width: 85%; font-size: 15px; line-height: 1.4; }
+.brand { align-self: flex-start; background: var(--accent-soft); border-bottom-left-radius: 4px; }
+.cust { align-self: flex-end; background: var(--fg); color: var(--bg); border-bottom-right-radius: 4px; }
+.sys { align-self: center; font: 400 12px var(--font-mono); color: var(--bad); background: var(--bad-soft); padding: 5px 10px; border-radius: 6px; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; align-items: start; }
+
+/* flow */
+.flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 18px 0; }
+.step { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; min-width: 0; }
+.step b { display: block; font-size: 14px; margin-bottom: 4px; }
+.step span { font-size: 13px; color: var(--muted); }
+.step.model { border-color: var(--accent); }
+
+/* tables */
+.scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font: 500 12px var(--font-mono); text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--font-mono); white-space: nowrap; }
+
+/* bars */
+.bars { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 18px; display: flex; flex-direction: column; gap: 22px; }
+.bars h3 { font-size: 15px; }
+.bars small { color: var(--muted); display: block; margin-bottom: 10px; font-size: 13px; }
+.row { display: grid; grid-template-columns: 110px 1fr 52px; gap: 10px; align-items: center; margin-bottom: 6px; font-size: 14px; }
+.track { background: var(--line); border-radius: 4px; height: 18px; overflow: hidden; }
+.fill { height: 100%; border-radius: 4px; }
+.fill.kw { background: var(--muted); }
+.fill.llm { background: var(--accent); }
+.val { font: 500 13px var(--font-mono); text-align: right; font-variant-numeric: tabular-nums; }
+
+.chart { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px; overflow-x: auto; }
+.chart svg { display: block; min-width: 520px; width: 100%; height: auto; }
+.chart text { fill: var(--muted); font: 12px var(--font-mono); }
+.callout { background: var(--warn-soft); border-radius: 8px; padding: 14px 16px; font-size: 15px; }
+.callout b { color: var(--warn); }
+ul.plain { margin: 0; padding-left: 20px; max-width: 65ch; }
+ul.plain li { margin-bottom: 8px; }
+code { font: 14px var(--font-mono); background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; }
+a { color: var(--accent); }
+footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 18px; }
+@media (max-width: 480px) { .row { grid-template-columns: 84px 1fr 48px; } }
+</style>
+
+<main>
+  <header>
+    <div class="eyebrow">Product case study · AI feature</div>
+    <h1>When “I don’t want your texts anymore” doesn’t say STOP</h1>
+    <p class="lede">At Maestra.io, a Klaviyo/Attentive-style marketing platform, SMS opt-out only worked on keywords. I designed and prototyped an LLM layer that catches natural-language refusals, with guardrails so it never acts alone on a shaky guess.</p>
+    <div class="meta"><span>Role: Product Manager</span><span>Prototype: Python + Claude Haiku</span><span>Data: 450 synthetic SMS replies</span></div>
+  </header>
+
+  <section>
+    <h2>The problem</h2>
+    <p>Customers who want to stop receiving texts don’t always type STOP. They write what they mean. The keyword system saw no keyword and kept them subscribed.</p>
+    <div class="two">
+      <div class="thread" aria-label="Example conversation that fails">
+        <div class="bubble brand">Flash sale! 30% off today. Reply STOP to opt out.</div>
+        <div class="bubble cust">I don’t want to receive messages from you anymore</div>
+        <div class="sys">no keyword found → still subscribed</div>
+      </div>
+      <div>
+        <h3>Why it matters</h3>
+        <ul class="plain">
+          <li>The customer asked clearly and was ignored. That is a compliance risk for the brand.</li>
+          <li>Ignored requests turn into complaints and spam reports, which can get the sender filtered by carriers.</li>
+          <li>Every message to someone who wants out is wasted spend.</li>
+        </ul>
+      </div>
+    </div>
+    <p style="margin-top:14px">The opposite mistake has a cost too. “Don’t stop the sales emails” and “how do I cancel my order” contain keywords and are not opt-outs. A fix that removes people who still want messages would lose revenue.</p>
+  </section>
+
+  <section>
+    <h2>What I designed</h2>
+    <p>Keyword rules still run first because they are fast and exact. Everything else goes to a small, cheap model that returns a label and a confidence. The model never opts anyone out by itself. Its confidence decides what happens next.</p>
+    <div class="flow">
+      <div class="step"><b>1. Inbound reply</b><span>Any SMS reply from a subscriber</span></div>
+      <div class="step"><b>2. Keyword rules</b><span>Short STOP-style replies are final</span></div>
+      <div class="step model"><b>3. LLM classifier</b><span>opt_out, not_opt_out or ambiguous, plus confidence</span></div>
+      <div class="step"><b>4. Routing</b><span>Thresholds pick the action</span></div>
+    </div>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Model says</th><th>Action</th></tr></thead>
+        <tbody>
+          <tr><td>opt_out, confidence ≥ 0.90</td><td>Opt out automatically</td></tr>
+          <tr><td>opt_out, confidence 0.60 to 0.90</td><td>Send a confirmation SMS: “Reply YES to unsubscribe”</td></tr>
+          <tr><td>ambiguous, or low confidence</td><td>Human review queue</td></tr>
+          <tr><td>not_opt_out</td><td>No action</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 style="margin-top:22px">The tradeoff behind the thresholds</h3>
+    <p>A missed opt-out is worse than a wrongly removed subscriber: one is a compliance and complaint problem, the other is a lost sale that confirmation can often recover. So the automatic threshold is high, and uncertain cases get a question or a human instead of a guess. The reasoning and the failure-mode table are in the risk doc of the repo.</p>
+    <p>The prompt also treats each reply as untrusted data. A customer can’t instruct the classifier, and the output is limited to three labels.</p>
+  </section>
+
+  <section>
+    <h2>How I tested it</h2>
+    <p>Real Maestra data is confidential, so I generated 450 labeled replies in English, Russian and Spanish. The set includes the hard cases: refusals with no keyword (130), keyword traps like “cancel my order” (45), and ambiguous replies like “not interested” (50). The headline metric is recall on opt-outs with no keyword, since that is the gap in the old system. The baseline is the keyword rules.</p>
+  </section>
+
+  <section>
+    <h2>Results</h2>
+    <div class="bars">
+      <div>
+        <h3>Catches refusals that have no keyword</h3>
+        <small>Share of 130 soft refusals detected as opt-outs</small>
+        <div class="row"><span>Keywords</span><div class="track"><div class="fill kw" style="width:0%"></div></div><span class="val">0%</span></div>
+        <div class="row"><span>Keywords + LLM</span><div class="track"><div class="fill llm" style="width:92.3%"></div></div><span class="val">92%</span></div>
+      </div>
+      <div>
+        <h3>Gets fooled by keyword traps</h3>
+        <small>Share of 45 non-opt-outs containing a keyword that were treated as opt-outs</small>
+        <div class="row"><span>Keywords</span><div class="track"><div class="fill kw" style="width:100%"></div></div><span class="val">100%</span></div>
+        <div class="row"><span>Keywords + LLM</span><div class="track"><div class="fill llm" style="width:2.2%"></div></div><span class="val">2%</span></div>
+      </div>
+    </div>
+    <p style="margin-top:16px">Overall opt-out precision and recall went from 0.56 and 0.31 to 0.99 and 0.95.</p>
+    <h3 style="margin-top:20px">What routing did with the 190 true opt-outs</h3>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Outcome</th><th class="num">Count</th></tr></thead>
+        <tbody>
+          <tr><td>Opted out automatically</td><td class="num">149</td></tr>
+          <tr><td>Sent a confirmation SMS</td><td class="num">31</td></tr>
+          <tr><td>Sent to human review</td><td class="num">10</td></tr>
+          <tr><td>Ignored</td><td class="num">0</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:14px">At the 0.90 threshold no non-opt-out reply was opted out automatically. The only false positive, “Quit it with the flash sales lol”, scored 0.75, so it triggered a confirmation message instead. The 10 human-review cases were borderline wording like “I’m done with these texts”.</p>
+
+    <h3 style="margin-top:20px">Choosing the automatic threshold</h3>
+    <div class="chart">
+      <svg viewBox="0 0 700 300" role="img" aria-label="Share of opt-outs handled automatically as the threshold rises from 0.50 to 0.99">
+        <g stroke="var(--line)" stroke-width="1">
+          <line x1="50" y1="20" x2="660" y2="20"/><line x1="50" y1="77.5" x2="660" y2="77.5"/>
+          <line x1="50" y1="135" x2="660" y2="135"/><line x1="50" y1="192.5" x2="660" y2="192.5"/>
+          <line x1="50" y1="250" x2="660" y2="250"/>
+        </g>
+        <text x="42" y="24" text-anchor="end">100%</text><text x="42" y="81.5" text-anchor="end">75%</text>
+        <text x="42" y="139" text-anchor="end">50%</text><text x="42" y="196.5" text-anchor="end">25%</text>
+        <text x="42" y="254" text-anchor="end">0%</text>
+        <polyline fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-linejoin="round"
+          points="50,32.2 170,32.2 290,32.2 410,47.8 470,62.3 530,69.7 590,97.5 638,179.8"/>
+        <g fill="var(--accent)">
+          <circle cx="50" cy="32.2" r="3.5"/><circle cx="170" cy="32.2" r="3.5"/><circle cx="290" cy="32.2" r="3.5"/>
+          <circle cx="410" cy="47.8" r="3.5"/><circle cx="470" cy="62.3" r="3.5"/><circle cx="590" cy="97.5" r="3.5"/>
+          <circle cx="638" cy="179.8" r="3.5"/>
+        </g>
+        <circle cx="530" cy="69.7" r="7" fill="var(--bg)" stroke="var(--accent)" stroke-width="3"/>
+        <text x="530" y="56" text-anchor="middle" style="fill:var(--fg)">0.90 chosen: 78%</text>
+        <g text-anchor="middle">
+          <text x="50" y="270">0.50</text><text x="170" y="270">0.60</text><text x="290" y="270">0.70</text>
+          <text x="410" y="270">0.80</text><text x="470" y="270">0.85</text><text x="530" y="270">0.90</text>
+          <text x="590" y="270">0.95</text><text x="638" y="270">0.99</text>
+        </g>
+        <text x="355" y="292" text-anchor="middle">auto opt-out threshold</text>
+      </svg>
+    </div>
+    <p style="margin-top:12px">Share of true opt-outs handled automatically. The rest go to confirmation or review, so nobody is dropped. False opt-outs are 0.4% at thresholds up to 0.70 and 0% from 0.80 up. I set 0.90 in the design before running the test. The results support it: it sits well above the 0.70 level where the first false opt-out appears, and the cost is that about one in five opt-outs gets a confirmation text first.</p>
+  </section>
+
+  <section>
+    <h2>What I got wrong first</h2>
+    <ul class="plain">
+      <li><b>A bug looked like a weak model.</b> My first real run showed 35% recall. I had capped the model’s output length too low and a quarter of the answers were cut off and read as “ambiguous”. After the fix the number rose, and the lesson was to check the harness before judging the model.</li>
+      <li><b>My labels were wrong.</b> I had labeled angry replies like “Who the heck keeps texting me?” as opt-outs. The model called them ambiguous, and it was right: they don’t ask to stop. I relabeled them, moved the eight that explicitly asked (“delete my number”) back to opt-outs, and reran. Questioning the ground truth moved the headline metric more than any model change.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Limits and next steps</h2>
+    <div class="callout"><b>Read these numbers as an upper bound.</b> The dataset is synthetic and built from templates, so many rows are close variants of each other. Real inbound SMS is messier. The keyword baseline’s 0% is true by construction, because the refusal rows contain no keyword.</div>
+    <p style="margin-top:14px">The rollout plan answers this by measuring on real traffic before acting on it:</p>
+    <ul class="plain">
+      <li><b>Shadow mode:</b> the model classifies live replies but changes nothing; compare against support tickets and complaints.</li>
+      <li><b>Human review:</b> reviewers confirm the model’s calls and the thresholds get tuned on real data.</li>
+      <li><b>Confirmation SMS, then automatic opt-out,</b> enabled per client behind a feature flag with a kill switch. Each phase has exit criteria on recall and false opt-outs.</li>
+    </ul>
+    <p style="margin-top:14px">Not legal advice. A compliance review would need to confirm the opt-out rules for each market before launch.</p>
+  </section>
+
+  <footer>Based on my product work at Maestra.io. All data is synthetic and all business figures in the repo are illustrative assumptions. No confidential data is included. Full PRD, risk analysis, metrics, rollout plan, dataset and code are in the project repository.</footer>
+</main>

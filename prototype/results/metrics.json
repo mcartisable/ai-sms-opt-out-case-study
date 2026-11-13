@@ -1,0 +1,295 @@
+{
+  "meta": {
+    "provider": "anthropic",
+    "model": "claude-haiku-5-5",
+    "n_rows": 450,
+    "mock_not_real_results": false,
+    "parse_failures": 0
+  },
+  "keyword": {
+    "overall": {
+      "precision": 0.5631067961165048,
+      "recall": 0.30526315789473685,
+      "f1": 0.3959044368600682,
+      "tp": 58,
+      "fp": 45,
+      "fn": 132,
+      "n": 450
+    },
+    "headline_recall_non_keyword_opt_out": {
+      "recall": 0.0,
+      "n": 130
+    },
+    "false_positive_rate_keyword_trap": {
+      "fpr": 1.0,
+      "n": 45
+    },
+    "recall_by_category": {
+      "keyword": 0.9666666666666667,
+      "soft_refusal": 0.0
+    },
+    "by_language": {
+      "en": {
+        "precision": 0.5454545454545454,
+        "recall": 0.3253012048192771,
+        "f1": 0.4075471698113207,
+        "tp": 54,
+        "fp": 45,
+        "fn": 112,
+        "n": 390
+      },
+      "es": {
+        "precision": 1.0,
+        "recall": 0.16666666666666666,
+        "f1": 0.2857142857142857,
+        "tp": 2,
+        "fp": 0,
+        "fn": 10,
+        "n": 30
+      },
+      "ru": {
+        "precision": 1.0,
+        "recall": 0.16666666666666666,
+        "f1": 0.2857142857142857,
+        "tp": 2,
+        "fp": 0,
+        "fn": 10,
+        "n": 30
+      }
+    },
+    "confusion_matrix": {
+      "opt_out": {
+        "opt_out": 58,
+        "not_opt_out": 132,
+        "ambiguous": 0
+      },
+      "not_opt_out": {
+        "opt_out": 45,
+        "not_opt_out": 135,
+        "ambiguous": 0
+      },
+      "ambiguous": {
+        "opt_out": 0,
+        "not_opt_out": 80,
+        "ambiguous": 0
+      }
+    },
+    "route_counts": {
+      "auto_opt_out": 103,
+      "send_confirmation": 0,
+      "human_review": 0,
+      "no_action": 347
+    },
+    "route_by_true_label": {
+      "opt_out": {
+        "auto_opt_out": 58,
+        "send_confirmation": 0,
+        "human_review": 0,
+        "no_action": 132
+      },
+      "not_opt_out": {
+        "auto_opt_out": 45,
+        "send_confirmation": 0,
+        "human_review": 0,
+        "no_action": 135
+      },
+      "ambiguous": {
+        "auto_opt_out": 0,
+        "send_confirmation": 0,
+        "human_review": 0,
+        "no_action": 80
+      }
+    }
+  },
+  "hybrid": {
+    "overall": {
+      "precision": 0.994475138121547,
+      "recall": 0.9473684210526315,
+      "f1": 0.9703504043126685,
+      "tp": 180,
+      "fp": 1,
+      "fn": 10,
+      "n": 450
+    },
+    "headline_recall_non_keyword_opt_out": {
+      "recall": 0.9230769230769231,
+      "n": 130
+    },
+    "false_positive_rate_keyword_trap": {
+      "fpr": 0.022222222222222223,
+      "n": 45
+    },
+    "recall_by_category": {
+      "keyword": 1.0,
+      "soft_refusal": 0.9230769230769231
+    },
+    "by_language": {
+      "en": {
+        "precision": 0.9936305732484076,
+        "recall": 0.9397590361445783,
+        "f1": 0.9659442724458205,
+        "tp": 156,
+        "fp": 1,
+        "fn": 10,
+        "n": 390
+      },
+      "es": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 12,
+        "fp": 0,
+        "fn": 0,
+        "n": 30
+      },
+      "ru": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 12,
+        "fp": 0,
+        "fn": 0,
+        "n": 30
+      }
+    },
+    "confusion_matrix": {
+      "opt_out": {
+        "opt_out": 180,
+        "not_opt_out": 0,
+        "ambiguous": 10
+      },
+      "not_opt_out": {
+        "opt_out": 1,
+        "not_opt_out": 174,
+        "ambiguous": 5
+      },
+      "ambiguous": {
+        "opt_out": 0,
+        "not_opt_out": 19,
+        "ambiguous": 61
+      }
+    },
+    "route_counts": {
+      "auto_opt_out": 149,
+      "send_confirmation": 32,
+      "human_review": 76,
+      "no_action": 193
+    },
+    "route_by_true_label": {
+      "opt_out": {
+        "auto_opt_out": 149,
+        "send_confirmation": 31,
+        "human_review": 10,
+        "no_action": 0
+      },
+      "not_opt_out": {
+        "auto_opt_out": 0,
+        "send_confirmation": 1,
+        "human_review": 5,
+        "no_action": 174
+      },
+      "ambiguous": {
+        "auto_opt_out": 0,
+        "send_confirmation": 0,
+        "human_review": 61,
+        "no_action": 19
+      }
+    }
+  },
+  "threshold_sweep_hybrid": [
+    {
+      "auto_threshold": 0.5,
+      "recall": 0.9473684210526315,
+      "false_opt_out_rate": 0.0038461538461538464
+    },
+    {
+      "auto_threshold": 0.6,
+      "recall": 0.9473684210526315,
+      "false_opt_out_rate": 0.0038461538461538464
+    },
+    {
+      "auto_threshold": 0.7,
+      "recall": 0.9473684210526315,
+      "false_opt_out_rate": 0.0038461538461538464
+    },
+    {
+      "auto_threshold": 0.8,
+      "recall": 0.8789473684210526,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.85,
+      "recall": 0.8157894736842105,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.9,
+      "recall": 0.7842105263157895,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.95,
+      "recall": 0.6631578947368421,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.99,
+      "recall": 0.30526315789473685,
+      "false_opt_out_rate": 0.0
+    }
+  ],
+  "threshold_sweep_keyword": [
+    {
+      "auto_threshold": 0.5,
+      "recall": 0.30526315789473685,
+      "false_opt_out_rate": 0.17307692307692307
+    },
+    {
+      "auto_threshold": 0.6,
+      "recall": 0.30526315789473685,
+      "false_opt_out_rate": 0.17307692307692307
+    },
+    {
+      "auto_threshold": 0.7,
+      "recall": 0.30526315789473685,
+      "false_opt_out_rate": 0.17307692307692307
+    },
+    {
+      "auto_threshold": 0.8,
+      "recall": 0.30526315789473685,
+      "false_opt_out_rate": 0.17307692307692307
+    },
+    {
+      "auto_threshold": 0.85,
+      "recall": 0.30526315789473685,
+      "false_opt_out_rate": 0.17307692307692307
+    },
+    {
+      "auto_threshold": 0.9,
+      "recall": 0.30526315789473685,
+      "false_opt_out_rate": 0.17307692307692307
+    },
+    {
+      "auto_threshold": 0.95,
+      "recall": 0.30526315789473685,
+      "false_opt_out_rate": 0.17307692307692307
+    },
+    {
+      "auto_threshold": 0.99,
+      "recall": 0.30526315789473685,
+      "false_opt_out_rate": 0.17307692307692307
+    }
+  ],
+  "token_usage": {
+    "new_calls": 392,
+    "cache_hits": 0,
+    "this_run_in_out": [
+      145607,
+      23577
+    ],
+    "all_used_in_out": [
+      145607,
+      23577
+    ]
+  }
+}

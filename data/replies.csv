@@ -1,0 +1,451 @@
+id,text,label,category,language,has_keyword
+1,ok so Maybe later!!,ambiguous,ambiguous,en,False
+2,"hello, Nice...",not_opt_out,positive,en,False
+3,"listen, send it over :)",not_opt_out,positive,en,False
+4,Может позже...,ambiguous,ambiguous,ru,False
+5,"I'M DONE GETTING THESE MESSAGES, REMOVE ME :)",opt_out,soft_refusal,en,False
+6,END!!,opt_out,keyword,en,True
+7,ok so yes please,not_opt_out,positive,en,False
+8,"hello, Does the 20% code work on sale items? pls",not_opt_out,question,en,False
+9,"hello, I've had enough of these texts, delete my number :)",opt_out,soft_refusal,en,False
+10,"hello, maybe later.",ambiguous,ambiguous,en,False
+11,yes please thx,not_opt_out,positive,en,False
+12,"Are you serious right now, delete my number",opt_out,soft_refusal,en,False
+13,STOP MESSAGES!!,opt_out,keyword,en,True
+14,"Hi, can i cancel my saturday pickup?",not_opt_out,keyword_trap,en,True
+15,Is the 20% code still valid? :),not_opt_out,question,en,False
+16,"LISTEN, I WANT OUT OF THIS LIST thx",opt_out,soft_refusal,en,False
+17,"ok so this is ridiculous, i never asked for these texts seriously",ambiguous,frustrated,en,False
+18,OK SO DO YOU HAVE THIS IN A SIZE 10?,not_opt_out,question,en,False
+19,"hello, I'm not interested in these texts, remove me",opt_out,soft_refusal,en,False
+20,ok so please just leave me be!!,opt_out,soft_refusal,en,False
+21,ну не присылайте больше сообщения плиз,opt_out,soft_refusal,ru,False
+22,LET'S GO thx,not_opt_out,positive,en,False
+23,ok so Not for me...,ambiguous,ambiguous,en,False
+24,delete my number from your system thx,opt_out,soft_refusal,en,False
+25,"Hi, i want out of this list",opt_out,soft_refusal,en,False
+26,ok so Your last text was so good I can't stop smiling :),not_opt_out,keyword_trap,en,True
+27,Your last text was so good i can't stop smiling,not_opt_out,keyword_trap,en,True
+28,Отпишите меня от рассылки,opt_out,soft_refusal,ru,False
+29,unsubscribe pls.,opt_out,keyword,en,True
+30,UNSUBSCRIBE...,opt_out,keyword,en,True
+31,"listen, great, i'll check it out!!",not_opt_out,positive,en,False
+32,Please stop :),opt_out,keyword,en,True
+33,"hello, I don't want these messages anymore thx",opt_out,soft_refusal,en,False
+34,who is this?,ambiguous,ambiguous,en,False
+35,Who dis?,ambiguous,ambiguous,en,False
+36,"listen, Love this! 🔥",not_opt_out,positive,en,False
+37,"Hello, please don't stop the sale emails, i love them",not_opt_out,keyword_trap,en,True
+38,"Perfect, thanks!!",not_opt_out,positive,en,False
+39,Ok so loving the new arrivals!,not_opt_out,positive,en,False
+40,"hello, Wow, you people are relentless. Leave me alone",opt_out,soft_refusal,en,False
+41,"hello, who is this?",ambiguous,ambiguous,en,False
+42,CANCEL SUBSCRIPTION,opt_out,keyword,en,True
+43,Stop.,opt_out,keyword,en,True
+44,maybe.,ambiguous,ambiguous,en,False
+45,"listen, Awesome",not_opt_out,positive,en,False
+46,hey Not interested right now!,ambiguous,ambiguous,en,False
+47,ok so Has my refund been processed?,not_opt_out,question,en,False
+48,¿quién les dio mi número? qué molestia :),ambiguous,frustrated,es,False
+49,Can i change my delivery address? lps,not_opt_out,question,en,False
+50,get me off this list...,opt_out,soft_refusal,en,False
+51,Can I cancel the gift wrap on order 5521?,not_opt_out,keyword_trap,en,True
+52,HEY YOUR END OF SEASON SALE LOOKS AMAZING pls,not_opt_out,keyword_trap,en,True
+53,ok so let's go,not_opt_out,positive,en,False
+54,Quit :),opt_out,keyword,en,True
+55,pls unsubscribe!!,opt_out,keyword,en,True
+56,"hi, ay.",not_opt_out,wrong_number_or_other,en,False
+57,unsubscribe...,opt_out,keyword,en,True
+58,hey Take my name off your mailing list.,opt_out,soft_refusal,en,False
+59,"mira, Eliminen mi número de su ilsta :)",opt_out,soft_refusal,es,False
+60,ok so I'm done with these texts,opt_out,soft_refusal,en,False
+61,"No more messages, thanks.",opt_out,soft_refusal,en,False
+62,"эй, Кто вам дал мой номер, блин.",ambiguous,frustrated,ru,False
+63,"mira, Por favor no me secriban más!",opt_out,soft_refusal,es,False
+64,hey reomve my number from your list please,opt_out,soft_refusal,en,False
+65,I'M SICK OF THIS CRAP ugh,ambiguous,frustrated,en,False
+66,unsubscribe me!,opt_out,keyword,en,True
+67,quit...,opt_out,keyword,en,True
+68,What time does the flash sale end?,not_opt_out,keyword_trap,en,True
+69,Maybe next time...,ambiguous,ambiguous,en,False
+70,👍!!,not_opt_out,wrong_number_or_other,en,False
+71,Can I change my delivery address?,not_opt_out,question,en,False
+72,I didn't ask for these messages. Delete me. pls,opt_out,soft_refusal,en,False
+73,"Слушайте, хорошо!!",not_opt_out,wrong_number_or_other,ru,False
+74,"NOT RIGHT NOW, TOO BUSY",ambiguous,ambiguous,en,False
+75,Оставьте меня в покое!,opt_out,soft_refusal,ru,False
+76,"hi, freaking annoying, leave me alone!",opt_out,soft_refusal,en,False
+77,"Hello, when does the winter sale start?",not_opt_out,question,en,False
+78,Ok so i did not agree to get texts from you,opt_out,soft_refusal,en,False
+79,Can't stop shopping with you guys,not_opt_out,keyword_trap,en,True
+80,"hey too many texts, i'm out.",opt_out,soft_refusal,en,False
+81,please delete me from your database thx,opt_out,soft_refusal,en,False
+82,¿cuándo llega mi paquete?,not_opt_out,question,es,False
+83,"hi, how much is shipping to mexico? pls",not_opt_out,question,en,False
+84,"i don't need any more promos from you, take me off.",opt_out,soft_refusal,en,False
+85,K thx,not_opt_out,wrong_number_or_other,en,False
+86,Is the student discount still on? thx,not_opt_out,question,en,False
+87,IS ORDER #4482 ON ITS WAY?,not_opt_out,question,en,False
+88,Is the new collection online yet?,not_opt_out,question,en,False
+89,код на 20% еще действует?,not_opt_out,question,ru,False
+90,pls unsubscribe!,opt_out,keyword,en,True
+91,Not now thx,ambiguous,ambiguous,en,False
+92,"HI, WSEET 🙌",not_opt_out,positive,en,False
+93,ok so do you do gift wrapping? pls,not_opt_out,question,en,False
+94,Quit...,opt_out,keyword,en,True
+95,ok so you can take me off your texting list :),opt_out,soft_refusal,en,False
+96,Unsubscribe.,opt_out,keyword,en,True
+97,Стоп,opt_out,keyword,ru,True
+98,"perfect, thanks pls",not_opt_out,positive,en,False
+99,"hello, please delete me from your database pls",opt_out,soft_refusal,en,False
+100,get lost already with your promos!,opt_out,soft_refusal,en,False
+101,bien por favor,not_opt_out,wrong_number_or_other,es,False
+102,Where can I find the size chart?,not_opt_out,question,en,False
+103,stop messages!,opt_out,keyword,en,True
+104,"hello, Too many texts, I'm out...",opt_out,soft_refusal,en,False
+105,Count me in 😍,not_opt_out,positive,en,False
+106,"MIRA, BÓRRAME DE LA LISTA",opt_out,soft_refusal,es,False
+107,Opt-out!!,opt_out,keyword,en,True
+108,"Hello, not interested",ambiguous,ambiguous,en,False
+109,Is this store open on sundays?,not_opt_out,question,en,False
+110,Спасибо!,not_opt_out,positive,ru,False
+111,Check back in a month!!,ambiguous,ambiguous,en,False
+112,"listen, maybe...",ambiguous,ambiguous,en,False
+113,"OYE, VALE...",not_opt_out,wrong_number_or_other,es,False
+114,"эй, Оставьте меня в покое плиз",opt_out,soft_refusal,ru,False
+115,"Hola, ¿dónde está mi pedido? :)",not_opt_out,question,es,False
+116,"Listen, ok cool.",not_opt_out,wrong_number_or_other,en,False
+117,"hi, is the sale price the final pirce?",not_opt_out,question,en,False
+118,"эй, Не интересно плиз",ambiguous,ambiguous,ru,False
+119,end :),opt_out,keyword,en,True
+120,ha!,not_opt_out,wrong_number_or_other,en,False
+121,"HELLO, PLEASE TAKE MY NUMBER OFF YOUR LIST",opt_out,soft_refusal,en,False
+122,"Hello, can't wait for the sale",not_opt_out,positive,en,False
+123,"mira, ¿Quién es? :)",ambiguous,ambiguous,es,False
+124,cancel :),opt_out,keyword,en,True
+125,hey i don't want these messages anymore,opt_out,soft_refusal,en,False
+126,"Hello, where is my order?",not_opt_out,question,en,False
+127,"hi, Enough already, you're driving me nuts thx",ambiguous,frustrated,en,False
+128,cancel subscription,opt_out,keyword,en,True
+129,Who the hell gave you my number :),ambiguous,frustrated,en,False
+130,not today...,ambiguous,ambiguous,en,False
+131,Hey is the lback jacket back in stock?,not_opt_out,question,en,False
+132,ok so Can I pick up in store today? :),not_opt_out,question,en,False
+133,"LISTEN, IS THE SALE PRICE THE FINAL PRICE? thx",not_opt_out,question,en,False
+134,"listen, Great, I'll check it out",not_opt_out,positive,en,False
+135,hey Your end of season sale looks amazing,not_opt_out,keyword_trap,en,True
+136,Is the end-of-season sale on this weekend?,not_opt_out,keyword_trap,en,True
+137,What's my tracking number?,not_opt_out,question,en,False
+138,"эй, не присылайте больше сообщения :)",opt_out,soft_refusal,ru,False
+139,"MIRA, QUÉ FASTIDIO CON TANTO MENSAJE!!",ambiguous,frustrated,es,False
+140,Stop!!,opt_out,keyword,en,True
+141,hey Nto interested,ambiguous,ambiguous,en,False
+142,DOES THE CODE END ON SUNDAY?,not_opt_out,keyword_trap,en,True
+143,maybe another time.,ambiguous,ambiguous,en,False
+144,"Ok so holy crap, another promo? really? :)",ambiguous,frustrated,en,False
+145,"Listen, i'm in!",not_opt_out,positive,en,False
+146,"litsen, ha ha",not_opt_out,wrong_number_or_other,en,False
+147,"hi, you can take me off your txeting list.",opt_out,soft_refusal,en,False
+148,ok so i need to cancel order #8831 and get a refund :),not_opt_out,keyword_trap,en,True
+149,Ridiculous. I've never shopped with you and you keep blowing up my phone!!,ambiguous,frustrated,en,False
+150,I'll think about it.,ambiguous,ambiguous,en,False
+151,"hello, Yes, please pls",not_opt_out,positive,en,False
+152,unsubscribe.,opt_out,keyword,en,True
+153,PLEASE STOP.,opt_out,keyword,en,True
+154,"I'm done getting these messages, remove me.",opt_out,soft_refusal,en,False
+155,ok so don't message me anymore :),opt_out,soft_refusal,en,False
+156,OK SO REMOVE THIS NUMBER FROM YOUR MARKETING LIST,opt_out,soft_refusal,en,False
+157,"NOT RIGHT NOW, TOO BUSY thx",ambiguous,ambiguous,en,False
+158,hye don't text this number anymore thx,opt_out,soft_refusal,en,False
+159,stop messages,opt_out,keyword,en,True
+160,"listen, who the heck keeps texting me? back off thx",opt_out,soft_refusal,en,False
+161,HEY NO MORE TEXTS PLEASE.,opt_out,soft_refusal,en,False
+162,"listen, Does the coed work on sale items?",not_opt_out,question,en,False
+163,QUIT.,opt_out,keyword,en,True
+164,sure lol!!,not_opt_out,wrong_number_or_other,en,False
+165,remove this number from your marketing list,opt_out,soft_refusal,en,False
+166,stop!,opt_out,keyword,en,True
+167,Don't stop the restock alerts pls,not_opt_out,keyword_trap,en,True
+168,"listen, not today.",ambiguous,ambiguous,en,False
+169,"LISTEN, I'M DONE GETTING THESE MESSAGES, REMOVE ME...",opt_out,soft_refusal,en,False
+170,please remove me from your list...,opt_out,soft_refusal,en,False
+171,"i have no idea how you got my number, please delete it",opt_out,soft_refusal,en,False
+172,Not now pls,ambiguous,ambiguous,en,False
+173,ok so Please don't keep messaging me.,opt_out,soft_refusal,en,False
+174,Let's go 🙌,not_opt_out,positive,en,False
+175,"oye, Sí, por favor...",not_opt_out,positive,es,False
+176,"hello, I don't want to recevie messages from you anymore thx",opt_out,soft_refusal,en,False
+177,i'm sick of this crap seriously,ambiguous,frustrated,en,False
+178,"hi, leave me alone!!",opt_out,soft_refusal,en,False
+179,Quit,opt_out,keyword,en,True
+180,take me off this thx,opt_out,soft_refusal,en,False
+181,"hi, Not today.",ambiguous,ambiguous,en,False
+182,Unsubscribe me...,opt_out,keyword,en,True
+183,"HEY FREAKING ANNOYING, LEAVE ME ALONE",opt_out,soft_refusal,en,False
+184,Get me off this list!!,opt_out,soft_refusal,en,False
+185,"hi, Remove this number from your marketing list...",opt_out,soft_refusal,en,False
+186,Can i use two codes at once?,not_opt_out,question,en,False
+187,"Listen, i'm sick of this crap seriously",ambiguous,frustrated,en,False
+188,"слушайте, Люблю новую коллекцию :)",not_opt_out,positive,ru,False
+189,"Idiots, I never signed up for this garbage.",ambiguous,frustrated,en,False
+190,"HI, WHAT THE HELL, BACK OFF ALREADY...",opt_out,soft_refusal,en,False
+191,Reply stop,opt_out,keyword,en,True
+192,"this is hraassment, i'm reporting you seriously",ambiguous,frustrated,en,False
+193,I want to cancel my pre-order for the boots!!,not_opt_out,keyword_trap,en,True
+194,Get lost already with your promos!,opt_out,soft_refusal,en,False
+195,"I'M DONE GETTNIG THESE MESSAGES, REMOVE ME!",opt_out,soft_refusal,en,False
+196,"HI, SWETE 😍",not_opt_out,positive,en,False
+197,"listen, Which store is open late?",not_opt_out,question,en,False
+198,"слушайте, удалите мой номер из вашей базы",opt_out,soft_refusal,ru,False
+199,Stop sending!!,opt_out,keyword,en,True
+200,"Listen, no thanks, i'm out, remove my number thx",opt_out,soft_refusal,en,False
+201,"hi, please remove me from your list",opt_out,soft_refusal,en,False
+202,"Idiots, i never signed pu for this garbage!!",ambiguous,frustrated,en,False
+203,ok so I did not agree to get texts from you!,opt_out,soft_refusal,en,False
+204,Do you price match? thx,not_opt_out,question,en,False
+205,"HELLO, CAN I GET MY RECEIPT BY EMAIL?",not_opt_out,question,en,False
+206,"HI, YES, SEND THE LINK LPEASE thx",not_opt_out,positive,en,False
+207,"this is getting annoying, enough",opt_out,soft_refusal,en,False
+208,"Hola, eliminen mi número de su lista :)",opt_out,soft_refusal,es,False
+209,Remove this number from your marketing list...,opt_out,soft_refusal,en,False
+210,"listen, take ym name off your mailing list pls",opt_out,soft_refusal,en,False
+211,I need to cancel order #8831 and get a refund.,not_opt_out,keyword_trap,en,True
+212,get lost already wiht your promos...,opt_out,soft_refusal,en,False
+213,"hello, Plaese don't contact me again...",opt_out,soft_refusal,en,False
+214,Please take me out of your system!!,opt_out,soft_refusal,en,False
+215,How do i cancel a backorder? pls,not_opt_out,keyword_trap,en,True
+216,"listen, Get lost already with your promos!!",opt_out,soft_refusal,en,False
+217,OPTOUT,opt_out,keyword,en,True
+218,"hello, Did my package ship yet? thx",not_opt_out,question,en,False
+219,Отпишите меня от рассылки плиз,opt_out,soft_refusal,ru,False
+220,"oye, ¿dónde está im pedido?",not_opt_out,question,es,False
+221,ну оставьте меня в покое...,opt_out,soft_refusal,ru,False
+222,Has my refund been processed?,not_opt_out,question,en,False
+223,"HELLO, MAYBE LATER...",ambiguous,ambiguous,en,False
+224,unsubscribe pls...,opt_out,keyword,en,True
+225,"Hi, does the 20% code work on sale items? :)",not_opt_out,question,en,False
+226,ok so Can't wait for the end of summer sale,not_opt_out,keyword_trap,en,True
+227,"lisetn, I'm in! pls",not_opt_out,positive,en,False
+228,"hello, no more texts please!",opt_out,soft_refusal,en,False
+229,Unsubscribe!,opt_out,keyword,en,True
+230,"hello, Remove this number from your marketing list pls",opt_out,soft_refusal,en,False
+231,unsubscribe me,opt_out,keyword,en,True
+232,Yes!! pls,not_opt_out,positive,en,False
+233,"Hello, hmm, not sure",ambiguous,ambiguous,en,False
+234,"hi, Can I cancel and reorder in a different size? :)",not_opt_out,keyword_trap,en,True
+235,"OK SO THIS IS RIDICULOUS, I NEVER ASKED FOR THESE TEXTS",ambiguous,frustrated,en,False
+236,"No me interesa, ya no me escriban.",opt_out,soft_refusal,es,False
+237,"hola, bien",not_opt_out,wrong_number_or_other,es,False
+238,I want out of this list txh,opt_out,soft_refusal,en,False
+239,"hello, Check back in a month!",ambiguous,ambiguous,en,False
+240,"Hi, not right now...",ambiguous,ambiguous,en,False
+241,"listen, hmm...",not_opt_out,wrong_number_or_other,en,False
+242,"Sí, por favor...",not_opt_out,positive,es,False
+243,"hello, this is spam and i'm furious seriously",ambiguous,frustrated,en,False
+244,"listen, Please don't contact me again :)",opt_out,soft_refusal,en,False
+245,who is this? pls,ambiguous,ambiguous,en,False
+246,"oh for crying out loud, another text? :)",ambiguous,frustrated,en,False
+247,I didn't ask for these messages. Delete me.,opt_out,soft_refusal,en,False
+248,¿quién es?,ambiguous,ambiguous,es,False
+249,wrong number.,ambiguous,ambiguous,en,False
+250,stopall!,opt_out,keyword,en,True
+251,Please just leave me be!,opt_out,soft_refusal,en,False
+252,"Hi, can i return an online order in store?",not_opt_out,question,en,False
+253,"HI, PLEASE DON'T END THE REWARDS PROGRAM, I LOVE IT",not_opt_out,keyword_trap,en,True
+254,"Quit it with the flash sales lol, my wallet hurts :)",not_opt_out,keyword_trap,en,True
+255,"LISTEN, UNREAL. GET YOUR JUNK OFF MY PHONE pls",opt_out,soft_refusal,en,False
+256,BAJA!,opt_out,keyword,es,True
+257,stop sending!!,opt_out,keyword,en,True
+258,Stop all!,opt_out,keyword,en,True
+259,Ok so what time does the flash sale end?,not_opt_out,keyword_trap,en,True
+260,What's the warranty period? thx,not_opt_out,question,en,False
+261,What's your retrun policy?,not_opt_out,question,en,False
+262,Try again next month.,ambiguous,ambiguous,en,False
+263,hey can't stop shopping with you guys,not_opt_out,keyword_trap,en,True
+264,"hello, Please just leave me be :)",opt_out,soft_refusal,en,False
+265,Stop the texts!!,opt_out,keyword,en,True
+266,"hello, is the black jacket back in stock?",not_opt_out,question,en,False
+267,"Эй, мне это надоело, не пишите.",opt_out,soft_refusal,ru,False
+268,Ok so does the sale end tomorrow? :),not_opt_out,keyword_trap,en,True
+269,Непарвильный номер!!,ambiguous,ambiguous,ru,False
+270,"Mira, sí, por favor :)",not_opt_out,positive,es,False
+271,"hello, I'm not going to keep receiving these, remove me please :)",opt_out,soft_refusal,en,False
+272,ДА.,not_opt_out,positive,ru,False
+273,"Please don't stop the sale emails, I love them",not_opt_out,keyword_trap,en,True
+274,stop!!,opt_out,keyword,en,True
+275,i'd like to be removed from your messages!,opt_out,soft_refusal,en,False
+276,"эй, хорошо плиз",not_opt_out,wrong_number_or_other,ru,False
+277,leave me alone pls,opt_out,soft_refusal,en,False
+278,stop being so generous with the discounts :),not_opt_out,keyword_trap,en,True
+279,Hey i don't want these messages anymore!,opt_out,soft_refusal,en,False
+280,Quítame de la lista...,opt_out,soft_refusal,es,False
+281,"Hmm, not sure thx",ambiguous,ambiguous,en,False
+282,"Enough with the spam already, seriously...",ambiguous,frustrated,en,False
+283,UNSUB!,opt_out,keyword,en,True
+284,"Perfect, thanks 🔥",not_opt_out,positive,en,False
+285,"Ok so what the hell, back off already :)",opt_out,soft_refusal,en,False
+286,"I never signed up for this, delete my number :)",opt_out,soft_refusal,en,False
+287,"hello, Enough already, you're driving me nuts...",ambiguous,frustrated,en,False
+288,"Hey hmm, not sure :)",ambiguous,ambiguous,en,False
+289,Ok so get lost already with your promos pls,opt_out,soft_refusal,en,False
+290,hey lpease remove me from your list...,opt_out,soft_refusal,en,False
+291,"ОТЛИЧНО, СПАСИБО пожлауйста",not_opt_out,positive,ru,False
+292,Stop all :),opt_out,keyword,en,True
+293,END.,opt_out,keyword,en,True
+294,"mira, bórrame de la lista.",opt_out,soft_refusal,es,False
+295,"great, i'll check it out",not_opt_out,positive,en,False
+296,hye Please just leave me be!!,opt_out,soft_refusal,en,False
+297,"listen, I'm done with these texts",opt_out,soft_refusal,en,False
+298,"hello, Stop it with the 50% off banners, I'm obsessed thx",not_opt_out,keyword_trap,en,True
+299,"Perfect, thanks...",not_opt_out,positive,en,False
+300,"LISTEN, DOES THE CODE WORK ON SALE ITEMS? :)",not_opt_out,question,en,False
+301,how do i cancel an order i placed yesterday?,not_opt_out,keyword_trap,en,True
+302,"listen, Yes!! thx",not_opt_out,positive,en,False
+303,"hello, I'm in!",not_opt_out,positive,en,False
+304,I'm done with these texts,opt_out,soft_refusal,en,False
+305,"Hi, too many texts lately",ambiguous,ambiguous,en,False
+306,UNSUBSCRIBE!,opt_out,keyword,en,True
+307,HEY I'M IN! thx,not_opt_out,positive,en,False
+308,I'M DONE WITH THESE TEXTS...,opt_out,soft_refusal,en,False
+309,yes send it 🔥,not_opt_out,positive,en,False
+310,This number doesn't want your promos...,opt_out,soft_refusal,en,False
+311,"listen, Don't stop the restock alerts pls.",not_opt_out,keyword_trap,en,True
+312,Did my package ship yet? :),not_opt_out,question,en,False
+313,"hi, just bought the boots, love them 🔥",not_opt_out,positive,en,False
+314,"hello, Who is this?",ambiguous,ambiguous,en,False
+315,"LISTEN, 👍 pls",not_opt_out,wrong_number_or_other,en,False
+316,Ok so yes!!,not_opt_out,positive,en,False
+317,reply STOP.,opt_out,keyword,en,True
+318,Do you ship to canada?,not_opt_out,question,en,False
+319,"hi, holy crap, another promo? really?",ambiguous,frustrated,en,False
+320,end!!,opt_out,keyword,en,True
+321,"MIRA, ¿DÓNDE ESTÁ MI PEDIDO?",not_opt_out,question,es,False
+322,HEY WHAT ARE YOUR OPENING HOURS?,not_opt_out,question,en,False
+323,"hi, alright.",not_opt_out,wrong_number_or_other,en,False
+324,Unsubscribe me :),opt_out,keyword,en,True
+325,"hello, i'm done getting these messages, remove me thx",opt_out,soft_refusal,en,False
+326,"IDIOTS, I NEVER SIGNED UP FOR THIS GARBAGE pls",ambiguous,frustrated,en,False
+327,OK SO QUIT BEING SO GOOD AT THESE DEALS LOL :),not_opt_out,keyword_trap,en,True
+328,"HOLA, QUIZÁS MÁS TARDE",ambiguous,ambiguous,es,False
+329,"OK SO NO MORE MESSAGES, THANKS lps",opt_out,soft_refusal,en,False
+330,"hi, Oh for crying out loud, another text?",ambiguous,frustrated,en,False
+331,"Listen, is this store open on sundays? pls",not_opt_out,question,en,False
+332,Haha thanks!,not_opt_out,positive,en,False
+333,"hello, Does the sale end tomorrow?",not_opt_out,keyword_trap,en,True
+334,"listen, does the offer end when i checkout?",not_opt_out,keyword_trap,en,True
+335,ну Оставьте меня в покое...,opt_out,soft_refusal,ru,False
+336,"hi, What the hell, back off already pls",opt_out,soft_refusal,en,False
+337,"listen, can't stop refreshing your site for the drop!",not_opt_out,keyword_trap,en,True
+338,"СЛУШАЙТЕ, ДА СКОЛЬКО МОЖНО УЖЕ! плиз",ambiguous,frustrated,ru,False
+339,"Hello, totally want that dress pls",not_opt_out,positive,en,False
+340,hey Who do I contact about a damaged item?,not_opt_out,question,en,False
+341,когда будет доставка? плиз,not_opt_out,question,ru,False
+342,"Hi, you can take me off your textnig list!!",opt_out,soft_refusal,en,False
+343,"Listen, perfect, thanks",not_opt_out,positive,en,False
+344,STOP :),opt_out,keyword,en,True
+345,"hi, i have no idea how you got my number, please edlete it...",opt_out,soft_refusal,en,False
+346,"hi, I can't stop checking your new arrivals.",not_opt_out,keyword_trap,en,True
+347,Bórrame de la litsa.,opt_out,soft_refusal,es,False
+348,tell me more pls,not_opt_out,positive,en,False
+349,Maybe another time pls,ambiguous,ambiguous,en,False
+350,When does the winter sale start? pls,not_opt_out,question,en,False
+351,ok 👍!!,not_opt_out,wrong_number_or_other,en,False
+352,"hi, This number doesn't want your promos",opt_out,soft_refusal,en,False
+353,Please take me out of your system pls,opt_out,soft_refusal,en,False
+354,How do I cancel an order I placed yesterday?,not_opt_out,keyword_trap,en,True
+355,Hey ha,not_opt_out,wrong_number_or_other,en,False
+356,Wrong person pls,ambiguous,ambiguous,en,False
+357,"Amazing deal, thank you.",not_opt_out,positive,en,False
+358,"listen, Who is this? :)",ambiguous,ambiguous,en,False
+359,Ok so 😂!,not_opt_out,wrong_number_or_other,en,False
+360,Please remove me from all yoru texting lists thx,opt_out,soft_refusal,en,False
+361,"listen, Does the code end on Sunday? thx",not_opt_out,keyword_trap,en,True
+362,Please delete me from your database!,opt_out,soft_refusal,en,False
+363,ok so remove this number from your marketing list,opt_out,soft_refusal,en,False
+364,Please just leave me be,opt_out,soft_refusal,en,False
+365,"hey not right now, too busy!!",ambiguous,ambiguous,en,False
+366,"hello, Totally want that dress 🙌",not_opt_out,positive,en,False
+367,СТОП!,opt_out,keyword,ru,True
+368,"HELLO, YOU'VE GOT SOME NERVE TEXTING ME LIKE THIS.",ambiguous,frustrated,en,False
+369,Wrong number.,ambiguous,ambiguous,en,False
+370,"listen, Wow, you people are relentless. Leave me alone.",opt_out,soft_refusal,en,False
+371,"hello, i'm not interested in these texts, remove me",opt_out,soft_refusal,en,False
+372,Send it over 😍,not_opt_out,positive,en,False
+373,baja!,opt_out,keyword,es,True
+374,"ok so Hmm, not sure pls",ambiguous,ambiguous,en,False
+375,"MIRA, ELIMINEN MI NÚMERO DE SU LISTA!!",opt_out,soft_refusal,es,False
+376,ok so don't message me anymore thx,opt_out,soft_refusal,en,False
+377,opt out!!,opt_out,keyword,en,True
+378,Stop being so generous with the discounts thx,not_opt_out,keyword_trap,en,True
+379,cancel,opt_out,keyword,en,True
+380,"Hello, seriously?? who gave you my number thx",ambiguous,frustrated,en,False
+381,Hey i can't stop checking your new arrivals...,not_opt_out,keyword_trap,en,True
+382,Cancel.,opt_out,keyword,en,True
+383,"Yes, send the link please :)",not_opt_out,positive,en,False
+384,Yay!,not_opt_out,positive,en,False
+385,Please remove me from your list,opt_out,soft_refusal,en,False
+386,Cool 🔥,not_opt_out,positive,en,False
+387,Hey thanks for the reminder pls,not_opt_out,positive,en,False
+388,Maybe another time,ambiguous,ambiguous,en,False
+389,"hello, ugh, this is so annoying.",ambiguous,frustrated,en,False
+390,ok so ok 👍,not_opt_out,wrong_number_or_other,en,False
+391,"hello, i'm not interested in these texts, remove me...",opt_out,soft_refusal,en,False
+392,"слушайте, ага плиз",not_opt_out,wrong_number_or_other,ru,False
+393,"hi, lmao!",not_opt_out,wrong_number_or_other,en,False
+394,"hello, I don't want to receive messages from you anymore",opt_out,soft_refusal,en,False
+395,OK SO DOES THE BROOKLYN STORE HAVE THESE IN STOCK?,not_opt_out,question,en,False
+396,OK SO GET EM OFF THIS LIST!!,opt_out,soft_refusal,en,False
+397,ok so Piss off with the texts :),opt_out,soft_refusal,en,False
+398,кто это?,ambiguous,ambiguous,ru,False
+399,END ALL.,opt_out,keyword,en,True
+400,"listen, is the end-of-season sale on this weekend?",not_opt_out,keyword_trap,en,True
+401,ok so does the code end on sunday?,not_opt_out,keyword_trap,en,True
+402,"Ok so this is getting annoying, enough.",opt_out,soft_refusal,en,False
+403,Can i pick up in store today?,not_opt_out,question,en,False
+404,how many points do i have?,not_opt_out,question,en,False
+405,Когда будет доставак?,not_opt_out,question,ru,False
+406,STOP TEXTS...,opt_out,keyword,en,True
+407,"Ok so i'm not interested in these texts, remove me",opt_out,soft_refusal,en,False
+408,"Listen, thakns for the reminder",not_opt_out,positive,en,False
+409,SURE LOL.,not_opt_out,wrong_number_or_other,en,False
+410,"hi, Are you kidding me with these texts!!",ambiguous,frustrated,en,False
+411,Quizás más tarde!!,ambiguous,ambiguous,es,False
+412,hey Yes!!,not_opt_out,positive,en,False
+413,"oye, Ya es el colmo con sus mensajes!!",ambiguous,frustrated,es,False
+414,hey too many messages lately :),ambiguous,ambiguous,en,False
+415,ok so please take me out of your system!,opt_out,soft_refusal,en,False
+416,Can I get my receipt by email?,not_opt_out,question,en,False
+417,"слушайте, Какого черта вы мне пишете?",ambiguous,frustrated,ru,False
+418,"I've had enough of these texts, delete my number",opt_out,soft_refusal,en,False
+419,hey 😂!!,not_opt_out,wrong_number_or_other,en,False
+420,"Hi, is there free shipping over $50?",not_opt_out,question,en,False
+421,"mira, sí, por favor",not_opt_out,positive,es,False
+422,CANCEL MY ORDER AND REFUND ME,not_opt_out,keyword_trap,en,True
+423,Hey delete my number from your system :),opt_out,soft_refusal,en,False
+424,"listen, delete my number from your system.",opt_out,soft_refusal,en,False
+425,"hi, 👍🙂...",not_opt_out,wrong_number_or_other,en,False
+426,Stop all.,opt_out,keyword,en,True
+427,"hi, okay :)",not_opt_out,wrong_number_or_other,en,False
+428,get lost already with your promos :),opt_out,soft_refusal,en,False
+429,"listen, I want out of this list!!",opt_out,soft_refusal,en,False
+430,END ALL...,opt_out,keyword,en,True
+431,"HELLO, ENOUGH WITH THE SPAM ALREADY, SERIOUSLY!",ambiguous,frustrated,en,False
+432,"oye, no quiero recibir más mensajes!!",opt_out,soft_refusal,es,False
+433,"Listen, stop it with the 50% off banners, i'm obsessed pls",not_opt_out,keyword_trap,en,True
+434,ok so How do I cancel my order #1234?,not_opt_out,keyword_trap,en,True
+435,Please take my number off your list :),opt_out,soft_refusal,en,False
+436,"Listen, please don't end the rewards program, i love it.",not_opt_out,keyword_trap,en,True
+437,"HELLO, I'M NOT INTERESTED IN THESE TEXTS, REOMVE ME!",opt_out,soft_refusal,en,False
+438,sure 😍,not_opt_out,positive,en,False
+439,"hello, Do you accept Apple Pay?",not_opt_out,question,en,False
+440,"GOT IT, THANKS 🔥",not_opt_out,positive,en,False
+441,opt-out.,opt_out,keyword,en,True
+442,what tiem do you close?,not_opt_out,question,en,False
+443,ok so get me off this list!!,opt_out,soft_refusal,en,False
+444,hey can i return an online order in store? pls,not_opt_out,question,en,False
+445,Hey remove my number from your list please thx,opt_out,soft_refusal,en,False
+446,Reply stop.,opt_out,keyword,en,True
+447,How do i cancel a backorder?,not_opt_out,keyword_trap,en,True
+448,"hello, Please don't stop the sale emails, I love them!",not_opt_out,keyword_trap,en,True
+449,"эй, код на 20% еще действует?",not_opt_out,question,ru,False
+450,Maybe,ambiguous,ambiguous,en,False

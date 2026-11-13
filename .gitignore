@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.venv/
+venv/
+env/
+
+# Secrets
+.env
+
+# macOS
+.DS_Store
+
+# LLM response cache
+prototype/results/cache_*.json
