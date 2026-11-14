@@ -6,6 +6,8 @@ What changed in each version is in `prototype/classifier.py` (`VERSIONS`). v1 is
 
 ## Dev results
 
+After these runs I decided that "Cancel my subscription" and "Unsubscribe me from the newsletter" are opt-outs, which flipped two hard-set labels from `ambiguous` to `opt_out`. The hard-set rows below were rescored from cached model answers, with no new API calls. Before the change the hard set read 58 / 53 / 58 correct on dev (v1 / v2 / v3), 36 / 39 on test, and 22 / 20 / 25 of 28 opt-outs auto opted out on dev. The main-set numbers did not change.
+
 | | v1 | v2 | v3 |
 |---|---|---|---|
 | Recall on non-keyword opt-outs (85 rows) | 91.8% | 97.6% | 100% |
@@ -13,8 +15,8 @@ What changed in each version is in `prototype/classifier.py` (`VERSIONS`). v1 is
 | Main set: true opt-outs sent to review, of 123 | 7 | 4 | 0 |
 | Main set: non-opt-outs sent to review, of 123 | 13 | 9 | 5 |
 | Main set: non-opt-outs auto opted out | 0 | 2 | 3 |
-| Hard set: correct labels, of 63 | 58 | 53 | 58 |
-| Hard set: true opt-outs auto opted out, of 28 | 22 | 20 | 25 |
+| Hard set: correct labels, of 63 | 59 | 54 | 59 |
+| Hard set: true opt-outs auto opted out, of 29 | 23 | 21 | 26 |
 | Cost per LLM-routed message (hard set) | $0.000082 | $0.000106 | $0.000099 |
 | Latency p50 / p95, hard set | 1.3 / 2.4 s | 1.4 / 3.2 s | 1.1 / 2.3 s |
 
@@ -29,7 +31,7 @@ Three versions on dev is where I stopped. Each further edit risks fitting the de
 ## Remaining dev misses in v3
 
 - Six "Enough already" and "I'm sick of this" messages are labeled `ambiguous` (generator category `frustrated`), and v3 calls them opt-outs. Three reach auto opt-out at 0.90. I think "Enough with the spam already" is a request to stop, so the labels may be wrong. I have not relabeled after seeing predictions. A second labeler should decide.
-- "Unsubscribe me from the newsletter" and "Please delete my account" are labeled `ambiguous` in the hard set and reach auto opt-out at 0.90 to 0.97. Whether a newsletter or account request should remove SMS consent is a policy question for compliance.
+- "Please delete my account" is labeled `ambiguous` and reaches auto opt-out at 0.90. Whether an account-deletion request should remove SMS consent is a policy question for compliance.
 - Four content-free fragments ("OYE, VALE...", "listen, Awesome") still go to review. Acceptable.
 - One prompt-injection string that closes the `<sms>` tag scores 0.4 ambiguous and goes to review, which is the safe outcome.
 
@@ -42,8 +44,8 @@ Three versions on dev is where I stopped. Each further edit risks fitting the de
 | True opt-outs: auto / confirmation / review (of 72) | 55 / 9 / 8 | 66 / 6 / 0 |
 | Non-opt-outs auto opted out or sent a confirmation | 0 | 0 |
 | Non-opt-outs sent to review (of 90) | 12 | 3 |
-| Hard test set: correct labels, of 41 | 36 | 39 |
-| Hard test set: true opt-outs auto opted out (of 16) | 16 | 16 |
+| Hard test set: correct labels, of 41 | 37 | 40 |
+| Hard test set: true opt-outs auto opted out or sent a confirmation (of 17) | 17 | 17 |
 | Cost per LLM-routed message | | $0.000086 main, $0.000094 hard |
 | Latency p50 / p95 | | 0.95 / 2.0 s main, 1.0 / 1.9 s hard |
 

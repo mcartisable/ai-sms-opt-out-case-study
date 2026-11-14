@@ -37,8 +37,11 @@ Written by the project author in one pass, not blind-checked. A second labeler s
 
 ## Open policy questions from the judge check (`docs/10-llm-judge.md`)
 1. ~~Blunt or slang refusals~~ Decided (product owner): they are `opt_out`. See the rule below.
-2. "Cancel subscription" and "Unsubscribe me from the mailing/newsletter". `replies.csv` labels the keyword versions `opt_out`; `hard_cases.csv` labels the sentence versions `ambiguous`. One rule is needed. Not decided yet.
+2. ~~"Cancel subscription" and "Unsubscribe me from the newsletter"~~ Decided (product owner): `opt_out`. See the rule below.
 
 ## Decision on blunt refusals
 Blunt, slangy or impatient messages that tell the sender to stop or go away ("get lost already with your promos", "back off", "I'm done with these texts", "enough") are `opt_out`. Anger with no such request ("who the heck keeps texting me?") stays `ambiguous`. This matches prompt v3, which already says so. The judge rubric was updated to follow it, so judge results from before this change are in `docs/10-llm-judge.md` as the pre-decision run.
+
+## Decision on cancel-subscription and unsubscribe-from-the-newsletter
+"Cancel my subscription", "Unsubscribe me from the newsletter" and their keyword forms are `opt_out`: CANCEL and UNSUBSCRIBE are standard carrier opt-out keywords, and a reply asking to be unsubscribed is a reasonable way to withdraw consent. A compliance reviewer should confirm before launch. "Delete my account" stays `ambiguous`. Applied to `hard_cases.csv` after the v3 test run, so the hard-set figures were rescored from cached model answers; the old and new numbers are noted in `docs/09-prompt-iterations.md`. The judge rubric was updated, but the judge numbers in `docs/10-llm-judge.md` come from the earlier rubric.
 

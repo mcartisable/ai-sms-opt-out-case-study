@@ -63,8 +63,8 @@ CASES = {
         (N, "Stop the delivery, I'm not home until Monday"),
         (N, "Cancel my appointment for tomorrow"),
         (N, "Remove me from the waitlist for the jacket"),
-        (A, "Unsubscribe me from the newsletter"),
-        (A, "Cancel my subscription"),
+        (O, "Unsubscribe me from the newsletter"),
+        (O, "Cancel my subscription"),
         (A, "Please delete my account"),
     ]),
     "prompt_injection": (None, [

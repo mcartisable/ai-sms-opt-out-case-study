@@ -227,7 +227,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
       <li><b>The prompt lacked rules my labeling policy already had.</b> Deferrals (“Not now”), “I never signed up” complaints and wrong-number replies had agreed answers that the model was never given. This explained 29 rows.</li>
       <li><b>A code bug, not a model error.</b> Any message of three words or fewer containing a keyword skipped the model. So “Cancel my subscription” was opted out automatically at 0.99. The carrier convention is that the keyword must be the whole message, and the fix follows it.</li>
     </ul>
-    <p style="margin-top:12px">I also wrote 104 harder messages (typos like “STPO”, sarcasm, look-alikes like “remove my card”, prompt-injection attempts, requests buried in long messages, threats). Then I rewrote the prompt against the dev split only and scored the held-out test split once. Version 2 was a dead end: one clause I added made the model over-cautious and the hard-set score fell from 58 to 53 correct. Version 3 removed it.</p>
+    <p style="margin-top:12px">I also wrote 104 harder messages (typos like “STPO”, sarcasm, look-alikes like “remove my card”, prompt-injection attempts, requests buried in long messages, threats). Then I rewrote the prompt against the dev split only and scored the held-out test split once. Version 2 was a dead end: one clause I added made the model over-cautious and the hard-set score fell from 59 to 54 correct. Version 3 removed it.</p>
     <div class="scroll">
       <table>
         <thead><tr><th>Held-out test split</th><th class="num">Prompt v1</th><th class="num">Prompt v3</th></tr></thead>
@@ -236,13 +236,13 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
           <tr><td>Real opt-outs sent to human review (of 72)</td><td class="num">8</td><td class="num">0</td></tr>
           <tr><td>Harmless messages sent to review (of 90)</td><td class="num">12</td><td class="num">3</td></tr>
           <tr><td>Non-opt-outs opted out or sent a confirmation</td><td class="num">0</td><td class="num">0</td></tr>
-          <tr><td>Hard set: correct labels (of 41)</td><td class="num">36</td><td class="num">39</td></tr>
+          <tr><td>Hard set: correct labels (of 41)</td><td class="num">37</td><td class="num">40</td></tr>
         </tbody>
       </table>
     </div>
     <p style="margin-top:14px">Cost is about $0.00009 per classified message (illustrative at 2026-11 list prices for the small model). Latency is about 1 second at the median and 2 seconds at the 95th percentile, which is fine because nobody is waiting on an opt-out.</p>
     <div class="callout"><b>Read 100% as a ceiling.</b> I looked at test misses while analyzing version 1, and the consent rule comes from a labeling policy built on a sample from the test split. The data is template-generated, so one rule fixes a whole family. Fifty messages at 100% still allows a true rate near 93%. The fair check is a fresh batch nobody on the project has seen, or real replies in shadow mode.</div>
-    <p style="margin-top:14px">Two open questions remain, flagged for a second labeler and compliance: “Enough already” messages that my labels call ambiguous but read as requests to stop, and whether “Unsubscribe me from the newsletter” or “Delete my account” should remove SMS consent (version 3 opts those out at 0.90 or higher).</p>
+    <p style="margin-top:14px">Two open questions remain, flagged for a second labeler and compliance: “Enough already” messages that my labels call ambiguous but version 3 treats as requests to stop (some reach automatic opt-out), and whether “Delete my account” should remove SMS consent.</p>
   </section>
 
   <section>
