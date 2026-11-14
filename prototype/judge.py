@@ -156,7 +156,9 @@ def main() -> None:
     client.save()
     df["judge_label"] = [r["label"] for r in res]
     df["judge_reason"] = [r["reason"] for r in res]
-    tag = "%s%s_%s" % (pre, a.rubric, "human" if a.only_human else "all")
+    default_data = a.data == ["data/replies.csv", "data/hard_cases.csv"]
+    scope = "human" if a.only_human else ("all" if default_data else "+".join(Path(d).stem for d in a.data))
+    tag = "%s%s_%s" % (pre, a.rubric, scope)
     df[["id", "dataset", "category", "text", "label", "human_label", "judge_label", "judge_reason"]].to_csv(
         out / (tag + "_predictions.csv"), index=False)
 
@@ -167,7 +169,8 @@ def main() -> None:
     L += ["Judge parse failures: %d. Prompt hash: `%s`." % (pf, sha), ""]
     pairs = [("judge vs hand label (blind, human)", df[df.human_label != ""], "human_label"),
              ("judge vs project label, replies.csv", df[df.dataset == "replies"], "label"),
-             ("judge vs project label, hard_cases.csv (one labeler)", df[df.dataset == "hard_cases"], "label")]
+             ("judge vs project label, hard_cases.csv (one labeler)", df[df.dataset == "hard_cases"], "label"),
+             ("judge vs author label, fresh_cases.csv", df[df.dataset == "fresh_cases"], "label")]
     L += ["| comparison | n | agreement | Cohen's kappa |", "|---|---|---|---|"]
     for name, sub, col in pairs:
         if len(sub):
