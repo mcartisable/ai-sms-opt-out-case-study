@@ -1,451 +1,451 @@
-id,text,label,category,language,has_keyword,keyword_label,keyword_conf,hybrid_label,hybrid_conf,hybrid_source
-1,ok so Maybe later!!,ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-2,"hello, Nice...",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-3,"listen, send it over :)",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.93,hybrid_llm
-4,Может позже...,ambiguous,ambiguous,ru,False,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
-5,"I'M DONE GETTING THESE MESSAGES, REMOVE ME :)",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.96,hybrid_llm
-6,END!!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-7,ok so yes please,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
-8,"hello, Does the 20% code work on sale items? pls",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-9,"hello, I've had enough of these texts, delete my number :)",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-10,"hello, maybe later.",ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-11,yes please thx,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
-12,"Are you serious right now, delete my number",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.9,hybrid_llm
-13,STOP MESSAGES!!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-14,"Hi, can i cancel my saturday pickup?",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.96,hybrid_llm
-15,Is the 20% code still valid? :),not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-16,"LISTEN, I WANT OUT OF THIS LIST thx",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-17,"ok so this is ridiculous, i never asked for these texts seriously",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-18,OK SO DO YOU HAVE THIS IN A SIZE 10?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-19,"hello, I'm not interested in these texts, remove me",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-20,ok so please just leave me be!!,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.8,hybrid_llm
-21,ну не присылайте больше сообщения плиз,opt_out,soft_refusal,ru,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-22,LET'S GO thx,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-23,ok so Not for me...,ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
-24,delete my number from your system thx,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-25,"Hi, i want out of this list",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-26,ok so Your last text was so good I can't stop smiling :),not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-27,Your last text was so good i can't stop smiling,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-28,Отпишите меня от рассылки,opt_out,soft_refusal,ru,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-29,unsubscribe pls.,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-30,UNSUBSCRIBE...,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-31,"listen, great, i'll check it out!!",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-32,Please stop :),opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-33,"hello, I don't want these messages anymore thx",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-34,who is this?,ambiguous,ambiguous,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-35,Who dis?,ambiguous,ambiguous,en,False,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
-36,"listen, Love this! 🔥",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-37,"Hello, please don't stop the sale emails, i love them",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-38,"Perfect, thanks!!",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-39,Ok so loving the new arrivals!,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-40,"hello, Wow, you people are relentless. Leave me alone",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.8,hybrid_llm
-41,"hello, who is this?",ambiguous,ambiguous,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-42,CANCEL SUBSCRIPTION,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-43,Stop.,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-44,maybe.,ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-45,"listen, Awesome",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
-46,hey Not interested right now!,ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
-47,ok so Has my refund been processed?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-48,¿quién les dio mi número? qué molestia :),ambiguous,frustrated,es,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-49,Can i change my delivery address? lps,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-50,get me off this list...,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-51,Can I cancel the gift wrap on order 5521?,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-52,HEY YOUR END OF SEASON SALE LOOKS AMAZING pls,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-53,ok so let's go,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
-54,Quit :),opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-55,pls unsubscribe!!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-56,"hi, ay.",not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
-57,unsubscribe...,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-58,hey Take my name off your mailing list.,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-59,"mira, Eliminen mi número de su ilsta :)",opt_out,soft_refusal,es,False,not_opt_out,1.0,opt_out,0.96,hybrid_llm
-60,ok so I'm done with these texts,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.75,hybrid_llm
-61,"No more messages, thanks.",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.96,hybrid_llm
-62,"эй, Кто вам дал мой номер, блин.",ambiguous,frustrated,ru,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-63,"mira, Por favor no me secriban más!",opt_out,soft_refusal,es,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-64,hey reomve my number from your list please,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-65,I'M SICK OF THIS CRAP ugh,ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-66,unsubscribe me!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-67,quit...,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-68,What time does the flash sale end?,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-69,Maybe next time...,ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
-70,👍!!,not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-71,Can I change my delivery address?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-72,I didn't ask for these messages. Delete me. pls,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-73,"Слушайте, хорошо!!",not_opt_out,wrong_number_or_other,ru,False,not_opt_out,1.0,not_opt_out,0.96,hybrid_llm
-74,"NOT RIGHT NOW, TOO BUSY",ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
-75,Оставьте меня в покое!,opt_out,soft_refusal,ru,False,not_opt_out,1.0,opt_out,0.7,hybrid_llm
-76,"hi, freaking annoying, leave me alone!",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.8,hybrid_llm
-77,"Hello, when does the winter sale start?",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-78,Ok so i did not agree to get texts from you,opt_out,soft_refusal,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-79,Can't stop shopping with you guys,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-80,"hey too many texts, i'm out.",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.75,hybrid_llm
-81,please delete me from your database thx,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.9,hybrid_llm
-82,¿cuándo llega mi paquete?,not_opt_out,question,es,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-83,"hi, how much is shipping to mexico? pls",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-84,"i don't need any more promos from you, take me off.",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.96,hybrid_llm
-85,K thx,not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
-86,Is the student discount still on? thx,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-87,IS ORDER #4482 ON ITS WAY?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-88,Is the new collection online yet?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-89,код на 20% еще действует?,not_opt_out,question,ru,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-90,pls unsubscribe!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-91,Not now thx,ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-92,"HI, WSEET 🙌",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-93,ok so do you do gift wrapping? pls,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-94,Quit...,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-95,ok so you can take me off your texting list :),opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-96,Unsubscribe.,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-97,Стоп,opt_out,keyword,ru,True,opt_out,1.0,opt_out,0.99,keyword
-98,"perfect, thanks pls",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-99,"hello, please delete me from your database pls",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.8,hybrid_llm
-100,get lost already with your promos!,opt_out,soft_refusal,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-101,bien por favor,not_opt_out,wrong_number_or_other,es,False,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
-102,Where can I find the size chart?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-103,stop messages!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-104,"hello, Too many texts, I'm out...",opt_out,soft_refusal,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-105,Count me in 😍,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-106,"MIRA, BÓRRAME DE LA LISTA",opt_out,soft_refusal,es,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-107,Opt-out!!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-108,"Hello, not interested",ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
-109,Is this store open on sundays?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-110,Спасибо!,not_opt_out,positive,ru,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-111,Check back in a month!!,ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
-112,"listen, maybe...",ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
-113,"OYE, VALE...",not_opt_out,wrong_number_or_other,es,False,not_opt_out,1.0,ambiguous,0.55,hybrid_llm
-114,"эй, Оставьте меня в покое плиз",opt_out,soft_refusal,ru,False,not_opt_out,1.0,opt_out,0.85,hybrid_llm
-115,"Hola, ¿dónde está mi pedido? :)",not_opt_out,question,es,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-116,"Listen, ok cool.",not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-117,"hi, is the sale price the final pirce?",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-118,"эй, Не интересно плиз",ambiguous,ambiguous,ru,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-119,end :),opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-120,ha!,not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
-121,"HELLO, PLEASE TAKE MY NUMBER OFF YOUR LIST",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-122,"Hello, can't wait for the sale",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-123,"mira, ¿Quién es? :)",ambiguous,ambiguous,es,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-124,cancel :),opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-125,hey i don't want these messages anymore,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-126,"Hello, where is my order?",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-127,"hi, Enough already, you're driving me nuts thx",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-128,cancel subscription,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-129,Who the hell gave you my number :),ambiguous,frustrated,en,False,not_opt_out,1.0,not_opt_out,0.7,hybrid_llm
-130,not today...,ambiguous,ambiguous,en,False,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
-131,Hey is the lback jacket back in stock?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-132,ok so Can I pick up in store today? :),not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-133,"LISTEN, IS THE SALE PRICE THE FINAL PRICE? thx",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-134,"listen, Great, I'll check it out",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
-135,hey Your end of season sale looks amazing,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-136,Is the end-of-season sale on this weekend?,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.98,hybrid_llm
-137,What's my tracking number?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-138,"эй, не присылайте больше сообщения :)",opt_out,soft_refusal,ru,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-139,"MIRA, QUÉ FASTIDIO CON TANTO MENSAJE!!",ambiguous,frustrated,es,False,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
-140,Stop!!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-141,hey Nto interested,ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
-142,DOES THE CODE END ON SUNDAY?,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-143,maybe another time.,ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-144,"Ok so holy crap, another promo? really? :)",ambiguous,frustrated,en,False,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
-145,"Listen, i'm in!",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-146,"litsen, ha ha",not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.85,hybrid_llm
-147,"hi, you can take me off your txeting list.",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-148,ok so i need to cancel order #8831 and get a refund :),not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-149,Ridiculous. I've never shopped with you and you keep blowing up my phone!!,ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.68,hybrid_llm
-150,I'll think about it.,ambiguous,ambiguous,en,False,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
-151,"hello, Yes, please pls",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
-152,unsubscribe.,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-153,PLEASE STOP.,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-154,"I'm done getting these messages, remove me.",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-155,ok so don't message me anymore :),opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-156,OK SO REMOVE THIS NUMBER FROM YOUR MARKETING LIST,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-157,"NOT RIGHT NOW, TOO BUSY thx",ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
-158,hye don't text this number anymore thx,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-159,stop messages,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-160,"listen, who the heck keeps texting me? back off thx",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.7,hybrid_llm
-161,HEY NO MORE TEXTS PLEASE.,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-162,"listen, Does the coed work on sale items?",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-163,QUIT.,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-164,sure lol!!,not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
-165,remove this number from your marketing list,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-166,stop!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-167,Don't stop the restock alerts pls,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-168,"listen, not today.",ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-169,"LISTEN, I'M DONE GETTING THESE MESSAGES, REMOVE ME...",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-170,please remove me from your list...,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-171,"i have no idea how you got my number, please delete it",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.8,hybrid_llm
-172,Not now pls,ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-173,ok so Please don't keep messaging me.,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-174,Let's go 🙌,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-175,"oye, Sí, por favor...",not_opt_out,positive,es,False,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
-176,"hello, I don't want to recevie messages from you anymore thx",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-177,i'm sick of this crap seriously,ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
-178,"hi, leave me alone!!",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.75,hybrid_llm
-179,Quit,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-180,take me off this thx,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-181,"hi, Not today.",ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-182,Unsubscribe me...,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-183,"HEY FREAKING ANNOYING, LEAVE ME ALONE",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-184,Get me off this list!!,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.96,hybrid_llm
-185,"hi, Remove this number from your marketing list...",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-186,Can i use two codes at once?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-187,"Listen, i'm sick of this crap seriously",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-188,"слушайте, Люблю новую коллекцию :)",not_opt_out,positive,ru,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-189,"Idiots, I never signed up for this garbage.",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-190,"HI, WHAT THE HELL, BACK OFF ALREADY...",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.75,hybrid_llm
-191,Reply stop,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-192,"this is hraassment, i'm reporting you seriously",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-193,I want to cancel my pre-order for the boots!!,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.96,hybrid_llm
-194,Get lost already with your promos!,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.7,hybrid_llm
-195,"I'M DONE GETTNIG THESE MESSAGES, REMOVE ME!",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-196,"HI, SWETE 😍",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-197,"listen, Which store is open late?",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-198,"слушайте, удалите мой номер из вашей базы",opt_out,soft_refusal,ru,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-199,Stop sending!!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-200,"Listen, no thanks, i'm out, remove my number thx",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-201,"hi, please remove me from your list",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-202,"Idiots, i never signed pu for this garbage!!",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-203,ok so I did not agree to get texts from you!,opt_out,soft_refusal,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-204,Do you price match? thx,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-205,"HELLO, CAN I GET MY RECEIPT BY EMAIL?",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-206,"HI, YES, SEND THE LINK LPEASE thx",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-207,"this is getting annoying, enough",opt_out,soft_refusal,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-208,"Hola, eliminen mi número de su lista :)",opt_out,soft_refusal,es,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-209,Remove this number from your marketing list...,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-210,"listen, take ym name off your mailing list pls",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-211,I need to cancel order #8831 and get a refund.,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-212,get lost already wiht your promos...,opt_out,soft_refusal,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-213,"hello, Plaese don't contact me again...",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-214,Please take me out of your system!!,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-215,How do i cancel a backorder? pls,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.95,hybrid_llm
-216,"listen, Get lost already with your promos!!",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.7,hybrid_llm
-217,OPTOUT,opt_out,keyword,en,True,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-218,"hello, Did my package ship yet? thx",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-219,Отпишите меня от рассылки плиз,opt_out,soft_refusal,ru,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-220,"oye, ¿dónde está im pedido?",not_opt_out,question,es,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-221,ну оставьте меня в покое...,opt_out,soft_refusal,ru,False,not_opt_out,1.0,opt_out,0.8,hybrid_llm
-222,Has my refund been processed?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-223,"HELLO, MAYBE LATER...",ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
-224,unsubscribe pls...,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-225,"Hi, does the 20% code work on sale items? :)",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-226,ok so Can't wait for the end of summer sale,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-227,"lisetn, I'm in! pls",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-228,"hello, no more texts please!",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-229,Unsubscribe!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-230,"hello, Remove this number from your marketing list pls",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-231,unsubscribe me,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-232,Yes!! pls,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
-233,"Hello, hmm, not sure",ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
-234,"hi, Can I cancel and reorder in a different size? :)",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-235,"OK SO THIS IS RIDICULOUS, I NEVER ASKED FOR THESE TEXTS",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-236,"No me interesa, ya no me escriban.",opt_out,soft_refusal,es,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-237,"hola, bien",not_opt_out,wrong_number_or_other,es,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-238,I want out of this list txh,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-239,"hello, Check back in a month!",ambiguous,ambiguous,en,False,not_opt_out,1.0,not_opt_out,0.85,hybrid_llm
-240,"Hi, not right now...",ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-241,"listen, hmm...",not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-242,"Sí, por favor...",not_opt_out,positive,es,False,not_opt_out,1.0,ambiguous,0.5,hybrid_llm
-243,"hello, this is spam and i'm furious seriously",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-244,"listen, Please don't contact me again :)",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-245,who is this? pls,ambiguous,ambiguous,en,False,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
-246,"oh for crying out loud, another text? :)",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-247,I didn't ask for these messages. Delete me.,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.85,hybrid_llm
-248,¿quién es?,ambiguous,ambiguous,es,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-249,wrong number.,ambiguous,ambiguous,en,False,not_opt_out,1.0,not_opt_out,0.93,hybrid_llm
-250,stopall!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-251,Please just leave me be!,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.75,hybrid_llm
-252,"Hi, can i return an online order in store?",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-253,"HI, PLEASE DON'T END THE REWARDS PROGRAM, I LOVE IT",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-254,"Quit it with the flash sales lol, my wallet hurts :)",not_opt_out,keyword_trap,en,True,opt_out,1.0,opt_out,0.75,hybrid_llm
-255,"LISTEN, UNREAL. GET YOUR JUNK OFF MY PHONE pls",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-256,BAJA!,opt_out,keyword,es,True,opt_out,1.0,opt_out,0.99,keyword
-257,stop sending!!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-258,Stop all!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-259,Ok so what time does the flash sale end?,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-260,What's the warranty period? thx,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-261,What's your retrun policy?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-262,Try again next month.,ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-263,hey can't stop shopping with you guys,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-264,"hello, Please just leave me be :)",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.8,hybrid_llm
-265,Stop the texts!!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-266,"hello, is the black jacket back in stock?",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-267,"Эй, мне это надоело, не пишите.",opt_out,soft_refusal,ru,False,not_opt_out,1.0,opt_out,0.9,hybrid_llm
-268,Ok so does the sale end tomorrow? :),not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-269,Непарвильный номер!!,ambiguous,ambiguous,ru,False,not_opt_out,1.0,not_opt_out,0.93,hybrid_llm
-270,"Mira, sí, por favor :)",not_opt_out,positive,es,False,not_opt_out,1.0,not_opt_out,0.82,hybrid_llm
-271,"hello, I'm not going to keep receiving these, remove me please :)",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-272,ДА.,not_opt_out,positive,ru,False,not_opt_out,1.0,not_opt_out,0.85,hybrid_llm
-273,"Please don't stop the sale emails, I love them",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-274,stop!!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-275,i'd like to be removed from your messages!,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-276,"эй, хорошо плиз",not_opt_out,wrong_number_or_other,ru,False,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
-277,leave me alone pls,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.9,hybrid_llm
-278,stop being so generous with the discounts :),not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.93,hybrid_llm
-279,Hey i don't want these messages anymore!,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-280,Quítame de la lista...,opt_out,soft_refusal,es,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-281,"Hmm, not sure thx",ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-282,"Enough with the spam already, seriously...",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
-283,UNSUB!,opt_out,keyword,en,True,not_opt_out,1.0,opt_out,0.98,hybrid_llm
-284,"Perfect, thanks 🔥",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-285,"Ok so what the hell, back off already :)",opt_out,soft_refusal,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-286,"I never signed up for this, delete my number :)",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.9,hybrid_llm
-287,"hello, Enough already, you're driving me nuts...",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-288,"Hey hmm, not sure :)",ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
-289,Ok so get lost already with your promos pls,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.8,hybrid_llm
-290,hey lpease remove me from your list...,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.96,hybrid_llm
-291,"ОТЛИЧНО, СПАСИБО пожлауйста",not_opt_out,positive,ru,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-292,Stop all :),opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-293,END.,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-294,"mira, bórrame de la lista.",opt_out,soft_refusal,es,False,not_opt_out,1.0,opt_out,0.96,hybrid_llm
-295,"great, i'll check it out",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-296,hye Please just leave me be!!,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.8,hybrid_llm
-297,"listen, I'm done with these texts",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.72,hybrid_llm
-298,"hello, Stop it with the 50% off banners, I'm obsessed thx",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.93,hybrid_llm
-299,"Perfect, thanks...",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
-300,"LISTEN, DOES THE CODE WORK ON SALE ITEMS? :)",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-301,how do i cancel an order i placed yesterday?,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-302,"listen, Yes!! thx",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
-303,"hello, I'm in!",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-304,I'm done with these texts,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.7,hybrid_llm
-305,"Hi, too many texts lately",ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.85,hybrid_llm
-306,UNSUBSCRIBE!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-307,HEY I'M IN! thx,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-308,I'M DONE WITH THESE TEXTS...,opt_out,soft_refusal,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-309,yes send it 🔥,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-310,This number doesn't want your promos...,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.75,hybrid_llm
-311,"listen, Don't stop the restock alerts pls.",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-312,Did my package ship yet? :),not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-313,"hi, just bought the boots, love them 🔥",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-314,"hello, Who is this?",ambiguous,ambiguous,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-315,"LISTEN, 👍 pls",not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.6,hybrid_llm
-316,Ok so yes!!,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
-317,reply STOP.,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-318,Do you ship to canada?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-319,"hi, holy crap, another promo? really?",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-320,end!!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-321,"MIRA, ¿DÓNDE ESTÁ MI PEDIDO?",not_opt_out,question,es,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-322,HEY WHAT ARE YOUR OPENING HOURS?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-323,"hi, alright.",not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
-324,Unsubscribe me :),opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-325,"hello, i'm done getting these messages, remove me thx",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-326,"IDIOTS, I NEVER SIGNED UP FOR THIS GARBAGE pls",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-327,OK SO QUIT BEING SO GOOD AT THESE DEALS LOL :),not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.93,hybrid_llm
-328,"HOLA, QUIZÁS MÁS TARDE",ambiguous,ambiguous,es,False,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
-329,"OK SO NO MORE MESSAGES, THANKS lps",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-330,"hi, Oh for crying out loud, another text?",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-331,"Listen, is this store open on sundays? pls",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-332,Haha thanks!,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-333,"hello, Does the sale end tomorrow?",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-334,"listen, does the offer end when i checkout?",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-335,ну Оставьте меня в покое...,opt_out,soft_refusal,ru,False,not_opt_out,1.0,opt_out,0.8,hybrid_llm
-336,"hi, What the hell, back off already pls",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.7,hybrid_llm
-337,"listen, can't stop refreshing your site for the drop!",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-338,"СЛУШАЙТЕ, ДА СКОЛЬКО МОЖНО УЖЕ! плиз",ambiguous,frustrated,ru,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-339,"Hello, totally want that dress pls",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-340,hey Who do I contact about a damaged item?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-341,когда будет доставка? плиз,not_opt_out,question,ru,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-342,"Hi, you can take me off your textnig list!!",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-343,"Listen, perfect, thanks",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-344,STOP :),opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-345,"hi, i have no idea how you got my number, please edlete it...",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.85,hybrid_llm
-346,"hi, I can't stop checking your new arrivals.",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-347,Bórrame de la litsa.,opt_out,soft_refusal,es,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-348,tell me more pls,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-349,Maybe another time pls,ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-350,When does the winter sale start? pls,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-351,ok 👍!!,not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.93,hybrid_llm
-352,"hi, This number doesn't want your promos",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.8,hybrid_llm
-353,Please take me out of your system pls,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-354,How do I cancel an order I placed yesterday?,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-355,Hey ha,not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
-356,Wrong person pls,ambiguous,ambiguous,en,False,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
-357,"Amazing deal, thank you.",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-358,"listen, Who is this? :)",ambiguous,ambiguous,en,False,not_opt_out,1.0,not_opt_out,0.93,hybrid_llm
-359,Ok so 😂!,not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
-360,Please remove me from all yoru texting lists thx,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-361,"listen, Does the code end on Sunday? thx",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-362,Please delete me from your database!,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.85,hybrid_llm
-363,ok so remove this number from your marketing list,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-364,Please just leave me be,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.8,hybrid_llm
-365,"hey not right now, too busy!!",ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-366,"hello, Totally want that dress 🙌",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-367,СТОП!,opt_out,keyword,ru,True,opt_out,1.0,opt_out,0.99,keyword
-368,"HELLO, YOU'VE GOT SOME NERVE TEXTING ME LIKE THIS.",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-369,Wrong number.,ambiguous,ambiguous,en,False,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
-370,"listen, Wow, you people are relentless. Leave me alone.",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.85,hybrid_llm
-371,"hello, i'm not interested in these texts, remove me",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-372,Send it over 😍,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-373,baja!,opt_out,keyword,es,True,opt_out,1.0,opt_out,0.99,keyword
-374,"ok so Hmm, not sure pls",ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
-375,"MIRA, ELIMINEN MI NÚMERO DE SU LISTA!!",opt_out,soft_refusal,es,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-376,ok so don't message me anymore thx,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-377,opt out!!,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-378,Stop being so generous with the discounts thx,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.93,hybrid_llm
-379,cancel,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-380,"Hello, seriously?? who gave you my number thx",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-381,Hey i can't stop checking your new arrivals...,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-382,Cancel.,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-383,"Yes, send the link please :)",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-384,Yay!,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-385,Please remove me from your list,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-386,Cool 🔥,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-387,Hey thanks for the reminder pls,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-388,Maybe another time,ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
-389,"hello, ugh, this is so annoying.",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-390,ok so ok 👍,not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
-391,"hello, i'm not interested in these texts, remove me...",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.9,hybrid_llm
-392,"слушайте, ага плиз",not_opt_out,wrong_number_or_other,ru,False,not_opt_out,1.0,not_opt_out,0.6,hybrid_llm
-393,"hi, lmao!",not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
-394,"hello, I don't want to receive messages from you anymore",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-395,OK SO DOES THE BROOKLYN STORE HAVE THESE IN STOCK?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-396,OK SO GET EM OFF THIS LIST!!,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-397,ok so Piss off with the texts :),opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.85,hybrid_llm
-398,кто это?,ambiguous,ambiguous,ru,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-399,END ALL.,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-400,"listen, is the end-of-season sale on this weekend?",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-401,ok so does the code end on sunday?,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-402,"Ok so this is getting annoying, enough.",opt_out,soft_refusal,en,False,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
-403,Can i pick up in store today?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-404,how many points do i have?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-405,Когда будет доставак?,not_opt_out,question,ru,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-406,STOP TEXTS...,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-407,"Ok so i'm not interested in these texts, remove me",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.92,hybrid_llm
-408,"Listen, thakns for the reminder",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-409,SURE LOL.,not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,ambiguous,0.5,hybrid_llm
-410,"hi, Are you kidding me with these texts!!",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
-411,Quizás más tarde!!,ambiguous,ambiguous,es,False,not_opt_out,1.0,not_opt_out,0.7,hybrid_llm
-412,hey Yes!!,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.93,hybrid_llm
-413,"oye, Ya es el colmo con sus mensajes!!",ambiguous,frustrated,es,False,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
-414,hey too many messages lately :),ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
-415,ok so please take me out of your system!,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.96,hybrid_llm
-416,Can I get my receipt by email?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-417,"слушайте, Какого черта вы мне пишете?",ambiguous,frustrated,ru,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-418,"I've had enough of these texts, delete my number",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-419,hey 😂!!,not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
-420,"Hi, is there free shipping over $50?",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-421,"mira, sí, por favor",not_opt_out,positive,es,False,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
-422,CANCEL MY ORDER AND REFUND ME,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.95,hybrid_llm
-423,Hey delete my number from your system :),opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-424,"listen, delete my number from your system.",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-425,"hi, 👍🙂...",not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.93,hybrid_llm
-426,Stop all.,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-427,"hi, okay :)",not_opt_out,wrong_number_or_other,en,False,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
-428,get lost already with your promos :),opt_out,soft_refusal,en,False,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
-429,"listen, I want out of this list!!",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-430,END ALL...,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-431,"HELLO, ENOUGH WITH THE SPAM ALREADY, SERIOUSLY!",ambiguous,frustrated,en,False,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
-432,"oye, no quiero recibir más mensajes!!",opt_out,soft_refusal,es,False,not_opt_out,1.0,opt_out,0.95,hybrid_llm
-433,"Listen, stop it with the 50% off banners, i'm obsessed pls",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.9,hybrid_llm
-434,ok so How do I cancel my order #1234?,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-435,Please take my number off your list :),opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-436,"Listen, please don't end the rewards program, i love it.",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-437,"HELLO, I'M NOT INTERESTED IN THESE TEXTS, REOMVE ME!",opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.93,hybrid_llm
-438,sure 😍,not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-439,"hello, Do you accept Apple Pay?",not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
-440,"GOT IT, THANKS 🔥",not_opt_out,positive,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-441,opt-out.,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-442,what tiem do you close?,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-443,ok so get me off this list!!,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-444,hey can i return an online order in store? pls,not_opt_out,question,en,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-445,Hey remove my number from your list please thx,opt_out,soft_refusal,en,False,not_opt_out,1.0,opt_out,0.97,hybrid_llm
-446,Reply stop.,opt_out,keyword,en,True,opt_out,1.0,opt_out,0.99,keyword
-447,How do i cancel a backorder?,not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-448,"hello, Please don't stop the sale emails, I love them!",not_opt_out,keyword_trap,en,True,opt_out,1.0,not_opt_out,0.97,hybrid_llm
-449,"эй, код на 20% еще действует?",not_opt_out,question,ru,False,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
-450,Maybe,ambiguous,ambiguous,en,False,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
+id,text,label,category,language,has_keyword,family,split,human_label,keyword_label,keyword_conf,hybrid_label,hybrid_conf,hybrid_source
+1,ok so Maybe later!!,not_opt_out,deferral,en,False,ambiguous/ambiguous/en/20e68f,test,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+2,"hello, Nice...",not_opt_out,positive,en,False,not_opt_out/positive/en/914d0a,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+3,"listen, send it over :)",not_opt_out,positive,en,False,not_opt_out/positive/en/c281b0,dev,,not_opt_out,1.0,not_opt_out,0.93,hybrid_llm
+4,Может позже...,not_opt_out,deferral,ru,False,ambiguous/ambiguous/ru/495ebf,test,,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
+5,"I'M DONE GETTING THESE MESSAGES, REMOVE ME :)",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/36eb6e,dev,,not_opt_out,1.0,opt_out,0.96,hybrid_llm
+6,END!!,opt_out,keyword,en,True,opt_out/keyword/en/b1a326,dev,,opt_out,1.0,opt_out,0.99,keyword
+7,ok so yes please,not_opt_out,positive,en,False,not_opt_out/positive/en/318afe,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
+8,"hello, Does the 20% code work on sale items? pls",not_opt_out,question,en,False,not_opt_out/question/en/d32ae5,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+9,"hello, I've had enough of these texts, delete my number :)",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/a6271a,dev,,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+10,"hello, maybe later.",ambiguous,deferral,en,False,ambiguous/ambiguous/en/20e68f,test,ambiguous,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+11,yes please thx,not_opt_out,positive,en,False,not_opt_out/positive/en/318afe,test,,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
+12,"Are you serious right now, delete my number",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/75cb14,test,,not_opt_out,1.0,opt_out,0.9,hybrid_llm
+13,STOP MESSAGES!!,opt_out,keyword,en,True,opt_out/keyword/en/d441b0,test,,opt_out,1.0,opt_out,0.99,keyword
+14,"Hi, can i cancel my saturday pickup?",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/a38eed,test,,opt_out,1.0,not_opt_out,0.96,hybrid_llm
+15,Is the 20% code still valid? :),not_opt_out,question,en,False,not_opt_out/question/en/91e2d2,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+16,"LISTEN, I WANT OUT OF THIS LIST thx",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/bd5c1f,dev,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+17,"ok so this is ridiculous, i never asked for these texts seriously",opt_out,soft_refusal,en,False,ambiguous/frustrated/en/65b990,test,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+18,OK SO DO YOU HAVE THIS IN A SIZE 10?,not_opt_out,question,en,False,not_opt_out/question/en/827410,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+19,"hello, I'm not interested in these texts, remove me",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/7acb2b,dev,,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+20,ok so please just leave me be!!,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/a7a6f0,dev,,not_opt_out,1.0,opt_out,0.8,hybrid_llm
+21,ну не присылайте больше сообщения плиз,opt_out,soft_refusal,ru,False,opt_out/soft_refusal/ru/9c88a7,dev,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+22,LET'S GO thx,not_opt_out,positive,en,False,not_opt_out/positive/en/534ad1,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+23,ok so Not for me...,ambiguous,ambiguous,en,False,ambiguous/ambiguous/en/2ef051,dev,,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
+24,delete my number from your system thx,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/3a6978,dev,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+25,"Hi, i want out of this list",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/bd5c1f,dev,,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+26,ok so Your last text was so good I can't stop smiling :),not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/1c3286,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+27,Your last text was so good i can't stop smiling,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/1c3286,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+28,Отпишите меня от рассылки,opt_out,soft_refusal,ru,False,opt_out/soft_refusal/ru/f0f0bf,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+29,unsubscribe pls.,opt_out,keyword,en,True,opt_out/keyword/en/18d5e5,test,opt_out,opt_out,1.0,opt_out,0.99,keyword
+30,UNSUBSCRIBE...,opt_out,keyword,en,True,opt_out/keyword/en/62b18b,dev,,opt_out,1.0,opt_out,0.99,keyword
+31,"listen, great, i'll check it out!!",not_opt_out,positive,en,False,not_opt_out/positive/en/83d6cc,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+32,Please stop :),opt_out,keyword,en,True,opt_out/keyword/en/ab1cbc,test,,opt_out,1.0,opt_out,0.99,keyword
+33,"hello, I don't want these messages anymore thx",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/beb099,dev,,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+34,who is this?,not_opt_out,question,en,False,ambiguous/ambiguous/en/c35f2a,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+35,Who dis?,not_opt_out,question,en,False,ambiguous/ambiguous/en/178b90,dev,,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
+36,"listen, Love this! 🔥",not_opt_out,positive,en,False,not_opt_out/positive/en/b6d028,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+37,"Hello, please don't stop the sale emails, i love them",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/390d15,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+38,"Perfect, thanks!!",not_opt_out,positive,en,False,not_opt_out/positive/en/e63407,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+39,Ok so loving the new arrivals!,not_opt_out,positive,en,False,not_opt_out/positive/en/b616da,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+40,"hello, Wow, you people are relentless. Leave me alone",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/81a60f,dev,,not_opt_out,1.0,opt_out,0.8,hybrid_llm
+41,"hello, who is this?",not_opt_out,question,en,False,ambiguous/ambiguous/en/3fe6b5,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+42,CANCEL SUBSCRIPTION,opt_out,keyword,en,True,opt_out/keyword/en/0cc515,dev,,opt_out,1.0,opt_out,0.99,keyword
+43,Stop.,opt_out,keyword,en,True,opt_out/keyword/en/11a755,test,,opt_out,1.0,opt_out,0.99,keyword
+44,maybe.,not_opt_out,deferral,en,False,ambiguous/ambiguous/en/80ba31,test,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+45,"listen, Awesome",not_opt_out,positive,en,False,not_opt_out/positive/en/d9673f,dev,,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
+46,hey Not interested right now!,not_opt_out,deferral,en,False,ambiguous/ambiguous/en/b36008,test,not_opt_out,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
+47,ok so Has my refund been processed?,not_opt_out,question,en,False,not_opt_out/question/en/d1ae72,test,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+48,¿quién les dio mi número? qué molestia :),ambiguous,frustrated,es,False,ambiguous/frustrated/es/cd8c74,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+49,Can i change my delivery address? lps,not_opt_out,question,en,False,not_opt_out/question/en/37c19f,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+50,get me off this list...,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/523fbe,test,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+51,Can I cancel the gift wrap on order 5521?,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/318966,test,not_opt_out,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+52,HEY YOUR END OF SEASON SALE LOOKS AMAZING pls,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/9ff188,test,not_opt_out,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+53,ok so let's go,not_opt_out,positive,en,False,not_opt_out/positive/en/534ad1,dev,,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
+54,Quit :),opt_out,keyword,en,True,opt_out/keyword/en/0d8279,test,,opt_out,1.0,opt_out,0.99,keyword
+55,pls unsubscribe!!,opt_out,keyword,en,True,opt_out/keyword/en/7ebeca,dev,,opt_out,1.0,opt_out,0.99,keyword
+56,"hi, ay.",not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/d74600,dev,,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
+57,unsubscribe...,opt_out,keyword,en,True,opt_out/keyword/en/62b18b,dev,,opt_out,1.0,opt_out,0.99,keyword
+58,hey Take my name off your mailing list.,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/9cf003,test,opt_out,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+59,"mira, Eliminen mi número de su ilsta :)",opt_out,soft_refusal,es,False,opt_out/soft_refusal/es/94b8ff,dev,,not_opt_out,1.0,opt_out,0.96,hybrid_llm
+60,ok so I'm done with these texts,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/1f2376,dev,,not_opt_out,1.0,opt_out,0.75,hybrid_llm
+61,"No more messages, thanks.",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/f4575e,dev,,not_opt_out,1.0,opt_out,0.96,hybrid_llm
+62,"эй, Кто вам дал мой номер, блин.",ambiguous,frustrated,ru,False,ambiguous/frustrated/ru/684d4f,test,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+63,"mira, Por favor no me secriban más!",opt_out,soft_refusal,es,False,opt_out/soft_refusal/es/949f15,dev,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+64,hey reomve my number from your list please,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/86bd26,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+65,I'M SICK OF THIS CRAP ugh,ambiguous,frustrated,en,False,ambiguous/frustrated/en/f7981a,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+66,unsubscribe me!,opt_out,keyword,en,True,opt_out/keyword/en/f47177,dev,,opt_out,1.0,opt_out,0.99,keyword
+67,quit...,opt_out,keyword,en,True,opt_out/keyword/en/5dfd35,dev,,opt_out,1.0,opt_out,0.99,keyword
+68,What time does the flash sale end?,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/41256f,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+69,Maybe next time...,not_opt_out,deferral,en,False,ambiguous/ambiguous/en/d34fc6,test,,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
+70,👍!!,not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/0215ac,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+71,Can I change my delivery address?,not_opt_out,question,en,False,not_opt_out/question/en/37c19f,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+72,I didn't ask for these messages. Delete me. pls,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/79da33,test,,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+73,"Слушайте, хорошо!!",not_opt_out,wrong_number_or_other,ru,False,not_opt_out/wrong_number_or_other/ru/646a8c,test,,not_opt_out,1.0,not_opt_out,0.96,hybrid_llm
+74,"NOT RIGHT NOW, TOO BUSY",not_opt_out,deferral,en,False,ambiguous/ambiguous/en/461887,dev,,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
+75,Оставьте меня в покое!,opt_out,soft_refusal,ru,False,opt_out/soft_refusal/ru/4051f6,test,,not_opt_out,1.0,opt_out,0.7,hybrid_llm
+76,"hi, freaking annoying, leave me alone!",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/eb6e3c,dev,,not_opt_out,1.0,opt_out,0.8,hybrid_llm
+77,"Hello, when does the winter sale start?",not_opt_out,question,en,False,not_opt_out/question/en/a9d6c0,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+78,Ok so i did not agree to get texts from you,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/c5e269,test,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+79,Can't stop shopping with you guys,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/2b84cd,test,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+80,"hey too many texts, i'm out.",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/89689a,test,opt_out,not_opt_out,1.0,opt_out,0.75,hybrid_llm
+81,please delete me from your database thx,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/28f3c2,test,,not_opt_out,1.0,opt_out,0.9,hybrid_llm
+82,¿cuándo llega mi paquete?,not_opt_out,question,es,False,not_opt_out/question/es/1434b8,test,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+83,"hi, how much is shipping to mexico? pls",not_opt_out,question,en,False,not_opt_out/question/en/1880eb,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+84,"i don't need any more promos from you, take me off.",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/7a0654,test,,not_opt_out,1.0,opt_out,0.96,hybrid_llm
+85,K thx,not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/8ce4b1,dev,,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
+86,Is the student discount still on? thx,not_opt_out,question,en,False,not_opt_out/question/en/08e3aa,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+87,IS ORDER #4482 ON ITS WAY?,not_opt_out,question,en,False,not_opt_out/question/en/740ca4,test,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+88,Is the new collection online yet?,not_opt_out,question,en,False,not_opt_out/question/en/36635a,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+89,код на 20% еще действует?,not_opt_out,question,ru,False,not_opt_out/question/ru/4cb2c5,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+90,pls unsubscribe!,opt_out,keyword,en,True,opt_out/keyword/en/7ebeca,dev,,opt_out,1.0,opt_out,0.99,keyword
+91,Not now thx,not_opt_out,deferral,en,False,ambiguous/ambiguous/en/3049da,test,not_opt_out,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+92,"HI, WSEET 🙌",not_opt_out,positive,en,False,not_opt_out/positive/en/0c13f5,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+93,ok so do you do gift wrapping? pls,not_opt_out,question,en,False,not_opt_out/question/en/84410f,test,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+94,Quit...,opt_out,keyword,en,True,opt_out/keyword/en/0d8279,test,,opt_out,1.0,opt_out,0.99,keyword
+95,ok so you can take me off your texting list :),opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/47b7ba,test,opt_out,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+96,Unsubscribe.,opt_out,keyword,en,True,opt_out/keyword/en/4182c8,test,,opt_out,1.0,opt_out,0.99,keyword
+97,Стоп,opt_out,keyword,ru,True,opt_out/keyword/ru/5d9160,dev,,opt_out,1.0,opt_out,0.99,keyword
+98,"perfect, thanks pls",not_opt_out,positive,en,False,not_opt_out/positive/en/e63407,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+99,"hello, please delete me from your database pls",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/28f3c2,test,,not_opt_out,1.0,opt_out,0.8,hybrid_llm
+100,get lost already with your promos!,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/ba603b,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+101,bien por favor,not_opt_out,wrong_number_or_other,es,False,not_opt_out/wrong_number_or_other/es/67d6c2,test,,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
+102,Where can I find the size chart?,not_opt_out,question,en,False,not_opt_out/question/en/12c8c2,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+103,stop messages!,opt_out,keyword,en,True,opt_out/keyword/en/d441b0,test,,opt_out,1.0,opt_out,0.99,keyword
+104,"hello, Too many texts, I'm out...",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/89689a,test,opt_out,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+105,Count me in 😍,not_opt_out,positive,en,False,not_opt_out/positive/en/1ed1f2,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+106,"MIRA, BÓRRAME DE LA LISTA",opt_out,soft_refusal,es,False,opt_out/soft_refusal/es/1538cd,test,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+107,Opt-out!!,opt_out,keyword,en,True,opt_out/keyword/en/480e7f,test,,opt_out,1.0,opt_out,0.99,keyword
+108,"Hello, not interested",ambiguous,ambiguous,en,False,ambiguous/ambiguous/en/c0a38f,dev,,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
+109,Is this store open on sundays?,not_opt_out,question,en,False,not_opt_out/question/en/04215f,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+110,Спасибо!,not_opt_out,positive,ru,False,not_opt_out/positive/ru/a4a765,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+111,Check back in a month!!,not_opt_out,deferral,en,False,ambiguous/ambiguous/en/2382d4,dev,,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
+112,"listen, maybe...",not_opt_out,deferral,en,False,ambiguous/ambiguous/en/80ba31,test,not_opt_out,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
+113,"OYE, VALE...",not_opt_out,wrong_number_or_other,es,False,not_opt_out/wrong_number_or_other/es/9617ae,dev,,not_opt_out,1.0,ambiguous,0.55,hybrid_llm
+114,"эй, Оставьте меня в покое плиз",opt_out,soft_refusal,ru,False,opt_out/soft_refusal/ru/4051f6,test,,not_opt_out,1.0,opt_out,0.85,hybrid_llm
+115,"Hola, ¿dónde está mi pedido? :)",not_opt_out,question,es,False,not_opt_out/question/es/a91fb4,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+116,"Listen, ok cool.",not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/30c5df,test,not_opt_out,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+117,"hi, is the sale price the final pirce?",not_opt_out,question,en,False,not_opt_out/question/en/e57610,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+118,"эй, Не интересно плиз",ambiguous,ambiguous,ru,False,ambiguous/ambiguous/ru/2a8de3,test,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+119,end :),opt_out,keyword,en,True,opt_out/keyword/en/7f021a,dev,,opt_out,1.0,opt_out,0.99,keyword
+120,ha!,not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/925cc8,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
+121,"HELLO, PLEASE TAKE MY NUMBER OFF YOUR LIST",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/91d3f7,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+122,"Hello, can't wait for the sale",not_opt_out,positive,en,False,not_opt_out/positive/en/56a02e,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+123,"mira, ¿Quién es? :)",not_opt_out,question,es,False,ambiguous/ambiguous/es/5e14e4,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+124,cancel :),opt_out,keyword,en,True,opt_out/keyword/en/10aec3,dev,,opt_out,1.0,opt_out,0.99,keyword
+125,hey i don't want these messages anymore,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/beb099,dev,,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+126,"Hello, where is my order?",not_opt_out,question,en,False,not_opt_out/question/en/1a66c2,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+127,"hi, Enough already, you're driving me nuts thx",ambiguous,frustrated,en,False,ambiguous/frustrated/en/66d8a5,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+128,cancel subscription,opt_out,keyword,en,True,opt_out/keyword/en/0cc515,dev,,opt_out,1.0,opt_out,0.99,keyword
+129,Who the hell gave you my number :),ambiguous,frustrated,en,False,ambiguous/frustrated/en/b082a9,test,ambiguous,not_opt_out,1.0,not_opt_out,0.7,hybrid_llm
+130,not today...,not_opt_out,deferral,en,False,ambiguous/ambiguous/en/144784,dev,,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
+131,Hey is the lback jacket back in stock?,not_opt_out,question,en,False,not_opt_out/question/en/2ff524,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+132,ok so Can I pick up in store today? :),not_opt_out,question,en,False,not_opt_out/question/en/9fef3d,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+133,"LISTEN, IS THE SALE PRICE THE FINAL PRICE? thx",not_opt_out,question,en,False,not_opt_out/question/en/e57610,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+134,"listen, Great, I'll check it out",not_opt_out,positive,en,False,not_opt_out/positive/en/83d6cc,test,,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
+135,hey Your end of season sale looks amazing,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/9ff188,test,not_opt_out,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+136,Is the end-of-season sale on this weekend?,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/327d75,test,,opt_out,1.0,not_opt_out,0.98,hybrid_llm
+137,What's my tracking number?,not_opt_out,question,en,False,not_opt_out/question/en/339ab1,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+138,"эй, не присылайте больше сообщения :)",opt_out,soft_refusal,ru,False,opt_out/soft_refusal/ru/9c88a7,dev,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+139,"MIRA, QUÉ FASTIDIO CON TANTO MENSAJE!!",ambiguous,frustrated,es,False,ambiguous/frustrated/es/5c73aa,test,,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
+140,Stop!!,opt_out,keyword,en,True,opt_out/keyword/en/11a755,test,,opt_out,1.0,opt_out,0.99,keyword
+141,hey Nto interested,ambiguous,ambiguous,en,False,ambiguous/ambiguous/en/c0a38f,dev,,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
+142,DOES THE CODE END ON SUNDAY?,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/fe38a3,test,not_opt_out,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+143,maybe another time.,ambiguous,deferral,en,False,ambiguous/ambiguous/en/3c316e,test,ambiguous,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+144,"Ok so holy crap, another promo? really? :)",ambiguous,frustrated,en,False,ambiguous/frustrated/en/6c9495,dev,,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
+145,"Listen, i'm in!",not_opt_out,positive,en,False,not_opt_out/positive/en/ff7f70,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+146,"litsen, ha ha",not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/a673f1,test,,not_opt_out,1.0,not_opt_out,0.85,hybrid_llm
+147,"hi, you can take me off your txeting list.",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/47b7ba,test,opt_out,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+148,ok so i need to cancel order #8831 and get a refund :),not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/4b7620,test,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+149,Ridiculous. I've never shopped with you and you keep blowing up my phone!!,ambiguous,frustrated,en,False,ambiguous/frustrated/en/78a9c0,dev,,not_opt_out,1.0,ambiguous,0.68,hybrid_llm
+150,I'll think about it.,not_opt_out,deferral,en,False,ambiguous/ambiguous/en/fd3bcd,dev,,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
+151,"hello, Yes, please pls",not_opt_out,positive,en,False,not_opt_out/positive/en/75e174,dev,,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
+152,unsubscribe.,opt_out,keyword,en,True,opt_out/keyword/en/a01365,dev,,opt_out,1.0,opt_out,0.99,keyword
+153,PLEASE STOP.,opt_out,keyword,en,True,opt_out/keyword/en/7cdfae,dev,,opt_out,1.0,opt_out,0.99,keyword
+154,"I'm done getting these messages, remove me.",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/36eb6e,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+155,ok so don't message me anymore :),opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/014187,test,,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+156,OK SO REMOVE THIS NUMBER FROM YOUR MARKETING LIST,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/adb562,test,opt_out,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+157,"NOT RIGHT NOW, TOO BUSY thx",not_opt_out,deferral,en,False,ambiguous/ambiguous/en/461887,dev,,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
+158,hye don't text this number anymore thx,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/e7af99,test,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+159,stop messages,opt_out,keyword,en,True,opt_out/keyword/en/d441b0,test,opt_out,opt_out,1.0,opt_out,0.99,keyword
+160,"listen, who the heck keeps texting me? back off thx",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/612ebc,test,opt_out,not_opt_out,1.0,opt_out,0.7,hybrid_llm
+161,HEY NO MORE TEXTS PLEASE.,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/46a341,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+162,"listen, Does the coed work on sale items?",not_opt_out,question,en,False,not_opt_out/question/en/dc5e3e,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+163,QUIT.,opt_out,keyword,en,True,opt_out/keyword/en/dbd73c,dev,,opt_out,1.0,opt_out,0.99,keyword
+164,sure lol!!,not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/13be59,dev,,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
+165,remove this number from your marketing list,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/adb562,test,opt_out,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+166,stop!,opt_out,keyword,en,True,opt_out/keyword/en/ef399b,dev,,opt_out,1.0,opt_out,0.99,keyword
+167,Don't stop the restock alerts pls,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/de25e5,test,not_opt_out,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+168,"listen, not today.",not_opt_out,deferral,en,False,ambiguous/ambiguous/en/144784,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+169,"LISTEN, I'M DONE GETTING THESE MESSAGES, REMOVE ME...",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/36eb6e,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+170,please remove me from your list...,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/3dade6,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+171,"i have no idea how you got my number, please delete it",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/b2ef88,dev,,not_opt_out,1.0,opt_out,0.8,hybrid_llm
+172,Not now pls,not_opt_out,deferral,en,False,ambiguous/ambiguous/en/3049da,test,not_opt_out,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+173,ok so Please don't keep messaging me.,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/2b5618,dev,,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+174,Let's go 🙌,not_opt_out,positive,en,False,not_opt_out/positive/en/534ad1,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+175,"oye, Sí, por favor...",not_opt_out,positive,es,False,not_opt_out/positive/es/6f23b3,dev,,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
+176,"hello, I don't want to recevie messages from you anymore thx",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/700cbd,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+177,i'm sick of this crap seriously,ambiguous,frustrated,en,False,ambiguous/frustrated/en/f7981a,dev,,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
+178,"hi, leave me alone!!",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/254993,dev,,not_opt_out,1.0,opt_out,0.75,hybrid_llm
+179,Quit,opt_out,keyword,en,True,opt_out/keyword/en/5dfd35,dev,,opt_out,1.0,opt_out,0.99,keyword
+180,take me off this thx,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/f5a3bc,test,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+181,"hi, Not today.",not_opt_out,deferral,en,False,ambiguous/ambiguous/en/144784,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+182,Unsubscribe me...,opt_out,keyword,en,True,opt_out/keyword/en/f47177,dev,,opt_out,1.0,opt_out,0.99,keyword
+183,"HEY FREAKING ANNOYING, LEAVE ME ALONE",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/eb6e3c,dev,,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+184,Get me off this list!!,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/523fbe,test,,not_opt_out,1.0,opt_out,0.96,hybrid_llm
+185,"hi, Remove this number from your marketing list...",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/adb562,test,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+186,Can i use two codes at once?,not_opt_out,question,en,False,not_opt_out/question/en/a24bcd,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+187,"Listen, i'm sick of this crap seriously",ambiguous,frustrated,en,False,ambiguous/frustrated/en/f7981a,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+188,"слушайте, Люблю новую коллекцию :)",not_opt_out,positive,ru,False,not_opt_out/positive/ru/8243d6,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+189,"Idiots, I never signed up for this garbage.",opt_out,soft_refusal,en,False,ambiguous/frustrated/en/9bc7c9,test,opt_out,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+190,"HI, WHAT THE HELL, BACK OFF ALREADY...",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/ab2b50,dev,,not_opt_out,1.0,opt_out,0.75,hybrid_llm
+191,Reply stop,opt_out,keyword,en,True,opt_out/keyword/en/0e4e63,dev,,opt_out,1.0,opt_out,0.99,keyword
+192,"this is hraassment, i'm reporting you seriously",ambiguous,frustrated,en,False,ambiguous/frustrated/en/c00cc4,test,ambiguous,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+193,I want to cancel my pre-order for the boots!!,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/9fd467,dev,,opt_out,1.0,not_opt_out,0.96,hybrid_llm
+194,Get lost already with your promos!,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/ba603b,dev,,not_opt_out,1.0,opt_out,0.7,hybrid_llm
+195,"I'M DONE GETTNIG THESE MESSAGES, REMOVE ME!",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/36eb6e,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+196,"HI, SWETE 😍",not_opt_out,positive,en,False,not_opt_out/positive/en/0c13f5,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+197,"listen, Which store is open late?",not_opt_out,question,en,False,not_opt_out/question/en/a7e8b7,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+198,"слушайте, удалите мой номер из вашей базы",opt_out,soft_refusal,ru,False,opt_out/soft_refusal/ru/6997a3,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+199,Stop sending!!,opt_out,keyword,en,True,opt_out/keyword/en/10d637,test,,opt_out,1.0,opt_out,0.99,keyword
+200,"Listen, no thanks, i'm out, remove my number thx",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/1f618f,test,opt_out,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+201,"hi, please remove me from your list",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/3dade6,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+202,"Idiots, i never signed pu for this garbage!!",opt_out,soft_refusal,en,False,ambiguous/frustrated/en/9bc7c9,test,opt_out,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+203,ok so I did not agree to get texts from you!,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/c5e269,test,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+204,Do you price match? thx,not_opt_out,question,en,False,not_opt_out/question/en/b1d668,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+205,"HELLO, CAN I GET MY RECEIPT BY EMAIL?",not_opt_out,question,en,False,not_opt_out/question/en/977f4b,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+206,"HI, YES, SEND THE LINK LPEASE thx",not_opt_out,positive,en,False,not_opt_out/positive/en/5d4f54,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+207,"this is getting annoying, enough",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/12a5af,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+208,"Hola, eliminen mi número de su lista :)",opt_out,soft_refusal,es,False,opt_out/soft_refusal/es/94b8ff,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+209,Remove this number from your marketing list...,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/adb562,test,opt_out,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+210,"listen, take ym name off your mailing list pls",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/9cf003,test,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+211,I need to cancel order #8831 and get a refund.,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/4b7620,test,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+212,get lost already wiht your promos...,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/ba603b,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+213,"hello, Plaese don't contact me again...",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/54954b,test,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+214,Please take me out of your system!!,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/b5d226,dev,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+215,How do i cancel a backorder? pls,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/b0a35d,dev,,opt_out,1.0,not_opt_out,0.95,hybrid_llm
+216,"listen, Get lost already with your promos!!",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/ba603b,dev,,not_opt_out,1.0,opt_out,0.7,hybrid_llm
+217,OPTOUT,opt_out,keyword,en,True,opt_out/keyword/en/0b3664,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+218,"hello, Did my package ship yet? thx",not_opt_out,question,en,False,not_opt_out/question/en/ba8806,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+219,Отпишите меня от рассылки плиз,opt_out,soft_refusal,ru,False,opt_out/soft_refusal/ru/f0f0bf,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+220,"oye, ¿dónde está im pedido?",not_opt_out,question,es,False,not_opt_out/question/es/a91fb4,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+221,ну оставьте меня в покое...,opt_out,soft_refusal,ru,False,opt_out/soft_refusal/ru/4051f6,test,,not_opt_out,1.0,opt_out,0.8,hybrid_llm
+222,Has my refund been processed?,not_opt_out,question,en,False,not_opt_out/question/en/d1ae72,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+223,"HELLO, MAYBE LATER...",not_opt_out,deferral,en,False,ambiguous/ambiguous/en/20e68f,test,not_opt_out,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
+224,unsubscribe pls...,opt_out,keyword,en,True,opt_out/keyword/en/18d5e5,test,,opt_out,1.0,opt_out,0.99,keyword
+225,"Hi, does the 20% code work on sale items? :)",not_opt_out,question,en,False,not_opt_out/question/en/d32ae5,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+226,ok so Can't wait for the end of summer sale,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/d28f32,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+227,"lisetn, I'm in! pls",not_opt_out,positive,en,False,not_opt_out/positive/en/ff7f70,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+228,"hello, no more texts please!",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/46a341,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+229,Unsubscribe!,opt_out,keyword,en,True,opt_out/keyword/en/62b18b,dev,,opt_out,1.0,opt_out,0.99,keyword
+230,"hello, Remove this number from your marketing list pls",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/adb562,test,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+231,unsubscribe me,opt_out,keyword,en,True,opt_out/keyword/en/f47177,dev,,opt_out,1.0,opt_out,0.99,keyword
+232,Yes!! pls,not_opt_out,positive,en,False,not_opt_out/positive/en/91e820,dev,,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
+233,"Hello, hmm, not sure",ambiguous,ambiguous,en,False,ambiguous/ambiguous/en/8233ef,dev,,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
+234,"hi, Can I cancel and reorder in a different size? :)",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/c2d39f,test,not_opt_out,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+235,"OK SO THIS IS RIDICULOUS, I NEVER ASKED FOR THESE TEXTS",opt_out,soft_refusal,en,False,ambiguous/frustrated/en/65b990,test,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+236,"No me interesa, ya no me escriban.",opt_out,soft_refusal,es,False,opt_out/soft_refusal/es/312772,test,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+237,"hola, bien",not_opt_out,wrong_number_or_other,es,False,not_opt_out/wrong_number_or_other/es/67d6c2,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+238,I want out of this list txh,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/bd5c1f,dev,,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+239,"hello, Check back in a month!",not_opt_out,deferral,en,False,ambiguous/ambiguous/en/2382d4,dev,,not_opt_out,1.0,not_opt_out,0.85,hybrid_llm
+240,"Hi, not right now...",not_opt_out,deferral,en,False,ambiguous/ambiguous/en/8cd888,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+241,"listen, hmm...",not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/a5175f,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+242,"Sí, por favor...",not_opt_out,positive,es,False,not_opt_out/positive/es/6f23b3,dev,,not_opt_out,1.0,ambiguous,0.5,hybrid_llm
+243,"hello, this is spam and i'm furious seriously",ambiguous,frustrated,en,False,ambiguous/frustrated/en/fc5e4a,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+244,"listen, Please don't contact me again :)",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/54954b,test,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+245,who is this? pls,not_opt_out,question,en,False,ambiguous/ambiguous/en/c35f2a,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
+246,"oh for crying out loud, another text? :)",ambiguous,frustrated,en,False,ambiguous/frustrated/en/f0549c,test,ambiguous,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+247,I didn't ask for these messages. Delete me.,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/79da33,test,opt_out,not_opt_out,1.0,opt_out,0.85,hybrid_llm
+248,¿quién es?,not_opt_out,question,es,False,ambiguous/ambiguous/es/5e14e4,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+249,wrong number.,ambiguous,ambiguous,en,False,ambiguous/ambiguous/en/200efc,dev,,not_opt_out,1.0,not_opt_out,0.93,hybrid_llm
+250,stopall!,opt_out,keyword,en,True,opt_out/keyword/en/6ee9d6,dev,,opt_out,1.0,opt_out,0.99,keyword
+251,Please just leave me be!,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/a7a6f0,dev,,not_opt_out,1.0,opt_out,0.75,hybrid_llm
+252,"Hi, can i return an online order in store?",not_opt_out,question,en,False,not_opt_out/question/en/0997e1,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+253,"HI, PLEASE DON'T END THE REWARDS PROGRAM, I LOVE IT",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/efdd7c,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+254,"Quit it with the flash sales lol, my wallet hurts :)",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/40cb0f,dev,,opt_out,1.0,opt_out,0.75,hybrid_llm
+255,"LISTEN, UNREAL. GET YOUR JUNK OFF MY PHONE pls",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/c1e274,dev,,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+256,BAJA!,opt_out,keyword,es,True,opt_out/keyword/es/4380cb,dev,,opt_out,1.0,opt_out,0.99,keyword
+257,stop sending!!,opt_out,keyword,en,True,opt_out/keyword/en/10d637,test,opt_out,opt_out,1.0,opt_out,0.99,keyword
+258,Stop all!,opt_out,keyword,en,True,opt_out/keyword/en/0ece7e,test,opt_out,opt_out,1.0,opt_out,0.99,keyword
+259,Ok so what time does the flash sale end?,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/41256f,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+260,What's the warranty period? thx,not_opt_out,question,en,False,not_opt_out/question/en/1ca17b,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+261,What's your retrun policy?,not_opt_out,question,en,False,not_opt_out/question/en/46c77e,test,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+262,Try again next month.,not_opt_out,deferral,en,False,ambiguous/ambiguous/en/4b0a32,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+263,hey can't stop shopping with you guys,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/2b84cd,test,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+264,"hello, Please just leave me be :)",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/a7a6f0,dev,,not_opt_out,1.0,opt_out,0.8,hybrid_llm
+265,Stop the texts!!,opt_out,keyword,en,True,opt_out/keyword/en/50f95c,dev,,opt_out,1.0,opt_out,0.99,keyword
+266,"hello, is the black jacket back in stock?",not_opt_out,question,en,False,not_opt_out/question/en/2ff524,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+267,"Эй, мне это надоело, не пишите.",opt_out,soft_refusal,ru,False,opt_out/soft_refusal/ru/546549,test,,not_opt_out,1.0,opt_out,0.9,hybrid_llm
+268,Ok so does the sale end tomorrow? :),not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/8c5577,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+269,Непарвильный номер!!,ambiguous,ambiguous,ru,False,ambiguous/ambiguous/ru/16fec8,dev,,not_opt_out,1.0,not_opt_out,0.93,hybrid_llm
+270,"Mira, sí, por favor :)",not_opt_out,positive,es,False,not_opt_out/positive/es/6f23b3,dev,,not_opt_out,1.0,not_opt_out,0.82,hybrid_llm
+271,"hello, I'm not going to keep receiving these, remove me please :)",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/6e4dab,test,opt_out,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+272,ДА.,not_opt_out,positive,ru,False,not_opt_out/positive/ru/e04af9,dev,,not_opt_out,1.0,not_opt_out,0.85,hybrid_llm
+273,"Please don't stop the sale emails, I love them",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/390d15,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+274,stop!!,opt_out,keyword,en,True,opt_out/keyword/en/615a46,dev,,opt_out,1.0,opt_out,0.99,keyword
+275,i'd like to be removed from your messages!,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/4aff8a,test,opt_out,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+276,"эй, хорошо плиз",not_opt_out,wrong_number_or_other,ru,False,not_opt_out/wrong_number_or_other/ru/646a8c,test,,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
+277,leave me alone pls,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/254993,dev,,not_opt_out,1.0,opt_out,0.9,hybrid_llm
+278,stop being so generous with the discounts :),not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/98241c,dev,,opt_out,1.0,not_opt_out,0.93,hybrid_llm
+279,Hey i don't want these messages anymore!,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/beb099,dev,,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+280,Quítame de la lista...,opt_out,soft_refusal,es,False,opt_out/soft_refusal/es/55fbf2,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+281,"Hmm, not sure thx",ambiguous,ambiguous,en,False,ambiguous/ambiguous/en/8233ef,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+282,"Enough with the spam already, seriously...",ambiguous,frustrated,en,False,ambiguous/frustrated/en/cf04e9,dev,,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
+283,UNSUB!,opt_out,keyword,en,True,opt_out/keyword/en/cba13a,dev,,not_opt_out,1.0,opt_out,0.98,hybrid_llm
+284,"Perfect, thanks 🔥",not_opt_out,positive,en,False,not_opt_out/positive/en/e63407,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+285,"Ok so what the hell, back off already :)",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/ab2b50,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+286,"I never signed up for this, delete my number :)",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/4446f9,dev,,not_opt_out,1.0,opt_out,0.9,hybrid_llm
+287,"hello, Enough already, you're driving me nuts...",ambiguous,frustrated,en,False,ambiguous/frustrated/en/66d8a5,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+288,"Hey hmm, not sure :)",ambiguous,ambiguous,en,False,ambiguous/ambiguous/en/8233ef,dev,,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
+289,Ok so get lost already with your promos pls,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/ba603b,dev,,not_opt_out,1.0,opt_out,0.8,hybrid_llm
+290,hey lpease remove me from your list...,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/3dade6,dev,,not_opt_out,1.0,opt_out,0.96,hybrid_llm
+291,"ОТЛИЧНО, СПАСИБО пожлауйста",not_opt_out,positive,ru,False,not_opt_out/positive/ru/fd8bb4,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+292,Stop all :),opt_out,keyword,en,True,opt_out/keyword/en/0ece7e,test,,opt_out,1.0,opt_out,0.99,keyword
+293,END.,opt_out,keyword,en,True,opt_out/keyword/en/b1a326,dev,,opt_out,1.0,opt_out,0.99,keyword
+294,"mira, bórrame de la lista.",opt_out,soft_refusal,es,False,opt_out/soft_refusal/es/1538cd,test,,not_opt_out,1.0,opt_out,0.96,hybrid_llm
+295,"great, i'll check it out",not_opt_out,positive,en,False,not_opt_out/positive/en/83d6cc,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+296,hye Please just leave me be!!,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/a7a6f0,dev,,not_opt_out,1.0,opt_out,0.8,hybrid_llm
+297,"listen, I'm done with these texts",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/1f2376,dev,,not_opt_out,1.0,opt_out,0.72,hybrid_llm
+298,"hello, Stop it with the 50% off banners, I'm obsessed thx",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/9539f3,dev,,opt_out,1.0,not_opt_out,0.93,hybrid_llm
+299,"Perfect, thanks...",not_opt_out,positive,en,False,not_opt_out/positive/en/e63407,test,,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
+300,"LISTEN, DOES THE CODE WORK ON SALE ITEMS? :)",not_opt_out,question,en,False,not_opt_out/question/en/dc5e3e,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+301,how do i cancel an order i placed yesterday?,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/8b50a1,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+302,"listen, Yes!! thx",not_opt_out,positive,en,False,not_opt_out/positive/en/91e820,dev,,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
+303,"hello, I'm in!",not_opt_out,positive,en,False,not_opt_out/positive/en/ff7f70,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+304,I'm done with these texts,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/1f2376,dev,,not_opt_out,1.0,opt_out,0.7,hybrid_llm
+305,"Hi, too many texts lately",ambiguous,ambiguous,en,False,ambiguous/ambiguous/en/d27f47,dev,,not_opt_out,1.0,ambiguous,0.85,hybrid_llm
+306,UNSUBSCRIBE!,opt_out,keyword,en,True,opt_out/keyword/en/62b18b,dev,,opt_out,1.0,opt_out,0.99,keyword
+307,HEY I'M IN! thx,not_opt_out,positive,en,False,not_opt_out/positive/en/ff7f70,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+308,I'M DONE WITH THESE TEXTS...,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/1f2376,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+309,yes send it 🔥,not_opt_out,positive,en,False,not_opt_out/positive/en/decd27,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+310,This number doesn't want your promos...,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/7cd745,dev,,not_opt_out,1.0,opt_out,0.75,hybrid_llm
+311,"listen, Don't stop the restock alerts pls.",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/de25e5,test,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+312,Did my package ship yet? :),not_opt_out,question,en,False,not_opt_out/question/en/ba8806,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+313,"hi, just bought the boots, love them 🔥",not_opt_out,positive,en,False,not_opt_out/positive/en/46809f,test,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+314,"hello, Who is this?",not_opt_out,question,en,False,ambiguous/ambiguous/en/3fe6b5,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+315,"LISTEN, 👍 pls",not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/0215ac,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.6,hybrid_llm
+316,Ok so yes!!,not_opt_out,positive,en,False,not_opt_out/positive/en/91e820,dev,,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
+317,reply STOP.,opt_out,keyword,en,True,opt_out/keyword/en/0e4e63,dev,,opt_out,1.0,opt_out,0.99,keyword
+318,Do you ship to canada?,not_opt_out,question,en,False,not_opt_out/question/en/876d4b,test,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+319,"hi, holy crap, another promo? really?",ambiguous,frustrated,en,False,ambiguous/frustrated/en/6c9495,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+320,end!!,opt_out,keyword,en,True,opt_out/keyword/en/b1a326,dev,,opt_out,1.0,opt_out,0.99,keyword
+321,"MIRA, ¿DÓNDE ESTÁ MI PEDIDO?",not_opt_out,question,es,False,not_opt_out/question/es/a91fb4,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+322,HEY WHAT ARE YOUR OPENING HOURS?,not_opt_out,question,en,False,not_opt_out/question/en/3b20c2,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+323,"hi, alright.",not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/d1b0b8,test,,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
+324,Unsubscribe me :),opt_out,keyword,en,True,opt_out/keyword/en/f47177,dev,,opt_out,1.0,opt_out,0.99,keyword
+325,"hello, i'm done getting these messages, remove me thx",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/36eb6e,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+326,"IDIOTS, I NEVER SIGNED UP FOR THIS GARBAGE pls",opt_out,soft_refusal,en,False,ambiguous/frustrated/en/9bc7c9,test,opt_out,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+327,OK SO QUIT BEING SO GOOD AT THESE DEALS LOL :),not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/3fc6af,test,,opt_out,1.0,not_opt_out,0.93,hybrid_llm
+328,"HOLA, QUIZÁS MÁS TARDE",not_opt_out,deferral,es,False,ambiguous/ambiguous/es/ea4d01,dev,,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
+329,"OK SO NO MORE MESSAGES, THANKS lps",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/f4575e,dev,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+330,"hi, Oh for crying out loud, another text?",ambiguous,frustrated,en,False,ambiguous/frustrated/en/f0549c,test,ambiguous,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+331,"Listen, is this store open on sundays? pls",not_opt_out,question,en,False,not_opt_out/question/en/04215f,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+332,Haha thanks!,not_opt_out,positive,en,False,not_opt_out/positive/en/99a0e8,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+333,"hello, Does the sale end tomorrow?",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/8c5577,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+334,"listen, does the offer end when i checkout?",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/0b27d0,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+335,ну Оставьте меня в покое...,opt_out,soft_refusal,ru,False,opt_out/soft_refusal/ru/4051f6,test,,not_opt_out,1.0,opt_out,0.8,hybrid_llm
+336,"hi, What the hell, back off already pls",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/ab2b50,dev,,not_opt_out,1.0,opt_out,0.7,hybrid_llm
+337,"listen, can't stop refreshing your site for the drop!",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/393ed4,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+338,"СЛУШАЙТЕ, ДА СКОЛЬКО МОЖНО УЖЕ! плиз",ambiguous,frustrated,ru,False,ambiguous/frustrated/ru/723d5f,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+339,"Hello, totally want that dress pls",not_opt_out,positive,en,False,not_opt_out/positive/en/300e5d,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+340,hey Who do I contact about a damaged item?,not_opt_out,question,en,False,not_opt_out/question/en/570362,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+341,когда будет доставка? плиз,not_opt_out,question,ru,False,not_opt_out/question/ru/416fe7,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+342,"Hi, you can take me off your textnig list!!",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/47b7ba,test,opt_out,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+343,"Listen, perfect, thanks",not_opt_out,positive,en,False,not_opt_out/positive/en/e63407,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+344,STOP :),opt_out,keyword,en,True,opt_out/keyword/en/615a46,dev,,opt_out,1.0,opt_out,0.99,keyword
+345,"hi, i have no idea how you got my number, please edlete it...",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/b2ef88,dev,,not_opt_out,1.0,opt_out,0.85,hybrid_llm
+346,"hi, I can't stop checking your new arrivals.",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/da2b79,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+347,Bórrame de la litsa.,opt_out,soft_refusal,es,False,opt_out/soft_refusal/es/1538cd,test,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+348,tell me more pls,not_opt_out,positive,en,False,not_opt_out/positive/en/d9aa40,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+349,Maybe another time pls,not_opt_out,deferral,en,False,ambiguous/ambiguous/en/3c316e,test,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+350,When does the winter sale start? pls,not_opt_out,question,en,False,not_opt_out/question/en/a9d6c0,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+351,ok 👍!!,not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/dd517d,test,,not_opt_out,1.0,not_opt_out,0.93,hybrid_llm
+352,"hi, This number doesn't want your promos",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/7cd745,dev,,not_opt_out,1.0,opt_out,0.8,hybrid_llm
+353,Please take me out of your system pls,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/b5d226,dev,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+354,How do I cancel an order I placed yesterday?,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/8b50a1,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+355,Hey ha,not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/925cc8,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
+356,Wrong person pls,ambiguous,ambiguous,en,False,ambiguous/ambiguous/en/b63cfd,dev,,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
+357,"Amazing deal, thank you.",not_opt_out,positive,en,False,not_opt_out/positive/en/4c9ce0,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+358,"listen, Who is this? :)",not_opt_out,question,en,False,ambiguous/ambiguous/en/3fe6b5,dev,,not_opt_out,1.0,not_opt_out,0.93,hybrid_llm
+359,Ok so 😂!,not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/984de8,dev,,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
+360,Please remove me from all yoru texting lists thx,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/f8c61a,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+361,"listen, Does the code end on Sunday? thx",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/fe38a3,test,not_opt_out,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+362,Please delete me from your database!,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/28f3c2,test,opt_out,not_opt_out,1.0,opt_out,0.85,hybrid_llm
+363,ok so remove this number from your marketing list,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/adb562,test,opt_out,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+364,Please just leave me be,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/a7a6f0,dev,,not_opt_out,1.0,opt_out,0.8,hybrid_llm
+365,"hey not right now, too busy!!",not_opt_out,deferral,en,False,ambiguous/ambiguous/en/461887,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+366,"hello, Totally want that dress 🙌",not_opt_out,positive,en,False,not_opt_out/positive/en/300e5d,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+367,СТОП!,opt_out,keyword,ru,True,opt_out/keyword/ru/5d9160,dev,,opt_out,1.0,opt_out,0.99,keyword
+368,"HELLO, YOU'VE GOT SOME NERVE TEXTING ME LIKE THIS.",ambiguous,frustrated,en,False,ambiguous/frustrated/en/cdb4aa,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+369,Wrong number.,ambiguous,ambiguous,en,False,ambiguous/ambiguous/en/6d9277,test,ambiguous,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
+370,"listen, Wow, you people are relentless. Leave me alone.",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/81a60f,dev,,not_opt_out,1.0,opt_out,0.85,hybrid_llm
+371,"hello, i'm not interested in these texts, remove me",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/7acb2b,dev,,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+372,Send it over 😍,not_opt_out,positive,en,False,not_opt_out/positive/en/c281b0,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+373,baja!,opt_out,keyword,es,True,opt_out/keyword/es/4380cb,dev,,opt_out,1.0,opt_out,0.99,keyword
+374,"ok so Hmm, not sure pls",ambiguous,ambiguous,en,False,ambiguous/ambiguous/en/8233ef,dev,,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
+375,"MIRA, ELIMINEN MI NÚMERO DE SU LISTA!!",opt_out,soft_refusal,es,False,opt_out/soft_refusal/es/94b8ff,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+376,ok so don't message me anymore thx,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/014187,test,opt_out,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+377,opt out!!,opt_out,keyword,en,True,opt_out/keyword/en/9e93c9,test,,opt_out,1.0,opt_out,0.99,keyword
+378,Stop being so generous with the discounts thx,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/98241c,dev,,opt_out,1.0,not_opt_out,0.93,hybrid_llm
+379,cancel,opt_out,keyword,en,True,opt_out/keyword/en/ea4788,test,,opt_out,1.0,opt_out,0.99,keyword
+380,"Hello, seriously?? who gave you my number thx",ambiguous,frustrated,en,False,ambiguous/frustrated/en/4dfa3a,test,ambiguous,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+381,Hey i can't stop checking your new arrivals...,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/da2b79,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+382,Cancel.,opt_out,keyword,en,True,opt_out/keyword/en/2027c0,test,,opt_out,1.0,opt_out,0.99,keyword
+383,"Yes, send the link please :)",not_opt_out,positive,en,False,not_opt_out/positive/en/5d4f54,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+384,Yay!,not_opt_out,positive,en,False,not_opt_out/positive/en/243f7a,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+385,Please remove me from your list,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/3dade6,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+386,Cool 🔥,not_opt_out,positive,en,False,not_opt_out/positive/en/22ba03,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+387,Hey thanks for the reminder pls,not_opt_out,positive,en,False,not_opt_out/positive/en/cfb781,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+388,Maybe another time,ambiguous,deferral,en,False,ambiguous/ambiguous/en/3c316e,test,ambiguous,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
+389,"hello, ugh, this is so annoying.",ambiguous,frustrated,en,False,ambiguous/frustrated/en/277878,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+390,ok so ok 👍,not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/dd517d,test,,not_opt_out,1.0,not_opt_out,0.8,hybrid_llm
+391,"hello, i'm not interested in these texts, remove me...",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/7acb2b,dev,,not_opt_out,1.0,opt_out,0.9,hybrid_llm
+392,"слушайте, ага плиз",not_opt_out,wrong_number_or_other,ru,False,not_opt_out/wrong_number_or_other/ru/39deb5,dev,,not_opt_out,1.0,not_opt_out,0.6,hybrid_llm
+393,"hi, lmao!",not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/0f18fd,dev,,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
+394,"hello, I don't want to receive messages from you anymore",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/700cbd,dev,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+395,OK SO DOES THE BROOKLYN STORE HAVE THESE IN STOCK?,not_opt_out,question,en,False,not_opt_out/question/en/4b9726,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+396,OK SO GET EM OFF THIS LIST!!,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/523fbe,test,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+397,ok so Piss off with the texts :),opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/672c33,dev,,not_opt_out,1.0,opt_out,0.85,hybrid_llm
+398,кто это?,not_opt_out,question,ru,False,ambiguous/ambiguous/ru/239da6,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+399,END ALL.,opt_out,keyword,en,True,opt_out/keyword/en/da2b91,dev,,opt_out,1.0,opt_out,0.99,keyword
+400,"listen, is the end-of-season sale on this weekend?",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/327d75,test,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+401,ok so does the code end on sunday?,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/fe38a3,test,not_opt_out,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+402,"Ok so this is getting annoying, enough.",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/12a5af,dev,,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
+403,Can i pick up in store today?,not_opt_out,question,en,False,not_opt_out/question/en/9fef3d,test,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+404,how many points do i have?,not_opt_out,question,en,False,not_opt_out/question/en/6ec79c,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+405,Когда будет доставак?,not_opt_out,question,ru,False,not_opt_out/question/ru/416fe7,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+406,STOP TEXTS...,opt_out,keyword,en,True,opt_out/keyword/en/e5e0ce,test,,opt_out,1.0,opt_out,0.99,keyword
+407,"Ok so i'm not interested in these texts, remove me",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/7acb2b,dev,,not_opt_out,1.0,opt_out,0.92,hybrid_llm
+408,"Listen, thakns for the reminder",not_opt_out,positive,en,False,not_opt_out/positive/en/cfb781,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+409,SURE LOL.,not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/13be59,dev,,not_opt_out,1.0,ambiguous,0.5,hybrid_llm
+410,"hi, Are you kidding me with these texts!!",ambiguous,frustrated,en,False,ambiguous/frustrated/en/8c2653,dev,,not_opt_out,1.0,ambiguous,0.7,hybrid_llm
+411,Quizás más tarde!!,not_opt_out,deferral,es,False,ambiguous/ambiguous/es/ea4d01,dev,,not_opt_out,1.0,not_opt_out,0.7,hybrid_llm
+412,hey Yes!!,not_opt_out,positive,en,False,not_opt_out/positive/en/91e820,dev,,not_opt_out,1.0,not_opt_out,0.93,hybrid_llm
+413,"oye, Ya es el colmo con sus mensajes!!",ambiguous,frustrated,es,False,ambiguous/frustrated/es/bddc9b,dev,,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
+414,hey too many messages lately :),ambiguous,ambiguous,en,False,ambiguous/ambiguous/en/fa5aa6,test,,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
+415,ok so please take me out of your system!,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/b5d226,dev,,not_opt_out,1.0,opt_out,0.96,hybrid_llm
+416,Can I get my receipt by email?,not_opt_out,question,en,False,not_opt_out/question/en/977f4b,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+417,"слушайте, Какого черта вы мне пишете?",ambiguous,frustrated,ru,False,ambiguous/frustrated/ru/072fe3,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+418,"I've had enough of these texts, delete my number",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/a6271a,dev,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+419,hey 😂!!,not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/984de8,dev,,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
+420,"Hi, is there free shipping over $50?",not_opt_out,question,en,False,not_opt_out/question/en/fb6c20,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+421,"mira, sí, por favor",not_opt_out,positive,es,False,not_opt_out/positive/es/6f23b3,dev,,not_opt_out,1.0,not_opt_out,0.9,hybrid_llm
+422,CANCEL MY ORDER AND REFUND ME,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/78fd35,test,,opt_out,1.0,not_opt_out,0.95,hybrid_llm
+423,Hey delete my number from your system :),opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/3a6978,dev,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+424,"listen, delete my number from your system.",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/3a6978,dev,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+425,"hi, 👍🙂...",not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/3bae1c,dev,,not_opt_out,1.0,not_opt_out,0.93,hybrid_llm
+426,Stop all.,opt_out,keyword,en,True,opt_out/keyword/en/0ece7e,test,opt_out,opt_out,1.0,opt_out,0.99,keyword
+427,"hi, okay :)",not_opt_out,wrong_number_or_other,en,False,not_opt_out/wrong_number_or_other/en/df8fed,dev,,not_opt_out,1.0,not_opt_out,0.95,hybrid_llm
+428,get lost already with your promos :),opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/ba603b,dev,,not_opt_out,1.0,ambiguous,0.6,hybrid_llm
+429,"listen, I want out of this list!!",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/bd5c1f,dev,,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+430,END ALL...,opt_out,keyword,en,True,opt_out/keyword/en/da2b91,dev,,opt_out,1.0,opt_out,0.99,keyword
+431,"HELLO, ENOUGH WITH THE SPAM ALREADY, SERIOUSLY!",ambiguous,frustrated,en,False,ambiguous/frustrated/en/cf04e9,dev,,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
+432,"oye, no quiero recibir más mensajes!!",opt_out,soft_refusal,es,False,opt_out/soft_refusal/es/7224bb,dev,,not_opt_out,1.0,opt_out,0.95,hybrid_llm
+433,"Listen, stop it with the 50% off banners, i'm obsessed pls",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/9539f3,dev,,opt_out,1.0,not_opt_out,0.9,hybrid_llm
+434,ok so How do I cancel my order #1234?,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/563026,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+435,Please take my number off your list :),opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/91d3f7,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+436,"Listen, please don't end the rewards program, i love it.",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/efdd7c,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+437,"HELLO, I'M NOT INTERESTED IN THESE TEXTS, REOMVE ME!",opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/7acb2b,dev,,not_opt_out,1.0,opt_out,0.93,hybrid_llm
+438,sure 😍,not_opt_out,positive,en,False,not_opt_out/positive/en/787361,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+439,"hello, Do you accept Apple Pay?",not_opt_out,question,en,False,not_opt_out/question/en/2327b4,dev,,not_opt_out,1.0,not_opt_out,0.98,hybrid_llm
+440,"GOT IT, THANKS 🔥",not_opt_out,positive,en,False,not_opt_out/positive/en/cff12b,dev,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+441,opt-out.,opt_out,keyword,en,True,opt_out/keyword/en/480e7f,test,opt_out,opt_out,1.0,opt_out,0.99,keyword
+442,what tiem do you close?,not_opt_out,question,en,False,not_opt_out/question/en/5f3a8c,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+443,ok so get me off this list!!,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/523fbe,test,opt_out,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+444,hey can i return an online order in store? pls,not_opt_out,question,en,False,not_opt_out/question/en/0997e1,test,not_opt_out,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+445,Hey remove my number from your list please thx,opt_out,soft_refusal,en,False,opt_out/soft_refusal/en/86bd26,dev,,not_opt_out,1.0,opt_out,0.97,hybrid_llm
+446,Reply stop.,opt_out,keyword,en,True,opt_out/keyword/en/0e4e63,dev,,opt_out,1.0,opt_out,0.99,keyword
+447,How do i cancel a backorder?,not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/b0a35d,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+448,"hello, Please don't stop the sale emails, I love them!",not_opt_out,keyword_trap,en,True,not_opt_out/keyword_trap/en/390d15,dev,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
+449,"эй, код на 20% еще действует?",not_opt_out,question,ru,False,not_opt_out/question/ru/4cb2c5,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
+450,Maybe,not_opt_out,deferral,en,False,ambiguous/ambiguous/en/80ba31,test,not_opt_out,not_opt_out,1.0,ambiguous,0.7,hybrid_llm

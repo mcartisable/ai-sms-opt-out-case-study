@@ -3,6 +3,9 @@
 
 Standard library only. Seeded, so re-running produces identical output.
 Writes replies.csv next to this script and prints a count table.
+
+NOTE: labels in the committed replies.csv were revised after hand-labeling (see
+LABELING_POLICY.md). Rerunning this script overwrites that revision.
 """
 
 import csv

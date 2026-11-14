@@ -1,0 +1,296 @@
+{
+  "meta": {
+    "provider": "anthropic",
+    "model": "claude-haiku-5-5",
+    "split": "test",
+    "n_rows": 175,
+    "mock_not_real_results": false,
+    "parse_failures": 0
+  },
+  "keyword": {
+    "overall": {
+      "precision": 0.55,
+      "recall": 0.3055555555555556,
+      "f1": 0.39285714285714285,
+      "tp": 22,
+      "fp": 18,
+      "fn": 50,
+      "n": 175
+    },
+    "headline_recall_non_keyword_opt_out": {
+      "recall": 0.0,
+      "n": 50
+    },
+    "false_positive_rate_keyword_trap": {
+      "fpr": 1.0,
+      "n": 18
+    },
+    "recall_by_category": {
+      "keyword": 1.0,
+      "soft_refusal": 0.0
+    },
+    "by_language": {
+      "en": {
+        "precision": 0.55,
+        "recall": 0.3492063492063492,
+        "f1": 0.4271844660194175,
+        "tp": 22,
+        "fp": 18,
+        "fn": 41,
+        "n": 151
+      },
+      "es": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 4,
+        "n": 10
+      },
+      "ru": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "tp": 0,
+        "fp": 0,
+        "fn": 5,
+        "n": 14
+      }
+    },
+    "confusion_matrix": {
+      "opt_out": {
+        "opt_out": 22,
+        "not_opt_out": 50,
+        "ambiguous": 0
+      },
+      "not_opt_out": {
+        "opt_out": 18,
+        "not_opt_out": 72,
+        "ambiguous": 0
+      },
+      "ambiguous": {
+        "opt_out": 0,
+        "not_opt_out": 13,
+        "ambiguous": 0
+      }
+    },
+    "route_counts": {
+      "auto_opt_out": 40,
+      "send_confirmation": 0,
+      "human_review": 0,
+      "no_action": 135
+    },
+    "route_by_true_label": {
+      "opt_out": {
+        "auto_opt_out": 22,
+        "send_confirmation": 0,
+        "human_review": 0,
+        "no_action": 50
+      },
+      "not_opt_out": {
+        "auto_opt_out": 18,
+        "send_confirmation": 0,
+        "human_review": 0,
+        "no_action": 72
+      },
+      "ambiguous": {
+        "auto_opt_out": 0,
+        "send_confirmation": 0,
+        "human_review": 0,
+        "no_action": 13
+      }
+    }
+  },
+  "hybrid": {
+    "overall": {
+      "precision": 1.0,
+      "recall": 0.8888888888888888,
+      "f1": 0.9411764705882353,
+      "tp": 64,
+      "fp": 0,
+      "fn": 8,
+      "n": 175
+    },
+    "headline_recall_non_keyword_opt_out": {
+      "recall": 0.84,
+      "n": 50
+    },
+    "false_positive_rate_keyword_trap": {
+      "fpr": 0.0,
+      "n": 18
+    },
+    "recall_by_category": {
+      "keyword": 1.0,
+      "soft_refusal": 0.84
+    },
+    "by_language": {
+      "en": {
+        "precision": 1.0,
+        "recall": 0.873015873015873,
+        "f1": 0.9322033898305084,
+        "tp": 55,
+        "fp": 0,
+        "fn": 8,
+        "n": 151
+      },
+      "es": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 4,
+        "fp": 0,
+        "fn": 0,
+        "n": 10
+      },
+      "ru": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "tp": 5,
+        "fp": 0,
+        "fn": 0,
+        "n": 14
+      }
+    },
+    "confusion_matrix": {
+      "opt_out": {
+        "opt_out": 64,
+        "not_opt_out": 0,
+        "ambiguous": 8
+      },
+      "not_opt_out": {
+        "opt_out": 0,
+        "not_opt_out": 78,
+        "ambiguous": 12
+      },
+      "ambiguous": {
+        "opt_out": 0,
+        "not_opt_out": 2,
+        "ambiguous": 11
+      }
+    },
+    "route_counts": {
+      "auto_opt_out": 55,
+      "send_confirmation": 9,
+      "human_review": 31,
+      "no_action": 80
+    },
+    "route_by_true_label": {
+      "opt_out": {
+        "auto_opt_out": 55,
+        "send_confirmation": 9,
+        "human_review": 8,
+        "no_action": 0
+      },
+      "not_opt_out": {
+        "auto_opt_out": 0,
+        "send_confirmation": 0,
+        "human_review": 12,
+        "no_action": 78
+      },
+      "ambiguous": {
+        "auto_opt_out": 0,
+        "send_confirmation": 0,
+        "human_review": 11,
+        "no_action": 2
+      }
+    }
+  },
+  "threshold_sweep_hybrid": [
+    {
+      "auto_threshold": 0.5,
+      "recall": 0.8888888888888888,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.6,
+      "recall": 0.8888888888888888,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.7,
+      "recall": 0.8888888888888888,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.8,
+      "recall": 0.8472222222222222,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.85,
+      "recall": 0.8055555555555556,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.9,
+      "recall": 0.7638888888888888,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.95,
+      "recall": 0.6805555555555556,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.99,
+      "recall": 0.3055555555555556,
+      "false_opt_out_rate": 0.0
+    }
+  ],
+  "threshold_sweep_keyword": [
+    {
+      "auto_threshold": 0.5,
+      "recall": 0.3055555555555556,
+      "false_opt_out_rate": 0.17475728155339806
+    },
+    {
+      "auto_threshold": 0.6,
+      "recall": 0.3055555555555556,
+      "false_opt_out_rate": 0.17475728155339806
+    },
+    {
+      "auto_threshold": 0.7,
+      "recall": 0.3055555555555556,
+      "false_opt_out_rate": 0.17475728155339806
+    },
+    {
+      "auto_threshold": 0.8,
+      "recall": 0.3055555555555556,
+      "false_opt_out_rate": 0.17475728155339806
+    },
+    {
+      "auto_threshold": 0.85,
+      "recall": 0.3055555555555556,
+      "false_opt_out_rate": 0.17475728155339806
+    },
+    {
+      "auto_threshold": 0.9,
+      "recall": 0.3055555555555556,
+      "false_opt_out_rate": 0.17475728155339806
+    },
+    {
+      "auto_threshold": 0.95,
+      "recall": 0.3055555555555556,
+      "false_opt_out_rate": 0.17475728155339806
+    },
+    {
+      "auto_threshold": 0.99,
+      "recall": 0.3055555555555556,
+      "false_opt_out_rate": 0.17475728155339806
+    }
+  ],
+  "token_usage": {
+    "new_calls": 0,
+    "cache_hits": 153,
+    "this_run_in_out": [
+      0,
+      0
+    ],
+    "all_used_in_out": [
+      56762,
+      8507
+    ]
+  }
+}

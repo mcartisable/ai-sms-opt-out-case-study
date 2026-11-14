@@ -65,3 +65,39 @@ I had labeled angry replies like "Who the heck keeps texting me?" as opt-outs. T
 
 ### Synthetic data and its limits
 All 450 messages were generated from templates, and the labels came from the same generator. That is cheap and controllable, but results are an upper bound: real messages are messier, and any bias in the generator is shared with the labels. The next steps (hand-labeling a subset blind, adding harder messages) address this.
+
+## Step 2: checking the answer key
+
+### Ground truth is a policy decision
+- **What it is.** The "right answer" for each message comes from a rule someone chose, not from nature. Where the rule is vague, two careful people disagree.
+- **Why a PM cares.** The labeling rule decides what the product does. Here `ambiguous` sends a message to human review and `not_opt_out` does nothing, so the line between them sets the review queue's workload and the compliance risk.
+- **In this repo.** The generator labeled "Not now", "Maybe later" and "Who is this?" as ambiguous. A human labeled them not_opt_out. We adopted that policy (`data/LABELING_POLICY.md`), and the headline recall on opt-outs with no keyword moved from 92.3% (130 messages) to 88.9% (135 messages) without any change to the model.
+- **One-liner.** "I treat the labeling rule as a product decision, write it down, and report how much the metric moves when it changes."
+
+### Blind labeling and agreement
+- **What it is.** The labeler sees only the message, not the generator's answer. Agreement is the share of messages where both labels match.
+- **Why a PM cares.** If you see the answer first you drift toward it, and the check tells you nothing.
+- **In this repo.** 70 English test messages, stratified by category. Agreement was 59 of 70 (84%). On the 50 clear opt-outs and non-opt-outs it was 50 of 50. All 11 disagreements were in the generator's `ambiguous` bucket.
+- **One-liner.** "Clear cases matched perfectly; the disagreements told me where the definition was loose."
+
+### Cohen's kappa
+- **What it is.** Agreement corrected for chance. Two labelers who both say "not_opt_out" most of the time will agree often even if they aren't paying attention, so raw percent agreement overstates quality.
+- **Why a PM cares.** It is the honest number to quote for label quality, and it is what we will use again for the judge model in step 6.
+- **In this repo.** Kappa 0.76 on the 70 messages. Rough guide: above 0.6 is substantial, above 0.8 is near-perfect.
+- **One-liner.** "Percent agreement says how often we matched; kappa says how much of that wasn't luck."
+
+### Annotator inconsistency
+- **What it is.** The same person labels near-identical items differently.
+- **Why a PM cares.** If the labeler can't be consistent, the category itself is fuzzy, and a model can't be blamed for it.
+- **In this repo.** "HELLO, MAYBE LATER..." got `not_opt_out`, while "hello, maybe later." got `ambiguous`. We kept the human labels, flagged the three rows, and noted the question in the policy file.
+- **One-liner.** "I check whether people agree with themselves before checking whether the model agrees with them."
+
+### Stratified sampling
+- **What it is.** Choosing a fixed number of examples from each category, not picking at random.
+- **Why a PM cares.** A random 70 would be mostly easy questions and thanks, with few of the hard cases that decide the product.
+- **In this repo.** 18 soft refusals, 12 ambiguous, 8 keyword traps and 8 frustrated replies, plus easy controls.
+- **One-liner.** "I sample the hard categories on purpose, because that's where the risk is."
+
+### A label change can expose a model weakness
+- **What it is.** Fixing the answer key can turn a "model looks fine" into a "model has a gap".
+- **In this repo.** Once "I never signed up for this garbage" counted as an opt-out, the model's 0.6-confidence "ambiguous" became a miss (0 of 5 caught). That is now a concrete target for the prompt in step 5.

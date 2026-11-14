@@ -23,21 +23,24 @@ The false-negative cost (a customer who wanted out stays subscribed) is much hig
 
 ## Results
 
-Offline evaluation on 450 synthetic replies (English, Russian, Spanish), including keyword traps like "cancel my order" and "don't stop the sales". Model: `claude-haiku-5-5`, 0 parse failures. Full output in [prototype/results/metrics.md](prototype/results/metrics.md).
+Offline evaluation on 450 synthetic replies (English, Russian, Spanish), including keyword traps like "cancel my order" and "don't stop the sales". Model: `claude-haiku-5-5`, 0 parse failures. Labels follow [data/LABELING_POLICY.md](data/LABELING_POLICY.md), which was revised after a blind hand-labeling check of 70 messages. Full output in [prototype/results/metrics.md](prototype/results/metrics.md).
 
-| Method | Recall on opt-outs with no keyword (n=130) | False opt-out on keyword traps (n=45) | Overall opt-out precision / recall |
+| Method | Recall on opt-outs with no keyword (n=135) | False opt-out on keyword traps (n=45) | Overall opt-out precision / recall |
 |---|---|---|---|
-| Keyword rules (baseline) | 0% | 100% | 0.56 / 0.31 |
-| Keyword + LLM (hybrid) | 92% | 2% | 0.99 / 0.95 |
+| Keyword rules (baseline) | 0% | 100% | 0.56 / 0.30 |
+| Keyword + LLM (hybrid) | 89% | 2% | 0.99 / 0.92 |
+
+The data is split by phrase family into a dev set (275 rows) and a held-out test set (175 rows). Recall on opt-outs with no keyword is 92% on dev (78 of 85) and 84% on test (42 of 50, 95% interval 71% to 92%). The test number is the one to quote. Output for each split is in `prototype/results/dev` and `prototype/results/test`.
 
 What the routing did with the hybrid's decisions:
-- All 190 true opt-outs ended up auto-opted-out (149), sent a confirmation (31), or sent to human review (10). None were ignored.
+- All 195 true opt-outs ended up auto-opted-out (149), sent a confirmation (31), or sent to human review (15). None were ignored.
 - At the 0.90 auto threshold, 0 non-opt-outs and 0 ambiguous replies were opted out automatically. The single false positive ("Quit it with the flash sales lol") scored 0.75, so it only triggered a confirmation SMS.
-- The 10 missed soft refusals were borderline phrasings ("I'm done with these texts", "get lost already with your promos") scored ambiguous at 0.6 to 0.7.
-- Raising the auto threshold trades recall for safety: auto-handled opt-outs fall from 78% at 0.90 to 66% at 0.95, with the rest going to confirmation or review.
-- Cost: about 146k input and 24k output tokens for all 450 messages.
+- The 15 opt-outs sent to review include 10 borderline refusals ("I'm done with these texts", "get lost already with your promos") and all 5 "I never signed up for this garbage" replies, which the model scores as ambiguous at 0.6. That is the first target for prompt version 2.
+- Raising the auto threshold trades recall for safety: auto-handled opt-outs fall from 76% at 0.90 to 65% at 0.95, with the rest going to confirmation or review.
+- A cost to watch: 25 of the 213 true non-opt-outs, mostly deferrals like "Not now", go to human review, because the model calls them ambiguous and the labeling policy says they need no action. That is wasted review work.
+- Token cost: about 146k input and 24k output tokens for all 450 messages.
 
-Caveats. The dataset is generated from templates with typos and prefixes, so many rows are close variants of each other, and real inbound SMS is messier. Treat these numbers as an upper bound that shows the approach works, and as the harness for measuring real data in a shadow-mode rollout ([docs/06-rollout-plan.md](docs/06-rollout-plan.md)). The keyword baseline's 0% is true by construction, because the soft-refusal rows contain no keyword.
+Caveats. The dataset is generated from templates with typos and prefixes, so many rows are close variants of each other, and real inbound SMS is messier. Treat these numbers as an upper bound that shows the approach works, and as the harness for measuring real data in a shadow-mode rollout ([docs/06-rollout-plan.md](docs/06-rollout-plan.md)). The keyword baseline's 0% is true by construction, because the soft-refusal rows contain no keyword. The labels came from the same generator as the messages. A blind human pass on 70 messages agreed on 84% (Cohen's kappa 0.76), and all disagreements were in the generator's `ambiguous` bucket.
 
 ## Repo structure
 
@@ -62,4 +65,5 @@ Responses are cached in `prototype/results/`, so reruns are free. Delete the cac
 
 - **Test the harness before trusting the model.** My first real run scored 35% recall because I capped the model's output length too low and a quarter of the answers were cut off. The number looked like a model weakness and was a bug.
 - **Check the labels.** I first labeled angry replies like "Who the heck keeps texting me?" as opt-outs. The model called them ambiguous, and on reflection it was right. Relabeling them changed the headline metric more than any model change would have.
+- **Labels are policy.** I labeled 70 messages blind and compared them with the generator's labels. They matched on every clear opt-out and non-opt-out, and disagreed on "Not now", "Maybe later", "Who is this?" and "I never signed up". Adopting my labels moved the headline recall from 92% to 89% without touching the model, and exposed a real gap in the prompt.
 - **The routing matters more than the classifier.** The model's borderline calls are mostly handled by confirmation and review tiers, which is what keeps false opt-outs at zero at the auto threshold.
