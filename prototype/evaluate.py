@@ -204,7 +204,10 @@ def main() -> None:
     ap.add_argument("--model", default=C.DEFAULT_MODEL)
     ap.add_argument("--limit", type=int)
     ap.add_argument("--sample-per-category", type=int)
-    ap.add_argument("--out", default="prototype/results")
+    ap.add_argument("--out", default=None,
+                    help="output dir (default prototype/results, or prototype/results/<split> for dev/test)")
+    ap.add_argument("--split", choices=["all", "dev", "test"], default="all",
+                    help="evaluate one split of data/replies.csv (split by template family)")
     ap.add_argument("--data", default="data/replies.csv")
     a = ap.parse_args()
 
@@ -213,6 +216,8 @@ def main() -> None:
         return q if q.is_absolute() else ROOT / q
 
     df = pd.read_csv(rp(a.data))
+    if a.split != "all":
+        df = df[df["split"] == a.split]
     if a.sample_per_category:
         df = pd.concat([g.sample(min(len(g), a.sample_per_category), random_state=0)
                         for _, g in df.groupby("category")]).sort_values("id")
@@ -223,9 +228,12 @@ def main() -> None:
     mock = a.provider == "mock"
     pre = "mock_" if mock else ""
     model = "mock" if mock else a.model
-    out = rp(a.out)
+    default_out = "prototype/results" + ("" if a.split == "all" else "/" + a.split)
+    out = rp(a.out or default_out)
     out.mkdir(parents=True, exist_ok=True)
-    client = CachingClient(C.make_client(a.provider), out / ("%scache_%s.json" % (pre, model.replace("/", "_"))))
+    # The response cache is shared across splits and lives in prototype/results.
+    cache_dir = rp("prototype/results")
+    client = CachingClient(C.make_client(a.provider), cache_dir / ("%scache_%s.json" % (pre, model.replace("/", "_"))))
 
     kw = [C.keyword_classify(t) for t in df.text]
     hy = []
@@ -246,7 +254,7 @@ def main() -> None:
             used_in += e["in"]
             used_out += e["out"]
     m: Dict[str, Any] = {
-        "meta": {"provider": a.provider, "model": model, "n_rows": len(df), "mock_not_real_results": mock,
+        "meta": {"provider": a.provider, "model": model, "split": a.split, "n_rows": len(df), "mock_not_real_results": mock,
                  "parse_failures": int((df.hybrid_source == "llm_parse_failure").sum())},
         "keyword": evaluate_method(df, "keyword"),
         "hybrid": evaluate_method(df, "hybrid"),

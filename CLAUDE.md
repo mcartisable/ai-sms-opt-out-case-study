@@ -23,13 +23,14 @@ python3 prototype/evaluate.py --provider anthropic --sample-per-category 10   # 
 python3 prototype/evaluate.py --provider anthropic                 # full 450 rows
 ```
 
-Other flags: `--model` (default `claude-haiku-5-5`, or env `OPTOUT_MODEL`; the ID is unverified against the API), `--limit N`, `--out DIR` (default `prototype/results`), `--data PATH`.
+`--split dev|test` evaluates one split. Splits are by template family (rows are near-duplicate variants of one base phrase), about 60% dev and 40% test: tune prompts on dev, report on test once. Other flags: `--model` (default `claude-haiku-5-5`, or env `OPTOUT_MODEL`; the ID is unverified against the API), `--limit N`, `--out DIR` (default `prototype/results`), `--data PATH`.
 
 ## Architecture
 
-- `data/replies.csv`: 450 synthetic inbound replies (columns `id,text,label,category,language,has_keyword`). Labels: `opt_out`, `not_opt_out`, `ambiguous`. Categories include `soft_refusal` (opt-outs with no keyword, the headline test set) and `frustrated` (angry replies with no explicit request, labeled `ambiguous`) and `keyword_trap` (contains a keyword but is not an opt-out, e.g. "cancel my order"). Languages: en, ru, es.
+- `data/replies.csv`: 450 synthetic inbound replies (columns `id,text,label,category,language,has_keyword,family,split`). Labels: `opt_out`, `not_opt_out`, `ambiguous`. Categories include `soft_refusal` (opt-outs with no keyword, the headline test set) and `frustrated` (angry replies with no explicit request, labeled `ambiguous`) and `keyword_trap` (contains a keyword but is not an opt-out, e.g. "cancel my order"). Languages: en, ru, es.
 - `prototype/classifier.py`: keyword baseline, `llm_classify` (Anthropic Messages API, JSON output, SMS wrapped in `<sms>` tags and treated as untrusted data), `hybrid_classify` (keyword hits of 3 words or fewer are final, everything else goes to the LLM), `route()` (confidence thresholds 0.90/0.60 to `auto_opt_out` / `send_confirmation` / `human_review` / `no_action`), and `MockLLM` (offline heuristic stand-in).
 - `prototype/evaluate.py`: runs keyword vs hybrid over the dataset, computes metrics, writes `metrics.json`, `metrics.md`, `threshold_sweep.png`, `recall_by_category.png`, `predictions.csv`, and `cache_<model>.json`.
+- `docs/concepts.md`: running glossary of the ideas behind the project, appended as each build step is done. Add an entry whenever a new concept is introduced.
 - `docs/01..07-*.md`: the PM case study (problem, discovery, PRD, risk/compliance, metrics, rollout, decision log). They must stay consistent with each other and with the code: thresholds 0.90/0.60, the 72h confirmation window and the illustrative cost figures appear across `03-prd.md`, `04-risk-and-compliance.md`, `05-metrics.md`, `06-rollout-plan.md` and `classifier.py`. Change them together.
 
 ## Things to know

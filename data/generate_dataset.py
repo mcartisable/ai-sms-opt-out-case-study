@@ -6,6 +6,7 @@ Writes replies.csv next to this script and prints a count table.
 """
 
 import csv
+import hashlib
 import os
 import random
 import re
@@ -13,7 +14,8 @@ from collections import Counter
 
 SEED = 20261112
 OUT_NAME = "replies.csv"
-COLUMNS = ["id", "text", "label", "category", "language", "has_keyword"]
+COLUMNS = ["id", "text", "label", "category", "language", "has_keyword", "family", "split"]
+TEST_SHARE = 0.4  # share of template families held out as the test split
 
 # Opt-out keywords used for the has_keyword flag (whole-word, case-insensitive).
 KEYWORD_RE = re.compile(
@@ -423,7 +425,8 @@ def generate(rng, seen, sp):
         if tries > limit:
             raise RuntimeError(
                 f"could not fill {sp['label']}/{sp['category']}/{sp['lang']}")
-        text = vary(rng.choice(sp["bases"]), sp, rng)
+        base = rng.choice(sp["bases"])
+        text = vary(base, sp, rng)
         if text in seen:
             continue
         if has_keyword(text) != sp["expect_kw"]:
@@ -437,8 +440,28 @@ def generate(rng, seen, sp):
             "category": sp["category"],
             "language": sp["lang"],
             "has_keyword": has_keyword(text),
+            # family = the base phrase the row was varied from; all variants
+            # of one phrase are near-duplicates, so they must share a split.
+            "family": "%s/%s/%s/%s" % (sp["label"], sp["category"], sp["lang"],
+                                       hashlib.md5(base.encode("utf-8")).hexdigest()[:6]),
         })
     return rows
+
+
+def assign_splits(rows):
+    """Hold out whole template families: within each label/category/language
+    group, the families with the smallest hash go to test (about 40%, at
+    least one when the group has two or more families)."""
+    groups = {}
+    for r in rows:
+        groups.setdefault(r["family"].rsplit("/", 1)[0], set()).add(r["family"])
+    test = set()
+    for fams in groups.values():
+        ordered = sorted(fams, key=lambda f: hashlib.md5(f.encode()).hexdigest())
+        n_test = max(1, round(TEST_SHARE * len(ordered))) if len(ordered) >= 2 else 0
+        test.update(ordered[:n_test])
+    for r in rows:
+        r["split"] = "test" if r["family"] in test else "dev"
 
 
 def verify(rows):
@@ -499,6 +522,7 @@ def main():
     for i, r in enumerate(rows, start=1):
         r["id"] = i
 
+    assign_splits(rows)
     verify(rows)
 
     out_dir = os.path.dirname(os.path.abspath(__file__))
