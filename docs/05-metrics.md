@@ -26,8 +26,8 @@ Baseline for non-keyword requests is close to 0% because only keywords work. Tar
 | Complaint rate | Spam reports and complaints per 1,000 messages, per brand | No increase over the pre-launch baseline |
 | Carrier filtering rate | Share of messages filtered or blocked | No increase over baseline |
 | Reversal rate | Restores by a brand admin, over classifier opt-outs | Under 3% |
-| Latency | Time from reply received to decision | p95 under 5 seconds for the classifier call |
-| Cost per message | Model cost per classified reply | Under $0.002 |
+| Latency | Time from reply received to decision | p95 under 5 seconds for the classifier call. Prototype: p95 about 2.2 s, one request at a time |
+| Cost per message | Model cost per classified reply | Under $0.002. Prototype: about $0.00009 at list price |
 
 A breach of the first four stops phase advancement and can trigger the kill switch described in `06-rollout-plan.md`.
 
@@ -39,9 +39,11 @@ Run before any live traffic, on a hand-labeled set with the taxonomy from `02-di
 - **False opt-out rate** on not-opt-out, keyword-trap and ambiguous classes.
 - **Per-language results.** A language without enough labeled examples (illustrative assumption: fewer than 200) cannot be set to auto opt-out.
 - **Confusion by class**, and calibration of confidence against actual accuracy, because thresholds depend on it.
-- **Injection set.** Replies that try to instruct the model, with the expectation of `unclear` or normal classification.
+- **Injection set.** Replies that try to instruct the model, with the expectation of `ambiguous` or normal classification.
 
 Offline gate: recall at or above 90% and false opt-out rate at or below 2% at the chosen auto threshold, in each language where auto opt-out is enabled.
+
+Prototype status: on a fresh synthetic batch, recall was 88% (interval 73% to 95%) and no harmless message was opted out, so the gate is not yet shown. The synthetic data cannot show it; real replies labeled by two people can.
 
 ## Online evaluation
 

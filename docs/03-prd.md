@@ -43,17 +43,17 @@ Subscribers who asked to leave keep getting messages. Carriers watch complaint r
 
 Inbound replies pass through three tiers.
 
-**Tier 1: keyword rules.** The existing matcher runs first and stays authoritative. A keyword match opts the subscriber out exactly as today. The classifier never sees these messages.
+**Tier 1: keyword rules.** The existing matcher runs first. A reply that is only a keyword (ignoring case, punctuation and filler like "please") opts the subscriber out exactly as today, and the classifier never sees it. A keyword inside a longer sentence ("cancel my order", "quit your job") goes to the classifier. The prototype found that treating any short message with a keyword as final opted out "Cancel my subscription"-style replies without any check; the bare-keyword rule follows the carrier convention that the keyword is the whole message. Whether the production matcher should change is in the open questions.
 
-**Tier 2: LLM classifier.** Non-keyword replies are sent to a classifier that returns one label from a fixed set (`opt_out`, `not_opt_out`, `unclear`) and a confidence score. The prompt includes the reply and, where available, the last outbound message for context. It excludes subscriber profile data.
+**Tier 2: LLM classifier.** Non-keyword replies are sent to a classifier that returns one label from a fixed set (`opt_out`, `not_opt_out`, `ambiguous`) and a confidence score. The prompt includes the reply and, where available, the last outbound message for context. It excludes subscriber profile data.
 
 **Tier 3: routing by confidence.**
 
 | Classifier result | Action |
 |---|---|
 | `opt_out`, confidence at or above the high threshold | Opt out immediately, send the standard opt-out confirmation |
-| `opt_out` between the low and high thresholds, or `unclear` | Send "Reply YES to unsubscribe" and pause marketing sends until a reply or a timeout |
-| Below the low threshold, or edge cases flagged by rules | Add to the brand's human review queue |
+| `opt_out` between the low and high thresholds | Send "Reply YES to unsubscribe" and pause marketing sends until a reply or a timeout |
+| `ambiguous`, `opt_out` below the low threshold, or edge cases flagged by rules | Add to the brand's human review queue |
 | `not_opt_out`, high confidence | No change |
 
 Starting thresholds (illustrative assumption): auto opt-out at 0.90, confirmation between 0.60 and 0.90. Thresholds are tuned on a labeled set before launch and per language afterward. The reasoning for setting them asymmetrically is in `04-risk-and-compliance.md`.
@@ -68,7 +68,7 @@ Starting thresholds (illustrative assumption): auto opt-out at 0.90, confirmatio
 ## Functional requirements
 
 1. Keyword matching runs before the classifier on every inbound reply.
-2. The classifier returns only a label from the fixed set and a numeric confidence. Any other output is treated as `unclear`.
+2. The classifier returns only a label from the fixed set and a numeric confidence. Any other output is treated as `ambiguous` with confidence 0, which routes to review.
 3. Auto opt-out takes effect before the next scheduled send to that subscriber.
 4. The confirmation SMS uses a fixed, brand-editable template with no generated text.
 5. If the subscriber does not answer the confirmation within a set window (illustrative assumption: 72 hours), the request goes to the review queue.
@@ -82,6 +82,37 @@ Starting thresholds (illustrative assumption): auto opt-out at 0.90, confirmatio
 - How do we handle a reply that contains both an opt-out and an order question?
 - What review-queue response time can brands realistically staff for?
 - Do some markets require an opt-out to be honored without a confirmation step at any confidence level?
+- Should the production keyword matcher move to the bare-keyword rule? Legal needs to agree, and the measured frequency of keyword-in-sentence replies would show how many people it affects.
+- Should an account-deletion request ("delete my account and my data") also remove SMS consent? The prototype's policy sends it to review; a blind reader removed the person.
+- A reply that buries the request next to another question ("where's my parcel? And please stop texting me") was the one real model miss on the fresh batch.
+
+## What the prototype measured (synthetic data)
+
+All figures come from the prototype in this repo: prompt v3, `claude-haiku-5-5`, synthetic English, Russian and Spanish replies plus hand-written hard cases. They show the approach works and where it breaks. They are not production numbers. Method and caveats: `docs/09-prompt-iterations.md`, `docs/11-fresh-batch.md`.
+
+| Measure | Result | Source |
+|---|---|---|
+| Recall on non-keyword opt-outs, held-out test split (50) | 100%, but the split was partly read before tuning | `docs/09-prompt-iterations.md` |
+| Opt-outs labeled `opt_out`, fresh batch of 63 never seen before (34 opt-outs) | 88% (95% interval 73% to 95%) | `docs/11-fresh-batch.md` |
+| What routing did with those 34 opt-outs | 26 automatic, 4 confirmation, 4 review, 0 ignored | same |
+| Harmless messages opted out or sent a confirmation (fresh batch, 29) | 0 | same |
+| Cost per classified message | about $0.00009 at list price | `prototype/results/**/metrics.md` |
+| Latency per classification | p50 about 0.9 s, p95 about 2.2 s, one request at a time, no load | same |
+| Prompt-injection attempts (13) | 12 handled as expected, 1 scored ambiguous and went to review | hard and fresh sets |
+
+Against the targets in `docs/05-metrics.md`: cost is about 20 times under the $0.002 guardrail and p95 latency is under the 5 second target. The offline gate (recall of 90% or more and false opt-out rate of 2% or less) is **not yet shown on unseen data**: the fresh-batch recall interval spans 73% to 95%. It needs real replies labeled by two people.
+
+**Policy decisions the evaluation forced** (details in `data/LABELING_POLICY.md`):
+
+| Reply type | Decision |
+|---|---|
+| Blunt refusals ("get lost", "back off", "I'm done with these texts") | Opt out |
+| "I never signed up", "I never agreed" | Opt out |
+| "Cancel my subscription", "Unsubscribe me from the newsletter" | Opt out |
+| Deferrals ("not now", "maybe later"), questions, START or HELP | No action |
+| Wrong number, anger with no request, wanting fewer texts | Human review |
+
+**Model and prompt governance.** The model is pinned by ID and the prompt has a version hash that goes into every audit record. Any change to either re-runs the offline evaluation first (`prototype/run_split.sh`), and the held-out split is scored once per version. The known weak spot is "Enough already" style frustration, which prompt v3 can opt out automatically while two labelers call it ambiguous. Its fix needs a new prompt version and a fresh test.
 
 ## Success metrics
 

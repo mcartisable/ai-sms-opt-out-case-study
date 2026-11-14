@@ -249,3 +249,33 @@ All 450 messages were generated from templates, and the labels came from the sam
 - **In this repo.** 26 automatic, 4 confirmations, 4 to review, 0 ignored.
 - **One-liner.** "I judge the system by what happens to the customer, not only by the label."
 
+## Step 9: putting measured numbers into the PRD
+
+### Cost per decision
+- **What it is.** What one model call costs, from input and output tokens at the provider's list price.
+- **Why a PM cares.** It decides whether the feature fits the unit economics. Here it is about $0.00009 per reply, roughly $9 per 100,000, which is far below the $0.002 guardrail. At this price, cost is not the constraint; review workload and error cost are.
+- **In this repo.** `docs/03-prd.md` (measured table) and `docs/05-metrics.md` (guardrail). Illustrative at list prices; volume discounts and caching are not counted.
+- **One-liner.** "I put the measured cost per decision next to the budget I set, instead of guessing."
+
+### Latency budget
+- **What it is.** The longest wait a flow can tolerate, set before measuring.
+- **Why a PM cares.** Opt-out classification runs after the reply arrives, so seconds are fine. The budget (p95 under 5 s) was met with margin (about 2.2 s), measured one request at a time without load, so load testing is still needed.
+- **One-liner.** "I set the budget first, then checked the measurement against it."
+
+### Model and prompt governance
+- **What it is.** Rules for changing the model or prompt: pin the model ID, version the prompt, re-run the evaluation first, and log the version with every decision.
+- **Why a PM cares.** A silent change in behavior is a compliance problem. The audit log needs to show which prompt made each decision.
+- **In this repo.** `VERSIONS` in `classifier.py`, the prompt hash in each `metrics.json`, and decision #13 in `docs/07-decision-log.md`.
+- **One-liner.** "Every automated decision records the model and prompt version that made it."
+
+### Keeping the PRD and the code consistent
+- **What it is.** The spec and the build drift apart unless someone checks.
+- **Why a PM cares.** The PRD said ambiguous replies get a confirmation text, and the code sent them to review. A reader of the case study would have caught that.
+- **In this repo.** Fixed in this step: label names, routing table and the keyword rule now match `classifier.py`.
+- **One-liner.** "After each build step I re-read the spec against the code."
+
+### What the evidence does not show
+- **What it is.** Saying plainly which gate has not been met.
+- **In this repo.** The 90% recall gate is not shown on unseen data (88%, interval 73% to 95%). The PRD says so.
+- **One-liner.** "I'd rather say 'not yet shown' than round up."
+
