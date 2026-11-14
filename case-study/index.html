@@ -103,7 +103,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
     <div class="eyebrow">Product case study · AI feature</div>
     <h1>When “I don’t want your texts anymore” doesn’t say STOP</h1>
     <p class="lede">At Maestra.io, a Klaviyo/Attentive-style marketing platform, SMS opt-out only worked on keywords. I designed and prototyped an LLM layer that catches natural-language refusals, with guardrails so it never acts alone on a shaky guess.</p>
-    <div class="meta"><span>Role: Product Manager</span><span>Prototype: Python + Claude Haiku</span><span>Data: 450 synthetic SMS replies</span></div>
+    <div class="meta"><span>Role: Product Manager</span><span>Prototype: Python + Claude Haiku</span><span>Data: 450 synthetic replies + 104 hard cases</span></div>
   </header>
 
   <section>
@@ -132,7 +132,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
     <p>Keyword rules still run first because they are fast and exact. Everything else goes to a small, cheap model that returns a label and a confidence. The model never opts anyone out by itself. Its confidence decides what happens next.</p>
     <div class="flow">
       <div class="step"><b>1. Inbound reply</b><span>Any SMS reply from a subscriber</span></div>
-      <div class="step"><b>2. Keyword rules</b><span>Short STOP-style replies are final</span></div>
+      <div class="step"><b>2. Keyword rules</b><span>A bare STOP-style reply is final</span></div>
       <div class="step model"><b>3. LLM classifier</b><span>opt_out, not_opt_out or ambiguous, plus confidence</span></div>
       <div class="step"><b>4. Routing</b><span>Thresholds pick the action</span></div>
     </div>
@@ -186,7 +186,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
         </tbody>
       </table>
     </div>
-    <p style="margin-top:14px">At the 0.90 threshold no non-opt-out reply was opted out automatically. The only false positive, “Quit it with the flash sales lol”, scored 0.75, so it triggered a confirmation message instead. The 15 human-review cases were borderline wording like “I’m done with these texts”, plus every “I never signed up for this garbage” reply, which the model scores as ambiguous. That is the first thing to fix in the next prompt version. The cost on the other side: 25 of 213 non-opt-outs, mostly deferrals like “Not now”, also go to review, which is wasted work for the queue.</p>
+    <p style="margin-top:14px">At the 0.90 threshold no non-opt-out reply was opted out automatically. The only false positive, “Quit it with the flash sales lol”, scored 0.75, so it triggered a confirmation message instead. The 15 human-review cases were borderline wording like “I’m done with these texts”, plus every “I never signed up for this garbage” reply, which the model scores as ambiguous. The next section covers the fix. The cost on the other side: 25 of 213 non-opt-outs, mostly deferrals like “Not now”, also go to review, which is wasted work for the queue. All figures in this section are from prompt version 1.</p>
 
     <h3 style="margin-top:20px">Choosing the automatic threshold</h3>
     <div class="chart">
@@ -217,6 +217,32 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
       </svg>
     </div>
     <p style="margin-top:12px">Share of true opt-outs handled automatically. The rest go to confirmation or review, so nobody is dropped. False opt-outs are 0.4% at thresholds up to 0.70 and 0% from 0.80 up. I set 0.90 in the design before running the test. The results support it: it sits well above the 0.70 level where the first false opt-out appears, and the cost is that about one in four opt-outs gets a confirmation text or a review first.</p>
+  </section>
+
+  <section>
+    <h2>Reading the failures and fixing them</h2>
+    <p>I read all 52 misses from version 1, wrote one sentence on each, and grouped them into causes. Most were not “the model is weak”:</p>
+    <ul class="plain">
+      <li><b>The prompt told the model to hedge.</b> A rule calling vague dissatisfaction “ambiguous” pulled slang refusals like “get lost already” and “I’m done with these texts” down to 0.6, so they went to a person.</li>
+      <li><b>The prompt lacked rules my labeling policy already had.</b> Deferrals (“Not now”), “I never signed up” complaints and wrong-number replies had agreed answers that the model was never given. This explained 29 rows.</li>
+      <li><b>A code bug, not a model error.</b> Any message of three words or fewer containing a keyword skipped the model. So “Cancel my subscription” was opted out automatically at 0.99. The carrier convention is that the keyword must be the whole message, and the fix follows it.</li>
+    </ul>
+    <p style="margin-top:12px">I also wrote 104 harder messages (typos like “STPO”, sarcasm, look-alikes like “remove my card”, prompt-injection attempts, requests buried in long messages, threats). Then I rewrote the prompt against the dev split only and scored the held-out test split once. Version 2 was a dead end: one clause I added made the model over-cautious and the hard-set score fell from 58 to 53 correct. Version 3 removed it.</p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Held-out test split</th><th class="num">Prompt v1</th><th class="num">Prompt v3</th></tr></thead>
+        <tbody>
+          <tr><td>Recall on refusals with no keyword (50)</td><td class="num">84%</td><td class="num">100%</td></tr>
+          <tr><td>Real opt-outs sent to human review (of 72)</td><td class="num">8</td><td class="num">0</td></tr>
+          <tr><td>Harmless messages sent to review (of 90)</td><td class="num">12</td><td class="num">3</td></tr>
+          <tr><td>Non-opt-outs opted out or sent a confirmation</td><td class="num">0</td><td class="num">0</td></tr>
+          <tr><td>Hard set: correct labels (of 41)</td><td class="num">36</td><td class="num">39</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:14px">Cost is about $0.00009 per classified message (illustrative at 2026-11 list prices for the small model). Latency is about 1 second at the median and 2 seconds at the 95th percentile, which is fine because nobody is waiting on an opt-out.</p>
+    <div class="callout"><b>Read 100% as a ceiling.</b> I looked at test misses while analyzing version 1, and the consent rule comes from a labeling policy built on a sample from the test split. The data is template-generated, so one rule fixes a whole family. Fifty messages at 100% still allows a true rate near 93%. The fair check is a fresh batch nobody on the project has seen, or real replies in shadow mode.</div>
+    <p style="margin-top:14px">Two open questions remain, flagged for a second labeler and compliance: “Enough already” messages that my labels call ambiguous but read as requests to stop, and whether “Unsubscribe me from the newsletter” or “Delete my account” should remove SMS consent (version 3 opts those out at 0.90 or higher).</p>
   </section>
 
   <section>
