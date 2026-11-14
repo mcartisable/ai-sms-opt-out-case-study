@@ -1,0 +1,254 @@
+{
+ "prompt_sha": "bebadfae",
+ "bare": [
+  [
+   "STOP",
+   true
+  ],
+  [
+   "Stop please",
+   true
+  ],
+  [
+   "stop!",
+   true
+  ],
+  [
+   "Cancel my subscription",
+   false
+  ],
+  [
+   "STOP texting me",
+   false
+  ],
+  [
+   "Cancel my order",
+   false
+  ],
+  [
+   "opt out",
+   true
+  ],
+  [
+   "Quit your job",
+   false
+  ],
+  [
+   "END",
+   true
+  ],
+  [
+   "unsubscribe pls",
+   true
+  ],
+  [
+   "СТОП",
+   true
+  ],
+  [
+   "baja",
+   true
+  ],
+  [
+   "Opt-out",
+   true
+  ],
+  [
+   "Thanks, stop",
+   true
+  ],
+  [
+   "stop stop",
+   false
+  ],
+  [
+   "quit :)",
+   true
+  ],
+  [
+   "Quit...",
+   true
+  ],
+  [
+   "Unsubscribe.",
+   true
+  ],
+  [
+   "cancel",
+   true
+  ]
+ ],
+ "parse": [
+  [
+   "{\"label\": \"opt_out\", \"confidence\": 0.93}",
+   {
+    "label": "opt_out",
+    "confidence": 0.93,
+    "source": "llm"
+   }
+  ],
+  [
+   "Sure! {\"label\": \"ambiguous\", \"confidence\": 0.5} done",
+   {
+    "label": "ambiguous",
+    "confidence": 0.5,
+    "source": "llm"
+   }
+  ],
+  [
+   "{\"label\": \"maybe\", \"confidence\": 1}",
+   {
+    "label": "ambiguous",
+    "confidence": 0.0,
+    "source": "llm_parse_failure"
+   }
+  ],
+  [
+   "not json",
+   {
+    "label": "ambiguous",
+    "confidence": 0.0,
+    "source": "llm_parse_failure"
+   }
+  ],
+  [
+   "{\"label\": \"not_opt_out\", \"confidence\": 7}",
+   {
+    "label": "not_opt_out",
+    "confidence": 1.0,
+    "source": "llm"
+   }
+  ],
+  [
+   "{\"label\": \"opt_out\"}",
+   {
+    "label": "opt_out",
+    "confidence": 0.0,
+    "source": "llm"
+   }
+  ],
+  [
+   "",
+   {
+    "label": "ambiguous",
+    "confidence": 0.0,
+    "source": "llm_parse_failure"
+   }
+  ],
+  [
+   "{\"label\": \"OPT_OUT\", \"confidence\": -2}",
+   {
+    "label": "opt_out",
+    "confidence": 0.0,
+    "source": "llm"
+   }
+  ]
+ ],
+ "route": [
+  [
+   "opt_out",
+   0,
+   "human_review"
+  ],
+  [
+   "opt_out",
+   0.5,
+   "human_review"
+  ],
+  [
+   "opt_out",
+   0.6,
+   "send_confirmation"
+  ],
+  [
+   "opt_out",
+   0.75,
+   "send_confirmation"
+  ],
+  [
+   "opt_out",
+   0.9,
+   "auto_opt_out"
+  ],
+  [
+   "opt_out",
+   0.99,
+   "auto_opt_out"
+  ],
+  [
+   "opt_out",
+   1,
+   "auto_opt_out"
+  ],
+  [
+   "not_opt_out",
+   0,
+   "no_action"
+  ],
+  [
+   "not_opt_out",
+   0.5,
+   "no_action"
+  ],
+  [
+   "not_opt_out",
+   0.6,
+   "no_action"
+  ],
+  [
+   "not_opt_out",
+   0.75,
+   "no_action"
+  ],
+  [
+   "not_opt_out",
+   0.9,
+   "no_action"
+  ],
+  [
+   "not_opt_out",
+   0.99,
+   "no_action"
+  ],
+  [
+   "not_opt_out",
+   1,
+   "no_action"
+  ],
+  [
+   "ambiguous",
+   0,
+   "human_review"
+  ],
+  [
+   "ambiguous",
+   0.5,
+   "human_review"
+  ],
+  [
+   "ambiguous",
+   0.6,
+   "human_review"
+  ],
+  [
+   "ambiguous",
+   0.75,
+   "human_review"
+  ],
+  [
+   "ambiguous",
+   0.9,
+   "human_review"
+  ],
+  [
+   "ambiguous",
+   0.99,
+   "human_review"
+  ],
+  [
+   "ambiguous",
+   1,
+   "human_review"
+  ]
+ ]
+}

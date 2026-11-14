@@ -1,0 +1,14 @@
+{
+  "name": "ai-sms-opt-out-demo",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node --test test/",
+    "dev": "npm run build && wrangler pages dev dist --kv DEMO_KV",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name ai-sms-opt-out-demo"
+  },
+  "devDependencies": {
+    "wrangler": "^4.162.0"
+  }
+}

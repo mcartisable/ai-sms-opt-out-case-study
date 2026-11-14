@@ -1,0 +1,4 @@
+name = "ai-sms-opt-out-demo"
+compatibility_date = "2026-11-01"
+pages_build_output_dir = "dist"
+# The KV binding DEMO_KV and the secret ANTHROPIC_API_KEY are set in the Cloudflare dashboard, see README.md.
