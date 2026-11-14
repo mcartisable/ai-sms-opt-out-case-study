@@ -253,6 +253,9 @@ def main() -> None:
         return q if q.is_absolute() else ROOT / q
 
     df = pd.read_csv(rp(a.data))
+    if "label" in df and df["label"].isna().any():
+        print("skipping %d rows with no final label (disputed)" % int(df["label"].isna().sum()))
+        df = df[df["label"].notna()]
     if a.split != "all":
         df = df[df["split"] == a.split]
     if a.sample_per_category:
