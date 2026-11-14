@@ -1,4 +1,8 @@
 name = "ai-sms-opt-out-demo"
 compatibility_date = "2026-11-01"
 pages_build_output_dir = "dist"
-# The KV binding DEMO_KV and the secret ANTHROPIC_API_KEY are set in the Cloudflare dashboard, see README.md.
+
+# Rate-limit counters. The ANTHROPIC_API_KEY secret is set with `npx wrangler pages secret put`, see README.md.
+[[kv_namespaces]]
+binding = "DEMO_KV"
+id = "51a47a2f0d76476fb2e95dd2ad92251a"
