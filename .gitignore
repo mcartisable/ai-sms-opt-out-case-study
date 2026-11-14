@@ -16,3 +16,4 @@ env/
 prototype/results/cache_*.json
 prototype/results/**/mock_*
 prototype/results/mock_*
+prototype/results/judge/*cache*.json

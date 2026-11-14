@@ -1,0 +1,71 @@
+id,dataset,category,text,label,human_label,judge_label,judge_reason
+7,replies,positive,ok so yes please,not_opt_out,not_opt_out,not_opt_out,The customer is giving an affirmative reply and does not ask to stop receiving messages.
+10,replies,deferral,"hello, maybe later.",ambiguous,ambiguous,not_opt_out,The customer is putting off an offer ('maybe later') and does not ask to stop receiving messages.
+29,replies,keyword,unsubscribe pls.,opt_out,opt_out,opt_out,"The sender explicitly asks to unsubscribe, which is a clear request to stop receiving messages."
+34,replies,question,who is this?,not_opt_out,not_opt_out,not_opt_out,"The person is asking who is texting them, which is a question and not a request to stop receiving messages."
+46,replies,deferral,hey Not interested right now!,not_opt_out,not_opt_out,not_opt_out,The person declines the current offer ('right now') but does not ask to stop receiving messages.
+51,replies,keyword_trap,Can I cancel the gift wrap on order 5521?,not_opt_out,not_opt_out,not_opt_out,"The customer is asking to cancel gift wrap on a specific order, which is an order-related request and not a request to stop receiving messages."
+52,replies,keyword_trap,HEY YOUR END OF SEASON SALE LOOKS AMAZING pls,not_opt_out,not_opt_out,not_opt_out,The customer is enthusiastic about the sale and does not ask to stop receiving messages.
+58,replies,soft_refusal,hey Take my name off your mailing list.,opt_out,opt_out,opt_out,"The customer explicitly asks to be removed from the mailing list, which is a clear request to stop receiving messages."
+80,replies,soft_refusal,"hey too many texts, i'm out.",opt_out,opt_out,opt_out,"The customer complains about too many texts and says 'i'm out', which clearly signals they want to stop receiving messages."
+86,replies,question,Is the student discount still on? thx,not_opt_out,not_opt_out,not_opt_out,"The customer is asking whether a student discount is still available, which is an inquiry and not a request to stop messages."
+91,replies,deferral,Not now thx,not_opt_out,not_opt_out,ambiguous,"""Not now thx"" could mean a temporary decline of the current offer or a wish to stop messages, so intent to opt out is unclear."
+95,replies,soft_refusal,ok so you can take me off your texting list :),opt_out,opt_out,opt_out,"The customer explicitly asks to be taken off the texting list, which is a clear request to stop receiving messages."
+104,replies,soft_refusal,"hello, Too many texts, I'm out...",opt_out,opt_out,opt_out,"The customer complains of too many texts and says ""I'm out,"" which clearly signals they want to stop receiving messages."
+112,replies,deferral,"listen, maybe...",not_opt_out,not_opt_out,not_opt_out,The message is a noncommittal reply with no request to stop receiving messages.
+116,replies,wrong_number_or_other,"Listen, ok cool.",not_opt_out,not_opt_out,not_opt_out,The message is a casual acknowledgment with no request to stop receiving messages.
+120,replies,wrong_number_or_other,ha!,not_opt_out,not_opt_out,not_opt_out,A casual 'ha!' is a reaction and contains no request to stop receiving messages.
+122,replies,positive,"Hello, can't wait for the sale",not_opt_out,not_opt_out,not_opt_out,The customer expresses excitement about the sale and makes no request to stop receiving messages.
+129,replies,frustrated,Who the hell gave you my number :),ambiguous,ambiguous,ambiguous,"The sender is upset and questions how they were contacted, but does not clearly ask to stop receiving messages."
+132,replies,question,ok so Can I pick up in store today? :),not_opt_out,not_opt_out,not_opt_out,"The customer is asking about same-day in-store pickup, which shows interest and contains no request to stop messages."
+135,replies,keyword_trap,hey Your end of season sale looks amazing,not_opt_out,not_opt_out,not_opt_out,The customer is complimenting the sale and does not ask to stop receiving messages.
+142,replies,keyword_trap,DOES THE CODE END ON SUNDAY?,not_opt_out,not_opt_out,not_opt_out,"The customer is asking whether a promo code expires on Sunday, which is a question about the offer and not a request to stop messages."
+143,replies,deferral,maybe another time.,ambiguous,ambiguous,ambiguous,The reply 'maybe another time' declines or defers an offer but does not clearly ask to stop receiving messages.
+147,replies,soft_refusal,"hi, you can take me off your txeting list.",opt_out,opt_out,opt_out,"The customer explicitly asks to be taken off the texting list, despite the typo in 'texting'."
+156,replies,soft_refusal,OK SO REMOVE THIS NUMBER FROM YOUR MARKETING LIST,opt_out,opt_out,opt_out,"The sender explicitly asks for their number to be removed from the marketing list, which is a clear request to stop receiving messages."
+159,replies,keyword,stop messages,opt_out,opt_out,opt_out,The customer directly asks to stop receiving messages.
+160,replies,soft_refusal,"listen, who the heck keeps texting me? back off thx",opt_out,opt_out,opt_out,"The person is annoyed at the repeated texts and says 'back off', which clearly asks the sender to stop messaging them."
+165,replies,soft_refusal,remove this number from your marketing list,opt_out,opt_out,opt_out,"The sender explicitly asks to be removed from the marketing list, which is a clear request to stop receiving messages."
+167,replies,keyword_trap,Don't stop the restock alerts pls,not_opt_out,not_opt_out,not_opt_out,"The customer explicitly asks not to stop the restock alerts, so they want to keep receiving messages."
+172,replies,deferral,Not now pls,not_opt_out,not_opt_out,ambiguous,"""Not now pls"" could mean pausing or declining the current offer, or it could mean they want messages to stop, so intent is unclear."
+189,replies,soft_refusal,"Idiots, I never signed up for this garbage.",opt_out,opt_out,ambiguous,"The person is angry and says they never signed up, which suggests they don't want the messages, but they don't explicitly ask to stop."
+192,replies,frustrated,"this is hraassment, i'm reporting you seriously",ambiguous,ambiguous,ambiguous,"The person complains of harassment and threatens to report, which implies they want the messages to end, but they never explicitly ask to stop."
+197,replies,question,"listen, Which store is open late?",not_opt_out,not_opt_out,not_opt_out,"The customer is asking which store is open late, which is an ordinary question and not a request to stop messages."
+200,replies,soft_refusal,"Listen, no thanks, i'm out, remove my number thx",opt_out,opt_out,opt_out,"The sender explicitly asks to have their number removed and says they're out, clearly requesting to stop messages."
+202,replies,soft_refusal,"Idiots, i never signed pu for this garbage!!",opt_out,opt_out,ambiguous,"The customer is angry and says they never signed up, which implies they don't want the messages, but they don't explicitly ask to stop."
+209,replies,soft_refusal,Remove this number from your marketing list...,opt_out,opt_out,opt_out,"The sender explicitly asks to be removed from the marketing list, which is a clear request to stop receiving messages."
+222,replies,question,Has my refund been processed?,not_opt_out,not_opt_out,not_opt_out,The customer is asking about the status of a refund and does not ask to stop receiving messages.
+223,replies,deferral,"HELLO, MAYBE LATER...",not_opt_out,not_opt_out,ambiguous,"""Maybe later"" signals a deferral and not a clear request to stop messages, so the person's wish to opt out is unclear."
+234,replies,keyword_trap,"hi, Can I cancel and reorder in a different size? :)",not_opt_out,not_opt_out,not_opt_out,"The customer is asking to cancel and reorder in a different size, which is an order change request and not a request to stop receiving messages."
+245,replies,question,who is this? pls,not_opt_out,not_opt_out,not_opt_out,The sender is asking who is texting and does not request to stop receiving messages.
+246,replies,frustrated,"oh for crying out loud, another text? :)",ambiguous,ambiguous,ambiguous,"The message shows mild annoyance at receiving another text, but the smiley softens it and there is no explicit request to stop."
+247,replies,soft_refusal,I didn't ask for these messages. Delete me.,opt_out,opt_out,opt_out,"The person says they didn't request the messages and asks to be deleted, which clearly signals they want to stop receiving them."
+257,replies,keyword,stop sending!!,opt_out,opt_out,opt_out,The customer explicitly tells the sender to stop sending messages.
+258,replies,keyword,Stop all!,opt_out,opt_out,opt_out,"The customer says ""Stop all!"", which is a clear request to stop receiving all messages."
+266,replies,question,"hello, is the black jacket back in stock?",not_opt_out,not_opt_out,not_opt_out,"The customer is asking about product availability, which is an inquiry and not a request to stop messages."
+271,replies,soft_refusal,"hello, I'm not going to keep receiving these, remove me please :)",opt_out,opt_out,opt_out,"The customer explicitly asks to be removed and says they won't keep receiving the messages, which is a clear request to stop."
+275,replies,soft_refusal,i'd like to be removed from your messages!,opt_out,opt_out,opt_out,"The sender explicitly asks to be removed from the messages, which is a clear request to stop receiving them."
+284,replies,positive,"Perfect, thanks 🔥",not_opt_out,not_opt_out,not_opt_out,The message is a positive acknowledgment with no request to stop receiving messages.
+315,replies,wrong_number_or_other,"LISTEN, 👍 pls",not_opt_out,not_opt_out,not_opt_out,The message has a thumbs-up and 'pls' but no request to stop receiving messages.
+326,replies,soft_refusal,"IDIOTS, I NEVER SIGNED UP FOR THIS GARBAGE pls",opt_out,opt_out,ambiguous,"The customer is angry and says they never signed up, but they don't explicitly ask to stop receiving messages."
+330,replies,frustrated,"hi, Oh for crying out loud, another text?",ambiguous,ambiguous,ambiguous,The sender is clearly annoyed by another text but never explicitly asks to stop receiving messages.
+342,replies,soft_refusal,"Hi, you can take me off your textnig list!!",opt_out,opt_out,opt_out,"The person explicitly asks to be taken off the texting list, which is a clear request to stop receiving messages."
+343,replies,positive,"Listen, perfect, thanks",not_opt_out,not_opt_out,not_opt_out,"The message is a positive acknowledgment ('perfect, thanks') with no request to stop receiving messages."
+355,replies,wrong_number_or_other,Hey ha,not_opt_out,not_opt_out,not_opt_out,The message is a casual greeting with no request to stop receiving messages.
+361,replies,keyword_trap,"listen, Does the code end on Sunday? thx",not_opt_out,not_opt_out,not_opt_out,"The customer is asking whether a promo code expires on Sunday, which is a question about the offer and not a request to stop messages."
+362,replies,soft_refusal,Please delete me from your database!,opt_out,opt_out,opt_out,"The customer asks to be deleted from the sender's database, which clearly means they want to be removed from the contact list and stop receiving messages."
+363,replies,soft_refusal,ok so remove this number from your marketing list,opt_out,opt_out,opt_out,"The sender explicitly asks to be removed from the marketing list, which is a clear request to stop receiving messages."
+369,replies,ambiguous,Wrong number.,ambiguous,ambiguous,ambiguous,"The person says it's a wrong number, which suggests they don't want the messages, but they don't explicitly ask to stop."
+376,replies,soft_refusal,ok so don't message me anymore thx,opt_out,opt_out,opt_out,"The sender explicitly asks not to be messaged anymore, which is a clear request to stop."
+380,replies,frustrated,"Hello, seriously?? who gave you my number thx",ambiguous,ambiguous,ambiguous,"The person is annoyed and asks how the sender got their number, but never clearly asks to stop receiving messages."
+387,replies,positive,Hey thanks for the reminder pls,not_opt_out,not_opt_out,not_opt_out,The customer thanks the sender for a reminder and makes no request to stop messages.
+388,replies,deferral,Maybe another time,ambiguous,ambiguous,not_opt_out,"The customer is politely declining the current offer for now, but does not ask to stop receiving messages."
+401,replies,keyword_trap,ok so does the code end on sunday?,not_opt_out,not_opt_out,not_opt_out,"The customer is asking whether a promo code expires on Sunday, which is a question about the offer and not a request to stop messages."
+416,replies,question,Can I get my receipt by email?,not_opt_out,not_opt_out,not_opt_out,"The customer is asking for a receipt by email, which is a service request and does not ask to stop receiving messages."
+426,replies,keyword,Stop all.,opt_out,opt_out,opt_out,"""Stop all"" is a clear request to stop receiving all messages."
+438,replies,positive,sure 😍,not_opt_out,not_opt_out,not_opt_out,"The reply 'sure 😍' is an enthusiastic, positive response with no request to stop receiving messages."
+441,replies,keyword,opt-out.,opt_out,opt_out,opt_out,"The customer explicitly states 'opt-out', which is a clear request to stop receiving messages."
+442,replies,question,what tiem do you close?,not_opt_out,not_opt_out,not_opt_out,"The customer is asking about closing time, which is an ordinary question and not a request to stop messages."
+443,replies,soft_refusal,ok so get me off this list!!,opt_out,opt_out,opt_out,"The customer explicitly asks to be removed from the list, which is a clear request to stop receiving messages."
+444,replies,question,hey can i return an online order in store? pls,not_opt_out,not_opt_out,not_opt_out,The customer is asking a question about returning an online order in store and does not ask to stop receiving messages.
+450,replies,deferral,Maybe,not_opt_out,not_opt_out,not_opt_out,'Maybe' is a noncommittal reply with no request to stop receiving messages.

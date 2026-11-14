@@ -198,3 +198,35 @@ All 450 messages were generated from templates, and the labels came from the sam
 - **In this repo.** `is_bare_keyword()` in `classifier.py`. Zero JSON parse failures in all runs since the token limit was fixed.
 - **One-liner.** "Check the glue code too, not only the prompt."
 
+## Step 6: using a model as a labeler
+
+### LLM-as-judge
+- **What it is.** A second model reads each message and applies a rubric to give it a label, so you don't label everything by hand.
+- **Why a PM cares.** Hand labeling doesn't scale. A judge makes a fresh test batch cheap, which is the fair check for a classifier whose test set has been seen.
+- **In this repo.** `prototype/judge.py` uses `claude-sonnet-5-5` on all 554 messages for about $0.92. It sees only the text.
+- **One-liner.** "I treat the judge as a labeler I have to validate, not as an oracle."
+
+### Validating a judge with kappa
+- **What it is.** Compare the judge with human labels on a sample, using Cohen's kappa (agreement corrected for chance).
+- **Why a PM cares.** Without it, "the judge says so" proves nothing.
+- **In this repo.** Judge vs your 70 blind labels: kappa 0.86 with the policy in the prompt, 0.81 without. The original generator labels scored 0.76 against the same human labels.
+- **One-liner.** "The judge matched the human better than the generator did, and I measured that."
+
+### Circularity in rubrics
+- **What it is.** If the judge's instructions were written from the same human labels you test it on, agreement is partly built in.
+- **Why a PM cares.** The fair number is the one without the policy in the prompt, and it is a little lower.
+- **In this repo.** The two runs, `policy` and `bare`, exist to show that gap: 0.86 vs 0.81.
+- **One-liner.** "I run the judge with and without my rules to see how much of the score is my rules."
+
+### Disagreements are policy gaps
+- **What it is.** Where the judge and the labels differ, the cause is often an unwritten rule, not a wrong answer.
+- **Why a PM cares.** Each disagreement is a decision somebody has to make.
+- **In this repo.** 16 of the judge's 19 differences are blunt refusals ("get lost", "back off") where the policy has no rule. They are listed as open questions in `data/LABELING_POLICY.md`.
+- **One-liner.** "A judge that disagrees with me is a list of rules I never wrote down."
+
+### Shared blind spots between models
+- **What it is.** Two models from one vendor can make the same mistake, so agreement between them is weaker evidence than agreement between independent sources.
+- **Why a PM cares.** It limits how much a judge can prove.
+- **In this repo.** Haiku v1 and the Sonnet judge both hedged on the same slang refusals. A different vendor's model, or a second human, is the stronger check.
+- **One-liner.** "Agreement between two models from one family is a smoke test, not a proof."
+
