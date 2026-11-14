@@ -14,4 +14,5 @@ env/
 
 # LLM response cache
 prototype/results/cache_*.json
+prototype/results/**/mock_*
 prototype/results/mock_*

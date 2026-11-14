@@ -37,5 +37,6 @@ python3 prototype/evaluate.py --provider anthropic                 # full 450 ro
 
 - Binary metrics count `opt_out` as positive; `ambiguous` and `not_opt_out` are negative. The headline metric is recall on non-keyword opt-outs (`soft_refusal`). The keyword baseline scores about 0 there by construction, so that is a dataset-design result, not a finding.
 - Mock runs write `mock_`-prefixed files in `prototype/results/` and their numbers say nothing about real model quality. Never cite them as results. Real runs write unprefixed files.
-- The LLM response cache is keyed by the wrapped SMS text only, not by model or system prompt. Delete `prototype/results/cache_*.json` after editing `SYSTEM_PROMPT`. Cache files can be gitignored.
+- The LLM response cache is keyed by the wrapped SMS text inside a per-model, per-prompt file. The cache file name includes a hash of `SYSTEM_PROMPT` (`cache_<model>_<sha>.json`), so editing the prompt starts a fresh cache automatically. Cache files can be gitignored.
 - `llm_classify` sends no `temperature` and uses `max_tokens=60`.
+- `data/hard_cases.csv` (104 hand-written adversarial English messages, built by `data/make_hard_cases.py`) is evaluated separately with `--data data/hard_cases.csv` (output in `prototype/results/hard_cases/`). Its labels were written by one person and have not been blind-checked. `prototype/run_v1.sh` scores both test splits. `metrics.md` now reports latency (p50/p95) and cost per message, using the price table in `evaluate.py` (check it before quoting).

@@ -22,3 +22,12 @@ Why: `ambiguous` sends a message to the human review queue and `not_opt_out` doe
 
 ## Regenerating
 `data/generate_dataset.py` still produces the original, pre-relabel labels, so rerunning it overwrites these changes. The relabeling was applied to the CSV afterward. Fold the policy into the generator before regenerating.
+
+## Rules added for `data/hard_cases.csv`
+Written by the project author in one pass, not blind-checked. A second labeler should review them before anyone quotes results.
+- Wants fewer or only some messages ("no texts after 8pm", "only order updates"): `ambiguous`. It is not a full stop, a person should decide.
+- "Email me instead of texting": `opt_out` for SMS.
+- Anger or a threat with no request to stop ("This is harassment", "I'm reporting you for spam"): `ambiguous`. With a request ("stop or I report you"): `opt_out`.
+- Unclear scope ("Unsubscribe me from the newsletter", "Cancel my subscription", "Delete my account"): `ambiguous`.
+- Commands that opt in or ask for help (START, HELP, UNSTOP): `not_opt_out`.
+- Keyword inside a non-opt-out sentence ("Quit sending my package to the old address"), negations ("Don't unsubscribe me"), and injection text with no real request to stop: `not_opt_out`. A real request next to injection text stays `opt_out`.
