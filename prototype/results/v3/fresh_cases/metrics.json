@@ -1,0 +1,428 @@
+{
+  "meta": {
+    "provider": "anthropic",
+    "model": "claude-haiku-5-5",
+    "split": "all",
+    "n_rows": 63,
+    "mock_not_real_results": false,
+    "parse_failures": 0,
+    "data": "data/fresh_cases.csv",
+    "version": "v3",
+    "prompt_sha": "bebadfae"
+  },
+  "keyword": {
+    "overall": {
+      "precision": 0.6,
+      "recall": 0.2647058823529412,
+      "f1": 0.36734693877551017,
+      "tp": 9,
+      "fp": 6,
+      "fn": 25,
+      "n": 63
+    },
+    "headline_recall_non_keyword_opt_out": {
+      "recall": 0.25,
+      "n": 12
+    },
+    "false_positive_rate_keyword_trap": {
+      "fpr": 1.0,
+      "n": 5
+    },
+    "recall_by_category": {
+      "account": 0.6666666666666666,
+      "blunt_refusal": 0.2,
+      "buried_request": 0.3333333333333333,
+      "channel_switch": 0.0,
+      "frustrated": 0.0,
+      "prompt_injection": 0.3333333333333333,
+      "sarcasm": 0.0,
+      "soft_refusal": 0.25,
+      "third_party": 0.5,
+      "typo_keyword": 0.0,
+      "wrong_number": 0.0
+    },
+    "accuracy_by_category": {
+      "account": {
+        "n": 3,
+        "correct": 2
+      },
+      "blunt_refusal": {
+        "n": 5,
+        "correct": 1
+      },
+      "buried_request": {
+        "n": 3,
+        "correct": 2
+      },
+      "channel_switch": {
+        "n": 2,
+        "correct": 0
+      },
+      "deferral": {
+        "n": 4,
+        "correct": 4
+      },
+      "frustrated": {
+        "n": 4,
+        "correct": 0
+      },
+      "keyword_trap": {
+        "n": 5,
+        "correct": 0
+      },
+      "partial_scope": {
+        "n": 3,
+        "correct": 0
+      },
+      "positive": {
+        "n": 4,
+        "correct": 4
+      },
+      "prompt_injection": {
+        "n": 3,
+        "correct": 3
+      },
+      "question": {
+        "n": 4,
+        "correct": 3
+      },
+      "sarcasm": {
+        "n": 3,
+        "correct": 0
+      },
+      "soft_refusal": {
+        "n": 12,
+        "correct": 3
+      },
+      "third_party": {
+        "n": 2,
+        "correct": 1
+      },
+      "typo_keyword": {
+        "n": 3,
+        "correct": 0
+      },
+      "wrong_number": {
+        "n": 3,
+        "correct": 0
+      }
+    },
+    "by_language": {
+      "en": {
+        "precision": 0.6,
+        "recall": 0.2647058823529412,
+        "f1": 0.36734693877551017,
+        "tp": 9,
+        "fp": 6,
+        "fn": 25,
+        "n": 63
+      }
+    },
+    "confusion_matrix": {
+      "opt_out": {
+        "opt_out": 9,
+        "not_opt_out": 25,
+        "ambiguous": 0
+      },
+      "not_opt_out": {
+        "opt_out": 6,
+        "not_opt_out": 14,
+        "ambiguous": 0
+      },
+      "ambiguous": {
+        "opt_out": 0,
+        "not_opt_out": 9,
+        "ambiguous": 0
+      }
+    },
+    "route_counts": {
+      "auto_opt_out": 15,
+      "send_confirmation": 0,
+      "human_review": 0,
+      "no_action": 48
+    },
+    "route_by_true_label": {
+      "opt_out": {
+        "auto_opt_out": 9,
+        "send_confirmation": 0,
+        "human_review": 0,
+        "no_action": 25
+      },
+      "not_opt_out": {
+        "auto_opt_out": 6,
+        "send_confirmation": 0,
+        "human_review": 0,
+        "no_action": 14
+      },
+      "ambiguous": {
+        "auto_opt_out": 0,
+        "send_confirmation": 0,
+        "human_review": 0,
+        "no_action": 9
+      }
+    }
+  },
+  "hybrid": {
+    "overall": {
+      "precision": 1.0,
+      "recall": 0.8823529411764706,
+      "f1": 0.9375,
+      "tp": 30,
+      "fp": 0,
+      "fn": 4,
+      "n": 63
+    },
+    "headline_recall_non_keyword_opt_out": {
+      "recall": 1.0,
+      "n": 12
+    },
+    "false_positive_rate_keyword_trap": {
+      "fpr": 0.0,
+      "n": 5
+    },
+    "recall_by_category": {
+      "account": 1.0,
+      "blunt_refusal": 1.0,
+      "buried_request": 0.3333333333333333,
+      "channel_switch": 1.0,
+      "frustrated": 0.0,
+      "prompt_injection": 0.3333333333333333,
+      "sarcasm": 0.3333333333333333,
+      "soft_refusal": 1.0,
+      "third_party": 1.0,
+      "typo_keyword": 1.0,
+      "wrong_number": 0.0
+    },
+    "accuracy_by_category": {
+      "account": {
+        "n": 3,
+        "correct": 3
+      },
+      "blunt_refusal": {
+        "n": 5,
+        "correct": 5
+      },
+      "buried_request": {
+        "n": 3,
+        "correct": 2
+      },
+      "channel_switch": {
+        "n": 2,
+        "correct": 2
+      },
+      "deferral": {
+        "n": 4,
+        "correct": 4
+      },
+      "frustrated": {
+        "n": 4,
+        "correct": 3
+      },
+      "keyword_trap": {
+        "n": 5,
+        "correct": 5
+      },
+      "partial_scope": {
+        "n": 3,
+        "correct": 3
+      },
+      "positive": {
+        "n": 4,
+        "correct": 4
+      },
+      "prompt_injection": {
+        "n": 3,
+        "correct": 3
+      },
+      "question": {
+        "n": 4,
+        "correct": 4
+      },
+      "sarcasm": {
+        "n": 3,
+        "correct": 3
+      },
+      "soft_refusal": {
+        "n": 12,
+        "correct": 12
+      },
+      "third_party": {
+        "n": 2,
+        "correct": 2
+      },
+      "typo_keyword": {
+        "n": 3,
+        "correct": 3
+      },
+      "wrong_number": {
+        "n": 3,
+        "correct": 1
+      }
+    },
+    "by_language": {
+      "en": {
+        "precision": 1.0,
+        "recall": 0.8823529411764706,
+        "f1": 0.9375,
+        "tp": 30,
+        "fp": 0,
+        "fn": 4,
+        "n": 63
+      }
+    },
+    "confusion_matrix": {
+      "opt_out": {
+        "opt_out": 30,
+        "not_opt_out": 0,
+        "ambiguous": 4
+      },
+      "not_opt_out": {
+        "opt_out": 0,
+        "not_opt_out": 20,
+        "ambiguous": 0
+      },
+      "ambiguous": {
+        "opt_out": 0,
+        "not_opt_out": 0,
+        "ambiguous": 9
+      }
+    },
+    "route_counts": {
+      "auto_opt_out": 26,
+      "send_confirmation": 4,
+      "human_review": 13,
+      "no_action": 20
+    },
+    "route_by_true_label": {
+      "opt_out": {
+        "auto_opt_out": 26,
+        "send_confirmation": 4,
+        "human_review": 4,
+        "no_action": 0
+      },
+      "not_opt_out": {
+        "auto_opt_out": 0,
+        "send_confirmation": 0,
+        "human_review": 0,
+        "no_action": 20
+      },
+      "ambiguous": {
+        "auto_opt_out": 0,
+        "send_confirmation": 0,
+        "human_review": 9,
+        "no_action": 0
+      }
+    }
+  },
+  "threshold_sweep_hybrid": [
+    {
+      "auto_threshold": 0.5,
+      "recall": 0.8823529411764706,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.6,
+      "recall": 0.8823529411764706,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.7,
+      "recall": 0.8823529411764706,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.8,
+      "recall": 0.8529411764705882,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.85,
+      "recall": 0.8529411764705882,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.9,
+      "recall": 0.7647058823529411,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.95,
+      "recall": 0.4411764705882353,
+      "false_opt_out_rate": 0.0
+    },
+    {
+      "auto_threshold": 0.99,
+      "recall": 0.0,
+      "false_opt_out_rate": 0.0
+    }
+  ],
+  "threshold_sweep_keyword": [
+    {
+      "auto_threshold": 0.5,
+      "recall": 0.2647058823529412,
+      "false_opt_out_rate": 0.20689655172413793
+    },
+    {
+      "auto_threshold": 0.6,
+      "recall": 0.2647058823529412,
+      "false_opt_out_rate": 0.20689655172413793
+    },
+    {
+      "auto_threshold": 0.7,
+      "recall": 0.2647058823529412,
+      "false_opt_out_rate": 0.20689655172413793
+    },
+    {
+      "auto_threshold": 0.8,
+      "recall": 0.2647058823529412,
+      "false_opt_out_rate": 0.20689655172413793
+    },
+    {
+      "auto_threshold": 0.85,
+      "recall": 0.2647058823529412,
+      "false_opt_out_rate": 0.20689655172413793
+    },
+    {
+      "auto_threshold": 0.9,
+      "recall": 0.2647058823529412,
+      "false_opt_out_rate": 0.20689655172413793
+    },
+    {
+      "auto_threshold": 0.95,
+      "recall": 0.2647058823529412,
+      "false_opt_out_rate": 0.20689655172413793
+    },
+    {
+      "auto_threshold": 0.99,
+      "recall": 0.2647058823529412,
+      "false_opt_out_rate": 0.20689655172413793
+    }
+  ],
+  "cost_latency": {
+    "prices_usd_per_mtok": {
+      "input": 0.1,
+      "output": 0.5
+    },
+    "llm_rows": 63,
+    "latency_n": 63,
+    "latency_ms": {
+      "p50": 883,
+      "p95": 2163,
+      "max": 3406
+    },
+    "total_cost_usd": 0.0056492,
+    "cost_per_message_usd": 8.966984126984128e-05
+  },
+  "token_usage": {
+    "new_calls": 63,
+    "cache_hits": 0,
+    "this_run_in_out": [
+      42147,
+      2869
+    ],
+    "all_used_in_out": [
+      42147,
+      2869
+    ]
+  }
+}

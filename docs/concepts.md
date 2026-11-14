@@ -230,3 +230,22 @@ All 450 messages were generated from templates, and the labels came from the sam
 - **In this repo.** Haiku v1 and the Sonnet judge both hedged on the same slang refusals. A different vendor's model, or a second human, is the stronger check.
 - **One-liner.** "Agreement between two models from one family is a smoke test, not a proof."
 
+## Step 7: the fresh batch
+### A truly held-out batch
+- **What it is.** New examples written before any model run and labeled before the classifier is scored.
+- **Why a PM cares.** It is the only way to turn a suspicious 100% into an estimate you can defend. Here it dropped to 88% label recall, with every opt-out still handled by routing.
+- **In this repo.** `data/fresh_cases.csv`, committed before any run; labels fixed by `data/finalize_fresh.py` first.
+- **One-liner.** "I froze the answer key before looking at the model's answers."
+
+### Human intuition vs the written policy
+- **What it is.** A blind human label can disagree with a rule the team wrote.
+- **Why a PM cares.** Three of the four misses were that: the rule says send "wrong number" to review, and a blind reader removed the person. The disagreement is a policy question, not a model bug.
+- **In this repo.** Reported both ways in `docs/11-fresh-batch.md`.
+- **One-liner.** "When the human and the rulebook disagree, I report both and ask which should win."
+
+### Routing as a safety net
+- **What it is.** The model's label can be wrong while the system's action is still safe.
+- **Why a PM cares.** Label recall was 88%, but no opt-out was ignored and no harmless message was opted out, because uncertain cases go to confirmation or a person.
+- **In this repo.** 26 automatic, 4 confirmations, 4 to review, 0 ignored.
+- **One-liner.** "I judge the system by what happens to the customer, not only by the label."
+
