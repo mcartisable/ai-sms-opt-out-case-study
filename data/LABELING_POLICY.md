@@ -36,6 +36,9 @@ Written by the project author in one pass, not blind-checked. A second labeler s
 "Wrong number", "Wrong person" and similar replies with no explicit request to stop stay `ambiguous` and go to human review. A reviewer can then remove the number or reply. Decided by the product owner after the v1 error analysis (`docs/08-error-analysis.md`, cause 3). Prompt v1 listed wrong number under `not_opt_out`, which contradicted this; prompt v2 must follow the policy.
 
 ## Open policy questions from the judge check (`docs/10-llm-judge.md`)
-1. Blunt or slang refusals ("get lost already with your promos", "back off", "I'm done with these texts", "enough"). This file has no rule for them. The generator and prompt v3 treat them as `opt_out`; the judge, given only the anger rule above, says `ambiguous`. Not decided yet.
+1. ~~Blunt or slang refusals~~ Decided (product owner): they are `opt_out`. See the rule below.
 2. "Cancel subscription" and "Unsubscribe me from the mailing/newsletter". `replies.csv` labels the keyword versions `opt_out`; `hard_cases.csv` labels the sentence versions `ambiguous`. One rule is needed. Not decided yet.
+
+## Decision on blunt refusals
+Blunt, slangy or impatient messages that tell the sender to stop or go away ("get lost already with your promos", "back off", "I'm done with these texts", "enough") are `opt_out`. Anger with no such request ("who the heck keeps texting me?") stays `ambiguous`. This matches prompt v3, which already says so. The judge rubric was updated to follow it, so judge results from before this change are in `docs/10-llm-judge.md` as the pre-decision run.
 
