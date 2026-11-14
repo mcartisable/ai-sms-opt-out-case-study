@@ -31,3 +31,7 @@ Written by the project author in one pass, not blind-checked. A second labeler s
 - Unclear scope ("Unsubscribe me from the newsletter", "Cancel my subscription", "Delete my account"): `ambiguous`.
 - Commands that opt in or ask for help (START, HELP, UNSTOP): `not_opt_out`.
 - Keyword inside a non-opt-out sentence ("Quit sending my package to the old address"), negations ("Don't unsubscribe me"), and injection text with no real request to stop: `not_opt_out`. A real request next to injection text stays `opt_out`.
+
+## Decision on wrong-number replies
+"Wrong number", "Wrong person" and similar replies with no explicit request to stop stay `ambiguous` and go to human review. A reviewer can then remove the number or reply. Decided by the product owner after the v1 error analysis (`docs/08-error-analysis.md`, cause 3). Prompt v1 listed wrong number under `not_opt_out`, which contradicted this; prompt v2 must follow the policy.
+

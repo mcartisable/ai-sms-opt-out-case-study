@@ -145,3 +145,30 @@ All 450 messages were generated from templates, and the labels came from the sam
 - **Why a PM cares.** The thresholds 0.90 and 0.60 rest on those numbers. If "0.9" means right 70% of the time, the routing is miscalibrated.
 - **In this repo.** The call sends no `temperature`, and newer models limit changing it, so reruns without the cache could differ a little; the cache hides this. Calibration check: among replies at 0.90+, what share were truly opt-outs? On the 450 rows no non-opt-out reached auto, which is a good sign, but the 104 hard messages are the real test.
 - **One-liner.** "Confidence is a signal to be checked against outcomes, not a probability to be trusted."
+
+## Step 4: reading the failures
+
+### Error analysis
+- **What it is.** Reading the individual cases a system got wrong, instead of looking at one accuracy number.
+- **Why a PM cares.** 89% recall doesn't say what to fix. The misses do: here 47 of 450 rows were wrong, and they trace back to a handful of causes.
+- **In this repo.** `docs/08-error-analysis.md`. Of the 47 mismatches, 15 were real opt-outs the model hedged on, 25 were harmless messages sent to review, 6 were ambiguous messages treated as harmless, and 1 was a false positive.
+- **One-liner.** "I read every miss before I touched the prompt."
+
+### Open coding and axial coding
+- **What it is.** Open coding: write a short free-form note on why each failure happened, without categories in mind. Axial coding: then group the notes into causes.
+- **Why a PM cares.** Starting with fixed categories makes you see only what you expected. Starting with notes surfaced a cause I hadn't planned for: the prompt and the labeling policy disagreed about wrong numbers.
+- **In this repo.** 18 open codes in the file, grouped into 7 causes. Counting rows by cause shows where to spend effort: missing policy rules explain 29 rows, the prompt's own hedging rule explains 11.
+- **One-liner.** "Notes first, categories second."
+
+### Model error, policy gap and label error
+- **What it is.** A miss can come from the model, from a rule the prompt never stated, from a bug in the surrounding code, or from a wrong answer key.
+- **Why a PM cares.** Each has a different owner and fix. "Cancel my subscription" was opted out by the keyword shortcut without the model ever running, so no prompt change would fix it.
+- **In this repo.** Cause 5 is a code bug, causes 1 and 2 are prompt fixes, cause 3 is a policy decision for the product owner, and cause 6 is doubt about my own labels.
+- **One-liner.** "Before I blame the model I check the rule, the code and the label."
+
+### Looking at the test set contaminates it
+- **What it is.** Once you've read the test misses and let them shape your changes, the test score is no longer a fair surprise.
+- **Why a PM cares.** It is the easiest way to fool yourself, because the temptation is strong and the harm is invisible.
+- **In this repo.** I read test misses to write the analysis, so the file marks every example with its split. Prompt v2 may only use dev examples, and the test set will be scored once. The contamination is disclosed, and a fresh unseen batch of messages is the later fix.
+- **One-liner.** "I tell people which numbers I've already peeked at."
+
