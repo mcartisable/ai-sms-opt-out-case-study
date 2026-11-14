@@ -31,7 +31,7 @@ Under my stricter policy labels (my intent, not your blind labels) the result is
 
 ## What it means
 - v3 is a good classifier on these message styles, not a perfect one. A fair claim is "roughly 88% to 100% label recall, with routing that ignored none".
-- The biggest question is policy, not the model: wrong-number replies and account-deletion requests. Your blind labels remove the person; the policy sends them to a human. Decide whether the policy should change.
+- The biggest question is policy, not the model: wrong-number replies and account-deletion requests. Your blind labels remove the person; the policy sends them to a human. Decided by the product owner: wrong-number replies stay in human review, so the policy and prompt v3 stand.
 - The "Enough already" risk from the dev analysis is not resolved here. The two relevant rows ended up disputed and were skipped. One related row, "enough with the texts already", was a consensus opt-out and v3 got it right.
 - A buried request next to a different question is a real weakness to fix in a later prompt version.
 

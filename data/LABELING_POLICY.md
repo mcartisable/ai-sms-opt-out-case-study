@@ -45,3 +45,6 @@ Blunt, slangy or impatient messages that tell the sender to stop or go away ("ge
 ## Decision on cancel-subscription and unsubscribe-from-the-newsletter
 "Cancel my subscription", "Unsubscribe me from the newsletter" and their keyword forms are `opt_out`: CANCEL and UNSUBSCRIBE are standard carrier opt-out keywords, and a reply asking to be unsubscribed is a reasonable way to withdraw consent. A compliance reviewer should confirm before launch. "Delete my account" stays `ambiguous`. Applied to `hard_cases.csv` after the v3 test run, so the hard-set figures were rescored from cached model answers; the old and new numbers are noted in `docs/09-prompt-iterations.md`. The judge rubric was updated, but the judge numbers in `docs/10-llm-judge.md` come from the earlier rubric.
 
+## Wrong-number decision confirmed after the fresh batch
+In `docs/11-fresh-batch.md` the blind hand labels removed wrong-number senders, while this policy sends them to human review. The product owner confirmed human review: a person checks whether to remove the number or reply, so no one is removed on a guess. Those blind labels stay in the fresh batch as the human's reading, and the three resulting misses are reported as policy conflicts, not corrected.
+
