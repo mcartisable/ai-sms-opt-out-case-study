@@ -2,6 +2,8 @@
 
 Question: can a model label messages well enough to replace most hand labeling, so a fresh batch of test messages is cheap? Judge: `claude-sonnet-5-5` (a different, stronger model than the `claude-haiku-5-5` classifier, but from the same vendor, so not fully independent). Code: `prototype/judge.py`. The judge sees only the SMS text, never any label or classifier output.
 
+The tables below are the first run, before the blunt-refusal decision. The rerun with the updated rubric is in the last section.
+
 ## Agreement with the blind hand labels (70 English messages)
 
 | Judge rubric | Agreement | Cohen's kappa |
@@ -42,3 +44,23 @@ In the reverse direction the judge sends 11 messages to `not_opt_out` that the c
 ## Limits
 
 Same vendor as the classifier, so shared blind spots are possible (both hedged on the same slang). The 70 hand labels are one person's. The judge with the policy rubric was not validated against a second human.
+
+## After deciding that blunt refusals are opt-outs
+
+I added the decision to the policy and to the judge rubric, then reran the judge on all 554 messages (about $0.94).
+
+| Comparison | Before | After |
+|---|---|---|
+| Judge (policy) vs blind hand labels, n=70 | 91%, kappa 0.86 | 94%, kappa 0.90 |
+| Judge vs `replies.csv` labels, n=450 | 93.6%, kappa 0.89 | 96.0%, kappa 0.93 |
+| Judge vs `hard_cases.csv` labels, n=104 | 96.2%, kappa 0.94 | 97.1%, kappa 0.96 |
+| Classifier v3 vs judge, all 554 | 92.4%, kappa 0.87 | 96.4%, kappa 0.94 |
+| Classifier v3 vs judge, test split (216) | 97.7% | 98.6%, kappa 0.98 |
+
+The gain comes from closing a policy gap, not from a better model. Because the rule now matches the hand labels, the 70-row figure is more circular than before and should not be quoted alone.
+
+Remaining disagreements between classifier v3 and the judge (20 of 554):
+- "Enough already, you're driving me nuts" and similar (5 rows): labels and judge say `ambiguous`, classifier v3 says `opt_out` and three reach auto opt-out at 0.90. Prompt v3 treats "enough" as a refusal; the judge reads it as frustration. This is the most important open risk, because it is an automatic action. It needs a prompt change and a fresh test, since v3's test split has been scored.
+- "Cancel subscription" and "Unsubscribe me from the newsletter" (6 rows): judge `ambiguous`, classifier `opt_out`. Open policy question 2.
+- Content-free fragments such as "OYE, VALE..." (9 rows): judge `not_opt_out`, classifier `ambiguous`. The classifier is more cautious, which costs a little review work and is harmless.
+
