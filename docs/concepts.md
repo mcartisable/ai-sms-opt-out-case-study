@@ -119,7 +119,7 @@ All 450 messages were generated from templates, and the labels came from the sam
 ### Reproducible evals
 - **What it is.** Anyone, including you in six months, can rerun the same command and get the same numbers or see exactly why they differ.
 - **Why a PM cares.** A number you can't reproduce can't be defended in an interview or used to compare prompt versions.
-- **In this repo.** `prototype/run_v1.sh` scores the test splits by script. Each `metrics.json` records the data file and a hash of the system prompt. The response cache is now stored per prompt hash, so changing the prompt can't silently reuse old answers (that was a manual rule before).
+- **In this repo.** `prototype/run_split.sh` scores the test splits by script. Each `metrics.json` records the data file and a hash of the system prompt. The response cache is now stored per prompt hash, so changing the prompt can't silently reuse old answers (that was a manual rule before).
 - **One-liner.** "Every reported number comes from a script and carries the prompt version it was made with."
 
 ### Tokens and pricing

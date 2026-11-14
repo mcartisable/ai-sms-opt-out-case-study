@@ -18,6 +18,20 @@ Binary metrics: opt_out is positive; ambiguous and not_opt_out both count as neg
 | keyword | 0.947 | 1.000 |
 | soft_refusal | 0.000 | 0.918 |
 
+## Label accuracy by category (predicted label equals true label)
+
+| category | n | keyword | hybrid |
+|---|---|---|---|
+| ambiguous | 11 | 0/11 | 8/11 |
+| deferral | 13 | 13/13 | 4/13 |
+| frustrated | 18 | 0/18 | 17/18 |
+| keyword | 38 | 36/38 | 38/38 |
+| keyword_trap | 27 | 0/27 | 26/27 |
+| positive | 34 | 34/34 | 33/34 |
+| question | 37 | 37/37 | 37/37 |
+| soft_refusal | 85 | 0/85 | 78/85 |
+| wrong_number_or_other | 12 | 12/12 | 9/12 |
+
 ## By language
 
 | method | lang | n | precision | recall | F1 |
@@ -80,3 +94,10 @@ auto_opt_out when label=opt_out and confidence >= threshold. Recall = share of t
 - New API calls this run: 0 (cache hits: 239)
 - Tokens this run (input/output): 0 / 0
 - Tokens of all cached responses used (input/output): 88845 / 15070
+
+## Cost and latency (LLM calls only)
+
+Prices (USD per million tokens, input/output): {'input': 0.1, 'output': 0.5}. Latency is wall-clock time of one API call, measured only on calls made after latency logging was added (n=0 of 239 LLM-routed rows).
+
+- Cost per LLM-routed message: $0.000069 (about $6.87 per 100,000 messages)
+- Cost of all rows in this run: $0.0164
