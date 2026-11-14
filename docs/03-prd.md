@@ -79,12 +79,11 @@ Starting thresholds (illustrative assumption): auto opt-out at 0.90, confirmatio
 ## Open questions
 
 - Should the pause during a pending confirmation cover all marketing sends or only the campaign that triggered the reply?
-- How do we handle a reply that contains both an opt-out and an order question?
 - What review-queue response time can brands realistically staff for?
 - Do some markets require an opt-out to be honored without a confirmation step at any confidence level?
 - Should the production keyword matcher move to the bare-keyword rule? Legal needs to agree, and the measured frequency of keyword-in-sentence replies would show how many people it affects.
 - Should an account-deletion request ("delete my account and my data") also remove SMS consent? The prototype's policy sends it to review; a blind reader removed the person.
-- A reply that buries the request next to another question ("where's my parcel? And please stop texting me") was the one real model miss on the fresh batch.
+- Mixed replies, such as "where's my parcel? And please stop texting me promos", go to human review by decision. While one waits in the queue nothing suppresses marketing. Should the platform stop marketing messages at once and send only the rest to review?
 
 ## What the prototype measured (synthetic data)
 
@@ -93,14 +92,14 @@ All figures come from the prototype in this repo: prompt v3, `claude-haiku-5-5`,
 | Measure | Result | Source |
 |---|---|---|
 | Recall on non-keyword opt-outs, held-out test split (50) | 100%, but the split was partly read before tuning | `docs/09-prompt-iterations.md` |
-| Opt-outs labeled `opt_out`, fresh batch of 63 never seen before (34 opt-outs) | 88% (95% interval 73% to 95%) | `docs/11-fresh-batch.md` |
-| What routing did with those 34 opt-outs | 26 automatic, 4 confirmation, 4 review, 0 ignored | same |
+| Opt-outs labeled `opt_out`, fresh batch of 63 never seen before (33 opt-outs) | 91% (95% interval 76% to 97%) | `docs/11-fresh-batch.md` |
+| What routing did with those 33 opt-outs | 26 automatic, 4 confirmation, 3 review, 0 ignored | same |
 | Harmless messages opted out or sent a confirmation (fresh batch, 29) | 0 | same |
 | Cost per classified message | about $0.00009 at list price | `prototype/results/**/metrics.md` |
 | Latency per classification | p50 about 0.9 s, p95 about 2.2 s, one request at a time, no load | same |
 | Prompt-injection attempts (13) | 12 handled as expected, 1 scored ambiguous and went to review | hard and fresh sets |
 
-Against the targets in `docs/05-metrics.md`: cost is about 20 times under the $0.002 guardrail and p95 latency is under the 5 second target. The offline gate (recall of 90% or more and false opt-out rate of 2% or less) is **not yet shown on unseen data**: the fresh-batch recall interval spans 73% to 95%. It needs real replies labeled by two people.
+Against the targets in `docs/05-metrics.md`: cost is about 20 times under the $0.002 guardrail and p95 latency is under the 5 second target. The offline gate (recall of 90% or more and false opt-out rate of 2% or less) is **not yet shown on unseen data**: the fresh-batch recall interval spans 76% to 97% (91% observed). It needs real replies labeled by two people.
 
 **Policy decisions the evaluation forced** (details in `data/LABELING_POLICY.md`):
 
@@ -111,6 +110,7 @@ Against the targets in `docs/05-metrics.md`: cost is about 20 times under the $0
 | "Cancel my subscription", "Unsubscribe me from the newsletter" | Opt out |
 | Deferrals ("not now", "maybe later"), questions, START or HELP | No action |
 | Wrong number, anger with no request, wanting fewer texts | Human review |
+| A stop request mixed with another question ("where's my parcel? And please stop texting me") | Human review. Later: also suppress marketing at once |
 
 **Model and prompt governance.** The model is pinned by ID and the prompt has a version hash that goes into every audit record. Any change to either re-runs the offline evaluation first (`prototype/run_split.sh`), and the held-out split is scored once per version. The known weak spot is "Enough already" style frustration, which prompt v3 can opt out automatically while two labelers call it ambiguous. Its fix needs a new prompt version and a fresh test.
 

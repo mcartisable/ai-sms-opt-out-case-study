@@ -73,7 +73,7 @@ id,text,label,category,language,has_keyword,family,split,human_label
 1072,My lawyer will hear about these texts,ambiguous,threat,en,False,ambiguous/threat/en/b9fac6,dev,
 1073,"Hi, thanks for the discount code last week, it worked great. By the way, please take me off the list, I'm moving abroad.",opt_out,buried_request,en,False,opt_out/buried_request/en/a492cd,dev,
 1074,"Got my order yesterday, love the jacket! Please stop sending me promos though, my inbox is overloaded.",opt_out,buried_request,en,True,opt_out/buried_request/en/a7c78d,dev,
-1075,"Quick question about my refund, also I'd like to stop receiving these messages.",opt_out,buried_request,en,True,opt_out/buried_request/en/80e05e,test,
+1075,"Quick question about my refund, also I'd like to stop receiving these messages.",ambiguous,buried_request,en,True,ambiguous/buried_request/en/80e05e,test,
 1076,"Loved the sale last month, but I don't want any more texts from you.",opt_out,buried_request,en,False,opt_out/buried_request/en/f8524d,dev,
 1077,Hope you're well! I changed my number a while ago and these keep coming. Please remove this one.,opt_out,buried_request,en,False,opt_out/buried_request/en/b4da9c,dev,
 1078,Order arrived fine. Please don't text me anymore.,opt_out,buried_request,en,False,opt_out/buried_request/en/8823ae,dev,

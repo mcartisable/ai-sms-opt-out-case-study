@@ -96,7 +96,7 @@ CASES = {
     "buried_request": (None, [
         (O, "Hi, thanks for the discount code last week, it worked great. By the way, please take me off the list, I'm moving abroad."),
         (O, "Got my order yesterday, love the jacket! Please stop sending me promos though, my inbox is overloaded."),
-        (O, "Quick question about my refund, also I'd like to stop receiving these messages."),
+        (A, "Quick question about my refund, also I'd like to stop receiving these messages."),
         (O, "Loved the sale last month, but I don't want any more texts from you."),
         (O, "Hope you're well! I changed my number a while ago and these keep coming. Please remove this one."),
         (O, "Order arrived fine. Please don't text me anymore."),

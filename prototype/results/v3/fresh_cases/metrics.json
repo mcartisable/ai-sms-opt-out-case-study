@@ -12,11 +12,11 @@
   },
   "keyword": {
     "overall": {
-      "precision": 0.6,
-      "recall": 0.2647058823529412,
-      "f1": 0.36734693877551017,
-      "tp": 9,
-      "fp": 6,
+      "precision": 0.5333333333333333,
+      "recall": 0.24242424242424243,
+      "f1": 0.3333333333333333,
+      "tp": 8,
+      "fp": 7,
       "fn": 25,
       "n": 63
     },
@@ -52,7 +52,7 @@
       },
       "buried_request": {
         "n": 3,
-        "correct": 2
+        "correct": 1
       },
       "channel_switch": {
         "n": 2,
@@ -109,18 +109,18 @@
     },
     "by_language": {
       "en": {
-        "precision": 0.6,
-        "recall": 0.2647058823529412,
-        "f1": 0.36734693877551017,
-        "tp": 9,
-        "fp": 6,
+        "precision": 0.5333333333333333,
+        "recall": 0.24242424242424243,
+        "f1": 0.3333333333333333,
+        "tp": 8,
+        "fp": 7,
         "fn": 25,
         "n": 63
       }
     },
     "confusion_matrix": {
       "opt_out": {
-        "opt_out": 9,
+        "opt_out": 8,
         "not_opt_out": 25,
         "ambiguous": 0
       },
@@ -130,7 +130,7 @@
         "ambiguous": 0
       },
       "ambiguous": {
-        "opt_out": 0,
+        "opt_out": 1,
         "not_opt_out": 9,
         "ambiguous": 0
       }
@@ -143,7 +143,7 @@
     },
     "route_by_true_label": {
       "opt_out": {
-        "auto_opt_out": 9,
+        "auto_opt_out": 8,
         "send_confirmation": 0,
         "human_review": 0,
         "no_action": 25
@@ -155,7 +155,7 @@
         "no_action": 14
       },
       "ambiguous": {
-        "auto_opt_out": 0,
+        "auto_opt_out": 1,
         "send_confirmation": 0,
         "human_review": 0,
         "no_action": 9
@@ -165,11 +165,11 @@
   "hybrid": {
     "overall": {
       "precision": 1.0,
-      "recall": 0.8823529411764706,
-      "f1": 0.9375,
+      "recall": 0.9090909090909091,
+      "f1": 0.9523809523809523,
       "tp": 30,
       "fp": 0,
-      "fn": 4,
+      "fn": 3,
       "n": 63
     },
     "headline_recall_non_keyword_opt_out": {
@@ -204,7 +204,7 @@
       },
       "buried_request": {
         "n": 3,
-        "correct": 2
+        "correct": 3
       },
       "channel_switch": {
         "n": 2,
@@ -262,11 +262,11 @@
     "by_language": {
       "en": {
         "precision": 1.0,
-        "recall": 0.8823529411764706,
-        "f1": 0.9375,
+        "recall": 0.9090909090909091,
+        "f1": 0.9523809523809523,
         "tp": 30,
         "fp": 0,
-        "fn": 4,
+        "fn": 3,
         "n": 63
       }
     },
@@ -274,7 +274,7 @@
       "opt_out": {
         "opt_out": 30,
         "not_opt_out": 0,
-        "ambiguous": 4
+        "ambiguous": 3
       },
       "not_opt_out": {
         "opt_out": 0,
@@ -284,7 +284,7 @@
       "ambiguous": {
         "opt_out": 0,
         "not_opt_out": 0,
-        "ambiguous": 9
+        "ambiguous": 10
       }
     },
     "route_counts": {
@@ -297,7 +297,7 @@
       "opt_out": {
         "auto_opt_out": 26,
         "send_confirmation": 4,
-        "human_review": 4,
+        "human_review": 3,
         "no_action": 0
       },
       "not_opt_out": {
@@ -309,7 +309,7 @@
       "ambiguous": {
         "auto_opt_out": 0,
         "send_confirmation": 0,
-        "human_review": 9,
+        "human_review": 10,
         "no_action": 0
       }
     }
@@ -317,37 +317,37 @@
   "threshold_sweep_hybrid": [
     {
       "auto_threshold": 0.5,
-      "recall": 0.8823529411764706,
+      "recall": 0.9090909090909091,
       "false_opt_out_rate": 0.0
     },
     {
       "auto_threshold": 0.6,
-      "recall": 0.8823529411764706,
+      "recall": 0.9090909090909091,
       "false_opt_out_rate": 0.0
     },
     {
       "auto_threshold": 0.7,
-      "recall": 0.8823529411764706,
+      "recall": 0.9090909090909091,
       "false_opt_out_rate": 0.0
     },
     {
       "auto_threshold": 0.8,
-      "recall": 0.8529411764705882,
+      "recall": 0.8787878787878788,
       "false_opt_out_rate": 0.0
     },
     {
       "auto_threshold": 0.85,
-      "recall": 0.8529411764705882,
+      "recall": 0.8787878787878788,
       "false_opt_out_rate": 0.0
     },
     {
       "auto_threshold": 0.9,
-      "recall": 0.7647058823529411,
+      "recall": 0.7878787878787878,
       "false_opt_out_rate": 0.0
     },
     {
       "auto_threshold": 0.95,
-      "recall": 0.4411764705882353,
+      "recall": 0.45454545454545453,
       "false_opt_out_rate": 0.0
     },
     {
@@ -359,43 +359,43 @@
   "threshold_sweep_keyword": [
     {
       "auto_threshold": 0.5,
-      "recall": 0.2647058823529412,
-      "false_opt_out_rate": 0.20689655172413793
+      "recall": 0.24242424242424243,
+      "false_opt_out_rate": 0.23333333333333334
     },
     {
       "auto_threshold": 0.6,
-      "recall": 0.2647058823529412,
-      "false_opt_out_rate": 0.20689655172413793
+      "recall": 0.24242424242424243,
+      "false_opt_out_rate": 0.23333333333333334
     },
     {
       "auto_threshold": 0.7,
-      "recall": 0.2647058823529412,
-      "false_opt_out_rate": 0.20689655172413793
+      "recall": 0.24242424242424243,
+      "false_opt_out_rate": 0.23333333333333334
     },
     {
       "auto_threshold": 0.8,
-      "recall": 0.2647058823529412,
-      "false_opt_out_rate": 0.20689655172413793
+      "recall": 0.24242424242424243,
+      "false_opt_out_rate": 0.23333333333333334
     },
     {
       "auto_threshold": 0.85,
-      "recall": 0.2647058823529412,
-      "false_opt_out_rate": 0.20689655172413793
+      "recall": 0.24242424242424243,
+      "false_opt_out_rate": 0.23333333333333334
     },
     {
       "auto_threshold": 0.9,
-      "recall": 0.2647058823529412,
-      "false_opt_out_rate": 0.20689655172413793
+      "recall": 0.24242424242424243,
+      "false_opt_out_rate": 0.23333333333333334
     },
     {
       "auto_threshold": 0.95,
-      "recall": 0.2647058823529412,
-      "false_opt_out_rate": 0.20689655172413793
+      "recall": 0.24242424242424243,
+      "false_opt_out_rate": 0.23333333333333334
     },
     {
       "auto_threshold": 0.99,
-      "recall": 0.2647058823529412,
-      "false_opt_out_rate": 0.20689655172413793
+      "recall": 0.24242424242424243,
+      "false_opt_out_rate": 0.23333333333333334
     }
   ],
   "cost_latency": {
@@ -414,11 +414,11 @@
     "cost_per_message_usd": 8.966984126984128e-05
   },
   "token_usage": {
-    "new_calls": 63,
-    "cache_hits": 0,
+    "new_calls": 0,
+    "cache_hits": 63,
     "this_run_in_out": [
-      42147,
-      2869
+      0,
+      0
     ],
     "all_used_in_out": [
       42147,

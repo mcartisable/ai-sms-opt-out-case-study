@@ -28,7 +28,7 @@ id,text,label,category,language,has_keyword,family,split,human_label,keyword_lab
 1065,Stop texting me or I'm reporting you to the FCC,opt_out,threat,en,True,opt_out/threat/en/817237,test,,opt_out,1.0,opt_out,0.95,hybrid_llm
 1069,I'm reporting you for spam,ambiguous,threat,en,False,ambiguous/threat/en/394cb4,test,,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
 1070,This is harassment,ambiguous,threat,en,False,ambiguous/threat/en/315222,test,,not_opt_out,1.0,ambiguous,0.8,hybrid_llm
-1075,"Quick question about my refund, also I'd like to stop receiving these messages.",opt_out,buried_request,en,True,opt_out/buried_request/en/80e05e,test,,opt_out,1.0,opt_out,0.93,hybrid_llm
+1075,"Quick question about my refund, also I'd like to stop receiving these messages.",ambiguous,buried_request,en,True,ambiguous/buried_request/en/80e05e,test,,opt_out,1.0,opt_out,0.93,hybrid_llm
 1080,Thanks for the code. Can't stop shopping with you guys lol,not_opt_out,buried_request,en,True,not_opt_out/buried_request/en/7a8eae,test,,opt_out,1.0,not_opt_out,0.97,hybrid_llm
 1081,"Got the jacket, great quality. When is the next sale?",not_opt_out,buried_request,en,False,not_opt_out/buried_request/en/031b40,test,,not_opt_out,1.0,not_opt_out,0.97,hybrid_llm
 1082,"Please don't stop the weekly deals, my family loves them",not_opt_out,buried_request,en,True,not_opt_out/buried_request/en/243c57,test,,opt_out,1.0,not_opt_out,0.97,hybrid_llm

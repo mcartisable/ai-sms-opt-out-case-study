@@ -12,11 +12,11 @@
   },
   "keyword": {
     "overall": {
-      "precision": 0.5454545454545454,
-      "recall": 0.35294117647058826,
-      "f1": 0.42857142857142855,
-      "tp": 6,
-      "fp": 5,
+      "precision": 0.45454545454545453,
+      "recall": 0.3125,
+      "f1": 0.3703703703703703,
+      "tp": 5,
+      "fp": 6,
       "fn": 11,
       "n": 41
     },
@@ -29,7 +29,6 @@
       "n": 0
     },
     "recall_by_category": {
-      "buried_request": 0.75,
       "channel_switch": 0.0,
       "confusable": 0.6,
       "formatting": 0.3333333333333333,
@@ -42,7 +41,7 @@
     "accuracy_by_category": {
       "buried_request": {
         "n": 4,
-        "correct": 2
+        "correct": 1
       },
       "channel_switch": {
         "n": 2,
@@ -91,18 +90,18 @@
     },
     "by_language": {
       "en": {
-        "precision": 0.5454545454545454,
-        "recall": 0.35294117647058826,
-        "f1": 0.42857142857142855,
-        "tp": 6,
-        "fp": 5,
+        "precision": 0.45454545454545453,
+        "recall": 0.3125,
+        "f1": 0.3703703703703703,
+        "tp": 5,
+        "fp": 6,
         "fn": 11,
         "n": 41
       }
     },
     "confusion_matrix": {
       "opt_out": {
-        "opt_out": 6,
+        "opt_out": 5,
         "not_opt_out": 11,
         "ambiguous": 0
       },
@@ -112,7 +111,7 @@
         "ambiguous": 0
       },
       "ambiguous": {
-        "opt_out": 0,
+        "opt_out": 1,
         "not_opt_out": 8,
         "ambiguous": 0
       }
@@ -125,7 +124,7 @@
     },
     "route_by_true_label": {
       "opt_out": {
-        "auto_opt_out": 6,
+        "auto_opt_out": 5,
         "send_confirmation": 0,
         "human_review": 0,
         "no_action": 11
@@ -137,7 +136,7 @@
         "no_action": 11
       },
       "ambiguous": {
-        "auto_opt_out": 0,
+        "auto_opt_out": 1,
         "send_confirmation": 0,
         "human_review": 0,
         "no_action": 8
@@ -146,11 +145,11 @@
   },
   "hybrid": {
     "overall": {
-      "precision": 1.0,
+      "precision": 0.9411764705882353,
       "recall": 1.0,
-      "f1": 1.0,
-      "tp": 17,
-      "fp": 0,
+      "f1": 0.9696969696969697,
+      "tp": 16,
+      "fp": 1,
       "fn": 0,
       "n": 41
     },
@@ -163,7 +162,6 @@
       "n": 0
     },
     "recall_by_category": {
-      "buried_request": 0.25,
       "channel_switch": 1.0,
       "confusable": 0.2,
       "formatting": 1.0,
@@ -176,7 +174,7 @@
     "accuracy_by_category": {
       "buried_request": {
         "n": 4,
-        "correct": 4
+        "correct": 3
       },
       "channel_switch": {
         "n": 2,
@@ -225,18 +223,18 @@
     },
     "by_language": {
       "en": {
-        "precision": 1.0,
+        "precision": 0.9411764705882353,
         "recall": 1.0,
-        "f1": 1.0,
-        "tp": 17,
-        "fp": 0,
+        "f1": 0.9696969696969697,
+        "tp": 16,
+        "fp": 1,
         "fn": 0,
         "n": 41
       }
     },
     "confusion_matrix": {
       "opt_out": {
-        "opt_out": 17,
+        "opt_out": 16,
         "not_opt_out": 0,
         "ambiguous": 0
       },
@@ -246,7 +244,7 @@
         "ambiguous": 1
       },
       "ambiguous": {
-        "opt_out": 0,
+        "opt_out": 1,
         "not_opt_out": 0,
         "ambiguous": 8
       }
@@ -259,7 +257,7 @@
     },
     "route_by_true_label": {
       "opt_out": {
-        "auto_opt_out": 16,
+        "auto_opt_out": 15,
         "send_confirmation": 1,
         "human_review": 0,
         "no_action": 0
@@ -271,7 +269,7 @@
         "no_action": 15
       },
       "ambiguous": {
-        "auto_opt_out": 0,
+        "auto_opt_out": 1,
         "send_confirmation": 0,
         "human_review": 8,
         "no_action": 0
@@ -282,36 +280,36 @@
     {
       "auto_threshold": 0.5,
       "recall": 1.0,
-      "false_opt_out_rate": 0.0
+      "false_opt_out_rate": 0.04
     },
     {
       "auto_threshold": 0.6,
       "recall": 1.0,
-      "false_opt_out_rate": 0.0
+      "false_opt_out_rate": 0.04
     },
     {
       "auto_threshold": 0.7,
       "recall": 1.0,
-      "false_opt_out_rate": 0.0
+      "false_opt_out_rate": 0.04
     },
     {
       "auto_threshold": 0.8,
-      "recall": 0.9411764705882353,
-      "false_opt_out_rate": 0.0
+      "recall": 0.9375,
+      "false_opt_out_rate": 0.04
     },
     {
       "auto_threshold": 0.85,
-      "recall": 0.9411764705882353,
-      "false_opt_out_rate": 0.0
+      "recall": 0.9375,
+      "false_opt_out_rate": 0.04
     },
     {
       "auto_threshold": 0.9,
-      "recall": 0.9411764705882353,
-      "false_opt_out_rate": 0.0
+      "recall": 0.9375,
+      "false_opt_out_rate": 0.04
     },
     {
       "auto_threshold": 0.95,
-      "recall": 0.8235294117647058,
+      "recall": 0.875,
       "false_opt_out_rate": 0.0
     },
     {
@@ -323,43 +321,43 @@
   "threshold_sweep_keyword": [
     {
       "auto_threshold": 0.5,
-      "recall": 0.35294117647058826,
-      "false_opt_out_rate": 0.20833333333333334
+      "recall": 0.3125,
+      "false_opt_out_rate": 0.24
     },
     {
       "auto_threshold": 0.6,
-      "recall": 0.35294117647058826,
-      "false_opt_out_rate": 0.20833333333333334
+      "recall": 0.3125,
+      "false_opt_out_rate": 0.24
     },
     {
       "auto_threshold": 0.7,
-      "recall": 0.35294117647058826,
-      "false_opt_out_rate": 0.20833333333333334
+      "recall": 0.3125,
+      "false_opt_out_rate": 0.24
     },
     {
       "auto_threshold": 0.8,
-      "recall": 0.35294117647058826,
-      "false_opt_out_rate": 0.20833333333333334
+      "recall": 0.3125,
+      "false_opt_out_rate": 0.24
     },
     {
       "auto_threshold": 0.85,
-      "recall": 0.35294117647058826,
-      "false_opt_out_rate": 0.20833333333333334
+      "recall": 0.3125,
+      "false_opt_out_rate": 0.24
     },
     {
       "auto_threshold": 0.9,
-      "recall": 0.35294117647058826,
-      "false_opt_out_rate": 0.20833333333333334
+      "recall": 0.3125,
+      "false_opt_out_rate": 0.24
     },
     {
       "auto_threshold": 0.95,
-      "recall": 0.35294117647058826,
-      "false_opt_out_rate": 0.20833333333333334
+      "recall": 0.3125,
+      "false_opt_out_rate": 0.24
     },
     {
       "auto_threshold": 0.99,
-      "recall": 0.35294117647058826,
-      "false_opt_out_rate": 0.20833333333333334
+      "recall": 0.3125,
+      "false_opt_out_rate": 0.24
     }
   ],
   "cost_latency": {

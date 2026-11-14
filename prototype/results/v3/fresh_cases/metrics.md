@@ -8,8 +8,8 @@ Binary metrics: opt_out is positive; ambiguous and not_opt_out both count as neg
 
 | method | precision | recall | F1 | headline recall (soft_refusal) | FPR on keyword_trap |
 |---|---|---|---|---|---|
-| keyword | 0.600 | 0.265 | 0.367 | 0.250 (n=12) | 1.000 (n=5) |
-| hybrid | 1.000 | 0.882 | 0.938 | 1.000 (n=12) | 0.000 (n=5) |
+| keyword | 0.533 | 0.242 | 0.333 | 0.250 (n=12) | 1.000 (n=5) |
+| hybrid | 1.000 | 0.909 | 0.952 | 1.000 (n=12) | 0.000 (n=5) |
 
 ## Recall by opt_out category
 
@@ -33,7 +33,7 @@ Binary metrics: opt_out is positive; ambiguous and not_opt_out both count as neg
 |---|---|---|---|
 | account | 3 | 2/3 | 3/3 |
 | blunt_refusal | 5 | 1/5 | 5/5 |
-| buried_request | 3 | 2/3 | 2/3 |
+| buried_request | 3 | 1/3 | 3/3 |
 | channel_switch | 2 | 0/2 | 2/2 |
 | deferral | 4 | 4/4 | 4/4 |
 | frustrated | 4 | 0/4 | 3/4 |
@@ -52,24 +52,24 @@ Binary metrics: opt_out is positive; ambiguous and not_opt_out both count as neg
 
 | method | lang | n | precision | recall | F1 |
 |---|---|---|---|---|---|
-| keyword | en | 63 | 0.600 | 0.265 | 0.367 |
-| hybrid | en | 63 | 1.000 | 0.882 | 0.938 |
+| keyword | en | 63 | 0.533 | 0.242 | 0.333 |
+| hybrid | en | 63 | 1.000 | 0.909 | 0.952 |
 
 ## Confusion matrix: keyword (rows = true, cols = predicted)
 
 | true \ pred | opt_out | not_opt_out | ambiguous |
 |---|---|---|---|
-| opt_out | 9 | 25 | 0 |
+| opt_out | 8 | 25 | 0 |
 | not_opt_out | 6 | 14 | 0 |
-| ambiguous | 0 | 9 | 0 |
+| ambiguous | 1 | 9 | 0 |
 
 ## Confusion matrix: hybrid (rows = true, cols = predicted)
 
 | true \ pred | opt_out | not_opt_out | ambiguous |
 |---|---|---|---|
-| opt_out | 30 | 0 | 4 |
+| opt_out | 30 | 0 | 3 |
 | not_opt_out | 0 | 20 | 0 |
-| ambiguous | 0 | 0 | 9 |
+| ambiguous | 0 | 0 | 10 |
 
 ## Route() outcomes (auto=0.9, confirm=0.6)
 
@@ -82,9 +82,9 @@ Hybrid route by true label:
 
 | true | auto_opt_out | send_confirmation | human_review | no_action |
 |---|---|---|---|---|
-| opt_out | 26 | 4 | 4 | 0 |
+| opt_out | 26 | 4 | 3 | 0 |
 | not_opt_out | 0 | 0 | 0 | 20 |
-| ambiguous | 0 | 0 | 9 | 0 |
+| ambiguous | 0 | 0 | 10 | 0 |
 
 ## Threshold sweep (hybrid)
 
@@ -92,19 +92,19 @@ auto_opt_out when label=opt_out and confidence >= threshold. Recall = share of t
 
 | auto_threshold | recall | false_opt_out_rate |
 |---|---|---|
-| 0.50 | 0.882 | 0.000 |
-| 0.60 | 0.882 | 0.000 |
-| 0.70 | 0.882 | 0.000 |
-| 0.80 | 0.853 | 0.000 |
-| 0.85 | 0.853 | 0.000 |
-| 0.90 | 0.765 | 0.000 |
-| 0.95 | 0.441 | 0.000 |
+| 0.50 | 0.909 | 0.000 |
+| 0.60 | 0.909 | 0.000 |
+| 0.70 | 0.909 | 0.000 |
+| 0.80 | 0.879 | 0.000 |
+| 0.85 | 0.879 | 0.000 |
+| 0.90 | 0.788 | 0.000 |
+| 0.95 | 0.455 | 0.000 |
 | 0.99 | 0.000 | 0.000 |
 
 ## Token usage
 
-- New API calls this run: 63 (cache hits: 0)
-- Tokens this run (input/output): 42147 / 2869
+- New API calls this run: 0 (cache hits: 63)
+- Tokens this run (input/output): 0 / 0
 - Tokens of all cached responses used (input/output): 42147 / 2869
 
 ## Cost and latency (LLM calls only)

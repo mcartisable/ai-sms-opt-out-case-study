@@ -11,29 +11,33 @@ Why: the v3 test result (100% recall on opt-outs with no keyword) came from a sp
 
 | | v3 on fresh batch |
 |---|---|
-| Correct labels | 59 of 63 (kappa 0.90) |
-| True opt-outs (34): opted out automatically | 26 |
+| Correct labels | 60 of 63 |
+| True opt-outs (33): opted out automatically | 26 |
 | True opt-outs: sent a confirmation text | 4 |
-| True opt-outs: sent to human review | 4 |
+| True opt-outs: sent to human review | 3 |
 | True opt-outs: ignored | 0 |
-| Opt-outs the model labeled `opt_out` | 30 of 34 (88%, 95% interval 73% to 95%) |
-| Non-opt-outs opted out or sent a confirmation | 0 of 29 |
+| Opt-outs the model labeled `opt_out` | 30 of 33 (91%, 95% interval 76% to 97%) |
+| Non-opt-outs opted out or sent a confirmation | 0 of 30 |
 | Real `not_opt_out` messages (20) sent to review | 0 |
 | Cost per message / latency p50, p95 | $0.00009 / 0.9 s, 2.2 s |
 
-The 100% on the older test split was too high. On messages nobody had seen, recall as a label is 88% with a wide interval, but the routing still caught every opt-out: none was ignored, and nothing harmless was opted out.
+The 100% on the older test split was too high. On messages nobody had seen, recall as a label is 91% with a wide interval, but the routing still caught every opt-out: none was ignored, and nothing harmless was opted out.
 
-## The four misses
-- "I'm so sick of this", "I think you have the wrong number", "This number is not Maria's anymore" (3 rows): your blind label says `opt_out`. The policy says `ambiguous`, and v3 followed the policy, so these went to human review. This is a conflict between your instinct and the written rule, not a model slip.
-- "Hi, quick one: where's my parcel? And also I'd like you to stop texting me promos." (1 row): a real model miss. The parcel question diluted the request, and the model scored it ambiguous at 0.6. It went to human review.
+A first version of this table counted 34 opt-outs and 59 correct. I then decided that a reply mixing a stop request with another question needs a person (`data/LABELING_POLICY.md`), which moved one row ("where's my parcel? And also I'd like you to stop texting me promos") from `opt_out` to `ambiguous`. The model had sent exactly that row to review, so it is no longer a miss. The rescore used cached model answers.
 
-Under my stricter policy labels (my intent, not your blind labels) the result is 60 of 63 correct, 24 of 29 opt-outs automatic, 4 confirmations and 1 to review. The two rows where this differs are "Please delete my account and my data" and "How do I unsubscribe from the newsletter?", which v3 opted out automatically at 0.90 and 0.95 while my intent said ambiguous. You and the judge both called the second one an opt-out.
+## The three misses
+All three are cases where your blind label says `opt_out` and the policy says `ambiguous`. v3 followed the policy, so each went to human review:
+- "I'm so sick of this"
+- "I think you have the wrong number"
+- "This number is not Maria's anymore"
+
+Under my stricter policy labels (my intent, not your blind labels) the result is 60 of 63 correct as well, with 24 of 29 opt-outs automatic, 4 confirmations and 1 to review. The two rows where the two label sets differ most are "Please delete my account and my data" and "How do I unsubscribe from the newsletter?", which v3 opted out automatically at 0.90 and 0.95 while my intent said ambiguous. You and the judge both called the second one an opt-out.
 
 ## What it means
-- v3 is a good classifier on these message styles, not a perfect one. A fair claim is "roughly 88% to 100% label recall, with routing that ignored none".
+- v3 is a good classifier on these message styles, not a perfect one. A fair claim is "roughly 91% to 100% label recall, with routing that ignored none".
 - The biggest question is policy, not the model: wrong-number replies and account-deletion requests. Your blind labels remove the person; the policy sends them to a human. Decided by the product owner: wrong-number replies stay in human review, so the policy and prompt v3 stand.
 - The "Enough already" risk from the dev analysis is not resolved here. The two relevant rows ended up disputed and were skipped. One related row, "enough with the texts already", was a consensus opt-out and v3 got it right.
-- A buried request next to a different question is a real weakness to fix in a later prompt version.
+- A reply that mixes a stop request with another question goes to a person by policy. The design gap is that nothing stops marketing messages while it waits in the queue (see the PRD).
 
 ## Limits
-Sixty-three messages is small, and 34 opt-outs gives a wide interval. All messages are mine. The labels use 25 human rows, 38 consensus rows and no second human.
+Sixty-three messages is small, and 33 opt-outs gives a wide interval. All messages are mine. The labels use 25 human rows, 38 consensus rows and no second human.

@@ -17,7 +17,7 @@ Case study based on my work as a PM at Maestra.io. No real Maestra figures appea
 | 11 | Rollout unit | All brands at once; per-brand flag | Per-brand flag, off by default, global kill switch | Brands differ in volume and readiness, and a problem should stay contained. | After the MVP pilot |
 
 | 12 | Labeling policy as a product decision | Let the model decide edge cases; write the rules down | Written policy in `data/LABELING_POLICY.md`, changed only by an explicit decision | Edge cases decide review workload and compliance exposure. Decisions so far: blunt refusals, "never signed up" and "cancel my subscription" are opt-outs; deferrals need no action; wrong number and anger with no request go to review. | Compliance review or real-reply data |
-| 13 | How a prompt change is accepted | Edit and ship; tune on dev and score a held-out split once | Tune on a dev split, score the held-out split once per version, disclose anything seen | Three prompt versions were tried on dev. Version 2 got worse on the hard set and was dropped. A fresh batch then cut the claimed 100% recall to 88%. | A larger real-reply set exists |
+| 13 | How a prompt change is accepted | Edit and ship; tune on dev and score a held-out split once | Tune on a dev split, score the held-out split once per version, disclose anything seen | Three prompt versions were tried on dev. Version 2 got worse on the hard set and was dropped. A fresh batch then cut the claimed 100% recall to 91%. | A larger real-reply set exists |
 
 ## Open decisions
 

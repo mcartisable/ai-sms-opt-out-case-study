@@ -8,14 +8,13 @@ Binary metrics: opt_out is positive; ambiguous and not_opt_out both count as neg
 
 | method | precision | recall | F1 | headline recall (soft_refusal) | FPR on keyword_trap |
 |---|---|---|---|---|---|
-| keyword | 0.545 | 0.353 | 0.429 | n/a (n=0) | n/a (n=0) |
-| hybrid | 1.000 | 1.000 | 1.000 | n/a (n=0) | n/a (n=0) |
+| keyword | 0.455 | 0.312 | 0.370 | n/a (n=0) | n/a (n=0) |
+| hybrid | 0.941 | 1.000 | 0.970 | n/a (n=0) | n/a (n=0) |
 
 ## Recall by opt_out category
 
 | category | keyword | hybrid |
 |---|---|---|
-| buried_request | 0.750 | 0.250 |
 | channel_switch | 0.000 | 1.000 |
 | confusable | 0.600 | 0.200 |
 | formatting | 0.333 | 1.000 |
@@ -29,7 +28,7 @@ Binary metrics: opt_out is positive; ambiguous and not_opt_out both count as neg
 
 | category | n | keyword | hybrid |
 |---|---|---|---|
-| buried_request | 4 | 2/4 | 4/4 |
+| buried_request | 4 | 1/4 | 3/4 |
 | channel_switch | 2 | 0/2 | 2/2 |
 | command | 3 | 3/3 | 3/3 |
 | confusable | 5 | 3/5 | 4/5 |
@@ -46,24 +45,24 @@ Binary metrics: opt_out is positive; ambiguous and not_opt_out both count as neg
 
 | method | lang | n | precision | recall | F1 |
 |---|---|---|---|---|---|
-| keyword | en | 41 | 0.545 | 0.353 | 0.429 |
-| hybrid | en | 41 | 1.000 | 1.000 | 1.000 |
+| keyword | en | 41 | 0.455 | 0.312 | 0.370 |
+| hybrid | en | 41 | 0.941 | 1.000 | 0.970 |
 
 ## Confusion matrix: keyword (rows = true, cols = predicted)
 
 | true \ pred | opt_out | not_opt_out | ambiguous |
 |---|---|---|---|
-| opt_out | 6 | 11 | 0 |
+| opt_out | 5 | 11 | 0 |
 | not_opt_out | 5 | 11 | 0 |
-| ambiguous | 0 | 8 | 0 |
+| ambiguous | 1 | 8 | 0 |
 
 ## Confusion matrix: hybrid (rows = true, cols = predicted)
 
 | true \ pred | opt_out | not_opt_out | ambiguous |
 |---|---|---|---|
-| opt_out | 17 | 0 | 0 |
+| opt_out | 16 | 0 | 0 |
 | not_opt_out | 0 | 15 | 1 |
-| ambiguous | 0 | 3 | 5 |
+| ambiguous | 1 | 3 | 5 |
 
 ## Route() outcomes (auto=0.9, confirm=0.6)
 
@@ -76,9 +75,9 @@ Hybrid route by true label:
 
 | true | auto_opt_out | send_confirmation | human_review | no_action |
 |---|---|---|---|---|
-| opt_out | 17 | 0 | 0 | 0 |
+| opt_out | 16 | 0 | 0 | 0 |
 | not_opt_out | 0 | 0 | 1 | 15 |
-| ambiguous | 0 | 0 | 5 | 3 |
+| ambiguous | 1 | 0 | 5 | 3 |
 
 ## Threshold sweep (hybrid)
 
@@ -86,14 +85,14 @@ auto_opt_out when label=opt_out and confidence >= threshold. Recall = share of t
 
 | auto_threshold | recall | false_opt_out_rate |
 |---|---|---|
-| 0.50 | 1.000 | 0.000 |
-| 0.60 | 1.000 | 0.000 |
-| 0.70 | 1.000 | 0.000 |
-| 0.80 | 1.000 | 0.000 |
-| 0.85 | 1.000 | 0.000 |
-| 0.90 | 1.000 | 0.000 |
-| 0.95 | 0.824 | 0.000 |
-| 0.99 | 0.118 | 0.000 |
+| 0.50 | 1.000 | 0.040 |
+| 0.60 | 1.000 | 0.040 |
+| 0.70 | 1.000 | 0.040 |
+| 0.80 | 1.000 | 0.040 |
+| 0.85 | 1.000 | 0.040 |
+| 0.90 | 1.000 | 0.040 |
+| 0.95 | 0.812 | 0.040 |
+| 0.99 | 0.125 | 0.000 |
 
 ## Token usage
 

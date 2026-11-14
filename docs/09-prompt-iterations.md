@@ -37,6 +37,8 @@ Three versions on dev is where I stopped. Each further edit risks fitting the de
 
 ## Test result (v3, scored once)
 
+A later policy decision (mixed requests go to review) flipped one hard test row from `opt_out` to `ambiguous`; the hard test figures below were rescored from cached answers. Before it they read 37 and 40 correct, and 17 of 17 opt-outs handled.
+
 | | v1 | v3 |
 |---|---|---|
 | Recall on non-keyword opt-outs (50 rows) | 42 of 50 (84%, 95% interval 71% to 92%) | 50 of 50 (100%, interval 93% to 100%) |
@@ -44,8 +46,8 @@ Three versions on dev is where I stopped. Each further edit risks fitting the de
 | True opt-outs: auto / confirmation / review (of 72) | 55 / 9 / 8 | 66 / 6 / 0 |
 | Non-opt-outs auto opted out or sent a confirmation | 0 | 0 |
 | Non-opt-outs sent to review (of 90) | 12 | 3 |
-| Hard test set: correct labels, of 41 | 37 | 40 |
-| Hard test set: true opt-outs auto opted out or sent a confirmation (of 17) | 17 | 17 |
+| Hard test set: correct labels, of 41 | 36 | 39 |
+| Hard test set: true opt-outs auto opted out or sent a confirmation (of 16) | 16 | 16 |
 | Cost per LLM-routed message | | $0.000086 main, $0.000094 hard |
 | Latency p50 / p95 | | 0.95 / 2.0 s main, 1.0 / 1.9 s hard |
 

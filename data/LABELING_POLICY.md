@@ -48,3 +48,6 @@ Blunt, slangy or impatient messages that tell the sender to stop or go away ("ge
 ## Wrong-number decision confirmed after the fresh batch
 In `docs/11-fresh-batch.md` the blind hand labels removed wrong-number senders, while this policy sends them to human review. The product owner confirmed human review: a person checks whether to remove the number or reply, so no one is removed on a guess. Those blind labels stay in the fresh batch as the human's reading, and the three resulting misses are reported as policy conflicts, not corrected.
 
+## Decision on mixed requests
+A reply that contains a clear request to stop and also asks something that needs an answer ("where's my parcel? And also I'd like you to stop texting me promos", "quick question about my refund, also stop these messages") is `ambiguous`: a person must see it, because the customer still wants a reply and may still want order updates. Decided by the product owner after the fresh batch. Applied to one fresh-batch row and one hard-set row, and the affected results were rescored from cached model answers (no new API calls); the earlier figures are in git history. A reply that merely adds a comment ("love the jacket! Please stop sending me promos") is still `opt_out`. Design note, not built: the better handling is two actions at once, suppress marketing immediately and send the rest to a person.
+

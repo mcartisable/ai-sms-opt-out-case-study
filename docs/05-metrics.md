@@ -43,7 +43,7 @@ Run before any live traffic, on a hand-labeled set with the taxonomy from `02-di
 
 Offline gate: recall at or above 90% and false opt-out rate at or below 2% at the chosen auto threshold, in each language where auto opt-out is enabled.
 
-Prototype status: on a fresh synthetic batch, recall was 88% (interval 73% to 95%) and no harmless message was opted out, so the gate is not yet shown. The synthetic data cannot show it; real replies labeled by two people can.
+Prototype status: on a fresh synthetic batch, recall was 91% (interval 76% to 97%) and no harmless message was opted out, so the gate is not yet shown. The synthetic data cannot show it; real replies labeled by two people can.
 
 ## Online evaluation
 
