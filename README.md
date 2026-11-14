@@ -40,6 +40,8 @@ What the routing did with the hybrid's decisions:
 - A cost to watch: 25 of the 213 true non-opt-outs, mostly deferrals like "Not now", go to human review, because the model calls them ambiguous and the labeling policy says they need no action. That is wasted review work.
 - Token cost: about 146k input and 24k output tokens for all 450 messages.
 
+Prompt v3 (details in [docs/09-prompt-iterations.md](docs/09-prompt-iterations.md)). After reading v1's misses ([docs/08-error-analysis.md](docs/08-error-analysis.md)) I rewrote the prompt three times against the dev split only, then scored the held-out test split once. Recall on opt-outs with no keyword went from 84% to 100% on test (50 of 50, interval 93% to 100%), real opt-outs sent to human review dropped from 8 to 0 of 72, and harmless messages sent to review dropped from 12 to 3 of 90. No non-opt-out was opted out or sent a confirmation. I also fixed a bug found along the way: any message of three words or fewer containing a keyword skipped the model, so "Cancel my subscription" was opted out. Cost is about $0.00009 per classified message and latency p50 is about 1 second. Read the 100% as a ceiling: I looked at test misses while analyzing v1, the data is template-generated, and the hard-set labels are mine alone.
+
 Caveats. The dataset is generated from templates with typos and prefixes, so many rows are close variants of each other, and real inbound SMS is messier. Treat these numbers as an upper bound that shows the approach works, and as the harness for measuring real data in a shadow-mode rollout ([docs/06-rollout-plan.md](docs/06-rollout-plan.md)). The keyword baseline's 0% is true by construction, because the soft-refusal rows contain no keyword. The labels came from the same generator as the messages. A blind human pass on 70 messages agreed on 84% (Cohen's kappa 0.76), and all disagreements were in the generator's `ambiguous` bucket.
 
 ## Repo structure
@@ -56,7 +58,8 @@ prototype/   classifier.py (keyword, LLM, hybrid, routing), evaluate.py, results
 pip3 install -r requirements.txt
 python3 prototype/evaluate.py --provider mock --sample-per-category 10   # offline pipeline test, not real results
 export ANTHROPIC_API_KEY=your-key
-python3 prototype/evaluate.py --provider anthropic                       # real run, 450 rows
+python3 prototype/evaluate.py --provider anthropic                       # real run, 450 rows, prompt v3
+prototype/run_split.sh v3 test                                           # one split of both datasets, one prompt version
 ```
 
 Responses are cached in `prototype/results/`, so reruns are free. Delete the cache after editing the system prompt.

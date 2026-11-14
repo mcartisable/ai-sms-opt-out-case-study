@@ -172,3 +172,29 @@ All 450 messages were generated from templates, and the labels came from the sam
 - **In this repo.** I read test misses to write the analysis, so the file marks every example with its split. Prompt v2 may only use dev examples, and the test set will be scored once. The contamination is disclosed, and a fresh unseen batch of messages is the later fix.
 - **One-liner.** "I tell people which numbers I've already peeked at."
 
+## Step 5: changing the prompt without fooling yourself
+
+### Prompt iteration and regressions
+- **What it is.** Editing the instructions and re-measuring. Each edit can fix one pattern and break another.
+- **Why a PM cares.** v2 fixed slang refusals and deferrals but got worse on the hard set (58 right to 53), because one added clause made the model send harmless messages to review. Without re-measuring, I would have shipped a regression and called it an improvement.
+- **In this repo.** `VERSIONS` in `classifier.py` keeps v1, v2 and v3 side by side; `docs/09-prompt-iterations.md` has the comparison table.
+- **One-liner.** "Every prompt change gets a before-and-after table, and some changes lose."
+
+### Overfitting to the dev set
+- **What it is.** Tuning so hard on the examples you look at that the gains stop transferring.
+- **Why a PM cares.** The dev numbers look better than the real ones. I stopped at three versions for that reason.
+- **In this repo.** Edits used dev examples, expressed as general rules ("blunt refusals like 'enough' are opt-outs") instead of copying phrases. Both the dev numbers and the test number are reported.
+- **One-liner.** "I stop iterating before the dev set stops being a fair test of anything."
+
+### Contaminated test sets and ceiling effects
+- **What it is.** A test score that is too good to trust, because the test examples influenced the work, or because the data is too easy to separate the versions.
+- **Why a PM cares.** 100% on 50 examples still allows a true rate near 93%, and I had read test misses. The honest claim is "fixed the known patterns", not "solved".
+- **In this repo.** The 09 file says exactly what I looked at and what I would and would not claim. A fresh unseen batch or shadow-mode traffic is the real check.
+- **One-liner.** "A perfect score on my own test set is a reason to look harder, not to celebrate."
+
+### Structured output and the shortcut rule
+- **What it is.** The prompt makes the model reply with one JSON object, which the code parses. Separately, a code rule decides when to skip the model.
+- **Why a PM cares.** Bugs hide in the code around the model. The keyword shortcut ("three words or fewer with a keyword") opted out "Cancel my subscription" with no model involved. The carrier convention is that a keyword must be the whole message, and the fix follows it.
+- **In this repo.** `is_bare_keyword()` in `classifier.py`. Zero JSON parse failures in all runs since the token limit was fixed.
+- **One-liner.** "Check the glue code too, not only the prompt."
+

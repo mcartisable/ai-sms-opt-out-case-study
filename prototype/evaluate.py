@@ -242,7 +242,7 @@ def main() -> None:
     ap.add_argument("--split", choices=["all", "dev", "test"], default="all",
                     help="evaluate one split of data/replies.csv (split by template family)")
     ap.add_argument("--data", default="data/replies.csv")
-    ap.add_argument("--version", choices=sorted(C.VERSIONS), default="v1",
+    ap.add_argument("--version", choices=sorted(C.VERSIONS), default="v3",
                     help="prompt + keyword-shortcut bundle (v1 = frozen baseline, v2/v3 = iterations after error analysis)")
     ap.add_argument("--price-in", type=float, help="USD per million input tokens (overrides built-in table)")
     ap.add_argument("--price-out", type=float, help="USD per million output tokens")

@@ -33,6 +33,27 @@ Three versions on dev is where I stopped. Each further edit risks fitting the de
 - Four content-free fragments ("OYE, VALE...", "listen, Awesome") still go to review. Acceptable.
 - One prompt-injection string that closes the `<sms>` tag scores 0.4 ambiguous and goes to review, which is the safe outcome.
 
-## Test result
+## Test result (v3, scored once)
 
-Not run yet.
+| | v1 | v3 |
+|---|---|---|
+| Recall on non-keyword opt-outs (50 rows) | 42 of 50 (84%, 95% interval 71% to 92%) | 50 of 50 (100%, interval 93% to 100%) |
+| Main test set: correct labels, of 175 | 153 | 169 |
+| True opt-outs: auto / confirmation / review (of 72) | 55 / 9 / 8 | 66 / 6 / 0 |
+| Non-opt-outs auto opted out or sent a confirmation | 0 | 0 |
+| Non-opt-outs sent to review (of 90) | 12 | 3 |
+| Hard test set: correct labels, of 41 | 36 | 39 |
+| Hard test set: true opt-outs auto opted out (of 16) | 16 | 16 |
+| Cost per LLM-routed message | | $0.000086 main, $0.000094 hard |
+| Latency p50 / p95 | | 0.95 / 2.0 s main, 1.0 / 1.9 s hard |
+
+The three remaining wrong labels on the main test set are the "Maybe later" and "Maybe another time" rows where the hand label said ambiguous and the policy says not_opt_out (see the inconsistency note in `data/LABELING_POLICY.md`). Two more are content-free fragments sent to review. On the hard set, "Cancel my subscription" now reaches the model, which scores opt_out at 0.7, so it triggers a confirmation text instead of an automatic opt-out. That confirms the keyword fix.
+
+## How far to trust this result
+
+100% is a ceiling, not a forecast.
+- **The test split is not clean.** I read test misses while writing `docs/08-error-analysis.md`. The consent rule in the v2 and v3 prompts ("never signed up", "never agreed") comes from the labeling policy, and the policy came from a blind sample drawn from the test split. The eight test soft refusals v1 missed were mostly about consent and slang, which the new rules address directly.
+- **The data is easy.** Messages are template variants, so one fixed rule fixes a whole family at once. Fifty rows at 100% still allows a true rate near 93%.
+- **Labels are mine.** The hard set was labeled by one person in one pass.
+
+What I would claim: v3 fixes the specific failure patterns found in v1, costs about the same, and removes the three-word keyword bug. What I would not claim: 100% recall in production. The fair check is a fresh batch of messages nobody on this project has seen, ideally real replies in shadow mode.
