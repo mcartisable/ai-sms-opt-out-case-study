@@ -7,7 +7,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 A product-management portfolio case study with a small working prototype. It is based on the author's real PM work at Maestra.io (a martech platform like Klaviyo/Attentive), where SMS opt-out only worked on keywords (STOP etc.), so natural-language refusals ("I don't want to receive messages from you anymore") stayed subscribed. The prototype shows an LLM catching those replies. The repo is meant to be published (GitHub plus a case study web page, later embedded in a personal portfolio site).
 
 Ground rules for anything written here:
-- All data is synthetic and all figures are labeled "illustrative assumption". Never add real Maestra numbers, client names or confidential details, and do not invent claims about what actually happened at Maestra beyond: opt-out was keyword-only, clients wrote natural-language refusals, the team wanted to handle them with AI.
+- All data is synthetic and all figures are labeled "illustrative assumption". Never add real Maestra numbers, client names or confidential details, and do not invent claims about what actually happened at Maestra beyond: opt-out was keyword-only, clients wrote natural-language refusals, the team wanted to handle them with AI, and (confirmed by the author) the author scoped the feature and the developers shipped it. This repo is a rebuild with synthetic data, not that implementation.
 - Discovery content is framed as an approach/plan, not fabricated findings or quotes.
 - Prose style: plain and direct, avoiding AI-sounding patterns (run the humanizer skill over prose before finishing).
 

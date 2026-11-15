@@ -116,6 +116,8 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
 .result .act { background: var(--accent-soft); border-radius: 8px; padding: 10px 12px; font-size: 15px; }
 .result .truth { font-size: 14px; color: var(--muted); }
 .result .truth.miss { color: var(--bad); }
+.summary { background: var(--accent-soft); border-radius: 10px; padding: 14px 16px; font-size: 16px; margin: 20px 0 0; max-width: 65ch; }
+.origin { font-size: 15px; color: var(--muted); margin: 12px 0 0; max-width: 65ch; }
 .demo .note { font-size: 13px; color: var(--muted); margin: 0; }
 </style>
 
@@ -124,6 +126,8 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
     <div class="eyebrow">Product case study · AI feature</div>
     <h1>When “I don’t want your texts anymore” doesn’t say STOP</h1>
     <p class="lede">At Maestra.io, a Klaviyo/Attentive-style marketing platform, SMS opt-out only worked on keywords. I designed and prototyped an LLM layer that catches natural-language refusals, with guardrails so it never acts alone on a shaky guess.</p>
+    <p class="summary"><b>Fair test, on 63 messages the classifier had never seen:</b> 91% of the 33 opt-outs labeled correctly (plausible range 76% to 97%), none ignored, no harmless message opted out or sent a confirmation. Keyword rules alone catch none of the refusals that contain no keyword. Synthetic data, so read it as an upper bound.</p>
+    <p class="origin">At Maestra I scoped this feature and our developers shipped it. This page is not that implementation: I rebuilt the approach with synthetic data, and none of the numbers here are Maestra’s.</p>
     <div class="meta"><span>By Ruslan Temirgaliev</span><span>Role: Product Manager</span><span>Prototype: Python + Claude Haiku</span><span>Data: 450 synthetic replies + 104 hard cases</span><span><a href="https://github.com/mcartisable/ai-sms-opt-out-case-study" target="_blank" rel="noopener">Code on GitHub</a></span></div>
   </header>
 
@@ -150,7 +154,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
 
   <section>
     <h2>What I designed</h2>
-    <p>Keyword rules still run first because they are fast and exact. Everything else goes to a small, cheap model that returns a label and a confidence. The model never opts anyone out by itself. Its confidence decides what happens next.</p>
+    <p>Keyword rules still run first because they are fast and exact. Everything else goes to a small, cheap model that returns a label and a confidence. The model never has the final word alone: its label and confidence go into fixed routing rules. Only a high-confidence opt-out (0.90 or more) happens automatically. Anything less certain asks the customer or goes to a person.</p>
     <div class="flow">
       <div class="step"><b>1. Inbound reply</b><span>Any SMS reply from a subscriber</span></div>
       <div class="step"><b>2. Keyword rules</b><span>A bare STOP-style reply is final</span></div>
@@ -174,12 +178,41 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
   </section>
 
   <section>
+    <h2>Decisions I made</h2>
+    <ul class="plain">
+      <li><b>A small model, not a large one.</b> The job is a three-way label on a short text, at high volume. The small model costs about $0.00009 per reply and answers in about a second. A larger model, around 20 times the cost, only labels evaluation data.</li>
+      <li><b>Ask the customer only when the model is unsure.</b> Confirmation texts go to opt-outs between 0.60 and 0.90 confidence. Asking someone who already said no adds friction. Asking when the model isn’t sure is cheap.</li>
+      <li><b>One brand at a time.</b> The feature sits behind a per-brand flag, off by default, with a global kill switch. A problem stays contained, and each brand can start in shadow mode, where the model decides but nothing happens.</li>
+      <li><b>English first.</b> Each language needs its own labeled data and reviewers, so the first release covers English plus one more language and everything else goes to review. The fair-test sets on this page are English only.</li>
+    </ul>
+    <p style="margin-top:12px">The full list, with the options I rejected, is the decision log in the repository.</p>
+  </section>
+
+  <section>
     <h2>How I tested it</h2>
     <p>Real Maestra data is confidential, so I generated 450 labeled replies in English, Russian and Spanish. The set includes the hard cases: refusals with no keyword (135), keyword traps like “cancel my order” (45), and ambiguous replies like “not interested” (42). The headline metric is recall on opt-outs with no keyword, since that is the gap in the old system. The baseline is the keyword rules. I split the data by phrase family into a dev set for tuning (275 messages) and a held-out test set (175), because many messages are small variations of one phrase and a random split would leak.</p>
   </section>
 
   <section>
     <h2>Results</h2>
+    <h3>The fair test: messages the classifier had never seen</h3>
+    <p>I wrote 63 new messages and fixed their labels before any model saw them. Prompt version 3, scored once:</p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Fresh batch (33 opt-outs, 30 other messages)</th><th class="num">Result</th></tr></thead>
+        <tbody>
+          <tr><td>Opt-outs labeled correctly</td><td class="num">30 of 33 (91%)</td></tr>
+          <tr><td>Plausible range for the true rate</td><td class="num">76% to 97%</td></tr>
+          <tr><td>Opted out automatically</td><td class="num">26</td></tr>
+          <tr><td>Sent a confirmation text</td><td class="num">4</td></tr>
+          <tr><td>Sent to a person</td><td class="num">3</td></tr>
+          <tr><td>Ignored</td><td class="num">0</td></tr>
+          <tr><td>Harmless messages opted out or sent a confirmation</td><td class="num">0 of 30</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin-top:12px">The three misses are replies like “wrong number” and “I’m so sick of this”, where my blind hand label would remove the person and my written policy sends them to review. Nobody was ignored.</p>
+    <h3 style="margin-top:28px">The 450-message set, where I did the tuning (prompt version 1)</h3>
     <div class="bars">
       <div>
         <h3>Catches refusals that have no keyword</h3>
@@ -188,10 +221,10 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
         <div class="row"><span>Keywords + LLM</span><div class="track"><div class="fill llm" style="width:88.9%"></div></div><span class="val">89%</span></div>
       </div>
       <div>
-        <h3>Gets fooled by keyword traps</h3>
-        <small>Share of 45 non-opt-outs containing a keyword that were treated as opt-outs</small>
-        <div class="row"><span>Keywords</span><div class="track"><div class="fill kw" style="width:100%"></div></div><span class="val">100%</span></div>
-        <div class="row"><span>Keywords + LLM</span><div class="track"><div class="fill llm" style="width:2.2%"></div></div><span class="val">2%</span></div>
+        <h3>Doesn’t fall for keyword traps</h3>
+        <small>Share of 45 non-opt-outs containing a keyword that were correctly left alone</small>
+        <div class="row"><span>Keywords</span><div class="track"><div class="fill kw" style="width:0%"></div></div><span class="val">0%</span></div>
+        <div class="row"><span>Keywords + LLM</span><div class="track"><div class="fill llm" style="width:97.8%"></div></div><span class="val">98%</span></div>
       </div>
     </div>
     <p style="margin-top:16px">Overall opt-out precision and recall went from 0.56 and 0.30 to 0.99 and 0.92. On the held-out test messages, recall on opt-outs with no keyword is 84% (42 of 50, plausible range 71% to 92%), so the headline number has real uncertainty at this sample size.</p>
@@ -262,7 +295,7 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
       </table>
     </div>
     <p style="margin-top:14px">Cost is about $0.00009 per classified message (illustrative at 2026-11 list prices for the small model). Latency is about 1 second at the median and 2 seconds at the 95th percentile, which is fine because nobody is waiting on an opt-out.</p>
-    <div class="callout"><b>Read 100% as a ceiling.</b> I looked at test misses while analyzing version 1, and the consent rule comes from a labeling policy built on a sample from the test split. The data is template-generated, so one rule fixes a whole family. Fifty messages at 100% still allows a true rate near 93%. I then ran the fair check: a fresh batch of 63 messages I wrote before any model saw them. Version 3 labeled 91% of the 33 opt-outs correctly (plausible range 76% to 97%). Routing sent 26 to automatic opt-out, 4 to a confirmation text and 3 to a person, ignored none, and opted out no harmless message. All three misses are replies like “wrong number” or “I’m so sick of this” that my blind hand label would remove but my written policy sends to review. That is the number to trust, and real replies in shadow mode are the next check.</div>
+    <div class="callout"><b>Read 100% as a ceiling.</b> I looked at test misses while analyzing version 1, and the consent rule comes from a labeling policy built on a sample from the test split. The data is template-generated, so one rule fixes a whole family. Fifty messages at 100% still allows a true rate near 93%. The fair check is the fresh batch at the top of the results. Real replies in shadow mode are the next check.</div>
     <p style="margin-top:14px">Two open questions remain, flagged for a second labeler and compliance: “Enough already” messages that my labels call ambiguous but version 3 treats as requests to stop (some reach automatic opt-out), and whether “Delete my account” should remove SMS consent.</p>
   </section>
 
