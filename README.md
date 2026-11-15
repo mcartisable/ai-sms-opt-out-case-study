@@ -74,3 +74,8 @@ Responses are cached in `prototype/results/`, so reruns are free. Delete the cac
 - **Check the labels.** I first labeled angry replies like "Who the heck keeps texting me?" as opt-outs. The model called them ambiguous, and on reflection it was right. Relabeling them changed the headline metric more than any model change would have.
 - **Labels are policy.** I labeled 70 messages blind and compared them with the generator's labels. They matched on every clear opt-out and non-opt-out, and disagreed on "Not now", "Maybe later", "Who is this?" and "I never signed up". Adopting my labels moved the headline recall from 92% to 89% without touching the model, and exposed a real gap in the prompt.
 - **The routing matters more than the classifier.** The model's borderline calls are mostly handled by confirmation and review tiers, which is what keeps false opt-outs at zero at the auto threshold.
+
+## License
+
+MIT, see [LICENSE](LICENSE). The code and docs may be copied and adapted. The case study figures are illustrative, the data is synthetic, and nothing here is legal advice. Check opt-out rules for your own markets with a compliance reviewer before using any of it in production.
+
