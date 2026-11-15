@@ -99,10 +99,12 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
 
 /* demo widget */
 .demo { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px; display: flex; flex-direction: column; gap: 14px; }
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip { font: 13px var(--font-body); background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; cursor: pointer; text-align: left; }
-.chip:hover, .chip[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
-.chip:focus-visible, .demo button:focus-visible, .demo textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.pickrow { display: flex; gap: 8px; align-items: stretch; }
+.pickrow select { flex: 1; min-width: 0; font: 15px var(--font-body); color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+.pickrow .step { font: 500 18px var(--font-body); background: var(--bg); color: var(--fg); border: 1px solid var(--line); border-radius: 8px; width: 44px; cursor: pointer; }
+.pickrow .step:hover { border-color: var(--accent); background: var(--accent-soft); }
+.demo label.lbl { font: 500 12px var(--font-mono); text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.demo button:focus-visible, .demo select:focus-visible, .demo textarea:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .demo textarea { width: 100%; min-height: 64px; font: 15px var(--font-body); color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; resize: vertical; }
 .demo .go { font: 500 14px var(--font-body); background: var(--accent); color: var(--bg); border: 0; border-radius: 8px; padding: 9px 16px; cursor: pointer; }
 .demo .go[disabled] { opacity: .5; cursor: default; }
@@ -277,7 +279,8 @@ footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line)
     <h2>Try it</h2>
     <p>Pick a message to see what the classifier did with it. These are recorded answers from real runs of prompt version 3 on messages it had not been tuned on, including the ones it got wrong or routed to a person. Nothing here calls a model.</p>
     <div class="demo">
-      <div class="chips" id="chips" role="group" aria-label="Example messages"></div>
+      <label class="lbl" for="pick">Example message</label>
+      <div class="pickrow"><button type="button" class="step" id="prev" aria-label="Previous example">‹</button><select id="pick"></select><button type="button" class="step" id="next" aria-label="Next example">›</button></div>
       <div id="live" hidden>
         <h3>Or type your own</h3>
         <textarea id="livetext" maxlength="300" aria-label="Your SMS reply" placeholder="e.g. please stop texting me about the sale"></textarea>
@@ -312,7 +315,7 @@ const REPLAY = /*REPLAY_JSON_START*/[{"text": "Stop.", "label": "opt_out", "conf
     no_action: "No action"
   };
   const NAME = { opt_out: "opt_out", not_opt_out: "not_opt_out", ambiguous: "ambiguous" };
-  const chips = document.getElementById("chips"), out = document.getElementById("result");
+  const pick = document.getElementById("pick"), out = document.getElementById("result");
   function show(r, tag) {
     out.textContent = "";
     const mk = (cls, text) => { const d = document.createElement("div"); if (cls) d.className = cls; d.textContent = text; return d; };
@@ -326,15 +329,26 @@ const REPLAY = /*REPLAY_JSON_START*/[{"text": "Stop.", "label": "opt_out", "conf
     out.appendChild(mk("act", ACTION[r.route] || r.route));
     if (r.truth) { const ok = r.truth === r.label; out.appendChild(mk("truth" + (ok ? "" : " miss"), ok ? "Matches the reference label (" + r.truth + ")." : "Reference label: " + r.truth + ". The system and the label disagree here; see the notes in the repo.")); }
   }
-  REPLAY.forEach(function (r, i) {
-    const b = document.createElement("button"); b.type = "button"; b.className = "chip"; b.textContent = r.text.length > 48 ? r.text.slice(0, 46) + "…" : r.text;
-    b.title = r.text; b.setAttribute("aria-pressed", "false");
-    b.addEventListener("click", function () {
-      chips.querySelectorAll(".chip").forEach(function (c) { c.setAttribute("aria-pressed", "false"); });
-      b.setAttribute("aria-pressed", "true"); show(r, "Recorded answer");
+  const groups = [["opt_out", "Should opt out"], ["not_opt_out", "Should not opt out"], ["ambiguous", "Needs a person"]];
+  const ph = document.createElement("option"); ph.value = ""; ph.textContent = "Choose an example…"; ph.disabled = true; ph.selected = true; pick.appendChild(ph);
+  groups.forEach(function (g) {
+    const og = document.createElement("optgroup"); og.label = g[1];
+    REPLAY.forEach(function (r, i) {
+      if (r.truth !== g[0]) return;
+      const o = document.createElement("option"); o.value = String(i); o.textContent = r.text; og.appendChild(o);
     });
-    chips.appendChild(b);
+    if (og.children.length) pick.appendChild(og);
   });
+  function choose(i) { pick.value = String(i); show(REPLAY[i], "Recorded answer"); }
+  pick.addEventListener("change", function () { show(REPLAY[+pick.value], "Recorded answer"); });
+  function step(d) {
+    const opts = Array.prototype.slice.call(pick.querySelectorAll("option")).filter(function (o) { return o.value !== ""; });
+    let k = opts.findIndex(function (o) { return o.value === pick.value; });
+    k = k < 0 ? (d > 0 ? 0 : opts.length - 1) : (k + d + opts.length) % opts.length;
+    choose(+opts[k].value);
+  }
+  document.getElementById("prev").addEventListener("click", function () { step(-1); });
+  document.getElementById("next").addEventListener("click", function () { step(1); });
   if (window.OPTOUT_API) {
     const live = document.getElementById("live"), ta = document.getElementById("livetext"), go = document.getElementById("livego");
     live.hidden = false;
