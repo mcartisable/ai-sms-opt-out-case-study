@@ -1,5 +1,7 @@
 # AI SMS Opt-Out: detecting natural-language unsubscribe requests
 
+By Ruslan Temirgaliev, product manager. Based on my work on SMS opt-out at Maestra.io.
+
 SMS marketing platforms like Maestra.io only honored keywords such as STOP, so replies like "I don't want to receive messages from you anymore" stayed subscribed. This project is a PM case study plus a working prototype that uses an LLM to catch those unsubscribe requests.
 
 It is based on my product work at Maestra.io. All data here is synthetic and all business figures are illustrative assumptions. No confidential data is included.
