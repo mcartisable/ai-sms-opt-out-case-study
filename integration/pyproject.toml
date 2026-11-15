@@ -1,0 +1,13 @@
+[project]
+name = "optout-classifier"
+version = "0.1.0"
+description = "Natural-language SMS opt-out classifier (prompt v3), packaged from the ai-sms-opt-out case study"
+requires-python = ">=3.9"
+dependencies = ["anthropic"]
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["optout_classifier"]

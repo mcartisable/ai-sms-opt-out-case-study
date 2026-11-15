@@ -50,6 +50,8 @@ Caveats. The dataset is generated from templates with typos and prefixes, so man
 docs/        PM case study: problem, discovery, PRD, risk, metrics, rollout, decision log
 data/        generate_dataset.py and the synthetic replies.csv (450 rows)
 prototype/   classifier.py (keyword, LLM, hybrid, routing), evaluate.py, results/
+demo/        Cloudflare Pages demo: recorded answers plus a rate-limited live box
+integration/ handoff kit for engineering: classifier package, rollout-mode handler, shadow-mode log and report, INTEGRATION.md
 ```
 
 ## How to run
