@@ -1,5 +1,7 @@
 # Live demo (Cloudflare Pages)
 
+> The public demo now runs on my portfolio: [/work/sms-opt-out-classifier](https://portfolio-website.mcartis94.workers.dev/work/sms-opt-out-classifier/). The same `/api/classify` code lives in the portfolio's Worker. This folder still works for running the demo locally.
+
 A static page plus one function, `POST /api/classify`, that runs the same logic as the Python prototype (prompt v3, bare-keyword rule, 0.90 / 0.60 routing). The page works in two modes: recorded answers always, and a "type your own" box when the function is configured.
 
 ## How it is protected
