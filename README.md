@@ -6,7 +6,7 @@ SMS marketing platforms like Maestra.io only honored keywords such as STOP, so r
 
 It is based on my product work at Maestra.io. All data here is synthetic and all business figures are illustrative assumptions. No confidential data is included.
 
-**Read the case study and try the live demo:** [portfolio-website.mcartis94.workers.dev/work/sms-opt-out-classifier](https://portfolio-website.mcartis94.workers.dev/work/sms-opt-out-classifier/)
+**Read the case study and try the live demo:** [portfolio.temirgaliev.workers.dev/work/sms-opt-out-classifier](https://portfolio.temirgaliev.workers.dev/work/sms-opt-out-classifier/)
 
 ## Problem
 
